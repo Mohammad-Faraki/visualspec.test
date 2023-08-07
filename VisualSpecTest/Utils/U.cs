@@ -578,7 +578,6 @@
 
 
 
-
         public static void AddStakeholder(UITest uiTest, string stakeholderName,
             string department = "department01", string role = "role01",
             string email = "email01@yahoo.com", string tel = "tel01",
