@@ -1,0 +1,22 @@
+﻿<ImpactFile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  Name="DeleteContact.15AVa8l14jyQdfyc90o5Aq0Qa4"
+  DataBaseCommand="&lt;Changes&gt;&#xD;&#xA;  &lt;Change Command=&quot;DELETE FROM Contacts WHERE ID = @Id&quot;&gt;&#xD;&#xA;    &lt;Param Name=&quot;Id&quot; Value=&quot;caf0cafd-39e4-b957-5be1-98862ac0bb7b&quot; Type=&quot;Guid&quot; /&gt;&#xD;&#xA;  &lt;/Change&gt;&#xD;&#xA;&lt;/Changes&gt;"
+  Url="contact/contacts">
+  <Files />
+  <SecureFiles />
+  <Cookies>
+    <ImpactFileCookie>
+      <Name>.myAuth</Name>
+      <Value>CfDJ8OOVL3jKplBLkCrheMWisYOHx8noRyKBSNzCLfW9KTcr7X8HryTkn9m6b5WWUeQGgmM6S7QcTxe6a363MIxa5DcNTf_qFObpmvt97oM6LxSOc21DfxB0_g7RyGG7Syi4Uy_5jy2Ofc5y58lYsOYGUBL0ddsCf4XHtaLlQHKxRocgjFy07GxVgmxAi-J7ujfL3e1efFkKfvt-r-bCv6AoX6P9-K__Hno-YKzVtSOVyi_zoUc9j3YBG0OWqoj_A2Lgq1zG_44Jm6pcQZbVZIyfHB52h7Y_Q--XOiMLuZwJHjpQ0vSt1vhzdcJEE15hlDLcam_fyq24Qju6G-TYOwLzP4G01p7D2gHZ4aJXn6Z7SEh_fVQ0DmkrHqBPwwyImYqs4KlB6DwKU2nE8SJslH8CJ2MUG2CBizUEmA81TDPUgCF1umlgdk-Lwp2hEjbwhunmW9g4y-9X6R7VdAVspn0VDhC7fIqC04bAh9gzdp1NoLOwtaY8v6aTF4KiYiCOPtGoAtaxFh6CIhXqJdKtcFIgBWCxNTonoRA5X18yUoUdStg6xG4NK1Qvl-Z3CMpqTfIVcje78aM29LVTu-nYCSXs4b-kK2V7rpEl0MYjfP__0CJM15wU_8SeE_UWABMhR34X8sGzDyYI5XXA_uUKNH4aPb42-3J-3955ruEBhJaJixg0iwAy00kDjVuRItkNiS2zma-JvVdzLondrUnNHUzPZauGCqxoVweQJM_r9eps47aecocr0K8sLD0NUjXth-UOZbYnefqP0vBro4YYvY3oUQIC4al0uP9S_tE8sgzDCEUPI4oJGGQ19NrP8MxCGBqeGEWRWnitvIs7979AVbCfDF554fEezJqaZXIECnzcDMb0chr9jnGAH9gWPunH7JRAFR16ZKwM2ufU68NucZ3WM7iELC28kEQx5stLwRHRGrmEOzj5TIr9sa6l-mj5TXWW9g</Value>
+      <Path>/</Path>
+      <Expiry>2023-02-11T12:20:56+00:00</Expiry>
+    </ImpactFileCookie>
+    <ImpactFileCookie>
+      <Name>.AspNetCore.Antiforgery.lGFmtVkhg2A</Name>
+      <Value>CfDJ8OOVL3jKplBLkCrheMWisYMka4axC0-vTR28Vbzn0kgqqryTkzR-9E6dNL71cKz9XUO-GTbf5nbDl66qLCx3GD0p98BRMmezetHHky08UFvKsFz4qArMMG4g5EJHx44AP1l3LzGUZxjn4dWXl3wZxKw</Value>
+      <Path>/</Path>
+      <Expiry
+        xsi:nil="true" />
+    </ImpactFileCookie>
+  </Cookies>
+</ImpactFile>
