@@ -87,6 +87,8 @@
         public const string parent = "parent";
 
 
+
+
         public enum DefaultApplications
         {
             WebApp,
@@ -97,6 +99,11 @@
             { DefaultApplications.WebApp , "A Web App" },
             { DefaultApplications.MobileApp , "A Mobile App" }
         };
+        // You can use below variables instead for convinience
+        public const string app_WebApp = "A Web App";
+        public const string app_Mobile = "A Mobile App";
+
+
 
         public enum DefaultActors
         {
@@ -108,6 +115,20 @@
             { DefaultActors.Admin , "Admin" },
             { DefaultActors.Customer , "Customer" }
         };
+        // You can use below variables instead for convinience
+        public const string Actor_Admin = "Admin";
+        public const string Actor_Customer = "Customer";
+
+
+
+        public const string Device_NormalScreen = "Normal screen";
+        public const string Device_WideScreen = "Wide screen";
+        public const string Device_TabletPortrait = "Tablet - Portrait";
+        public const string Device_TabletLandscape = "Tablet - Landscape";
+        public const string Device_Mobile = "Mobile"; 
+
+
+
 
         public enum Environment
         {
@@ -314,6 +335,12 @@
         public static string btnThreeDotsUsecaseXPath(int featureIndex, int usecaseIdx) => $"{usecaseXPath(featureIndex, usecaseIdx)}//a[@name='OpenUseCaseDiagram']/following-sibling::i";
         //public static string btnDeleteFeatureXPath(int featureIndex) => $"//*[@data-module='TreeFeatures']//li[{featureIndex}]//a[{XPathTextContains("Delete")}]";
         public static string btnDeleteFeatureXPath(string featureName) => $"//*[@data-module='TreeFeatures']//li[{XPathHasElement($"a[{XPathText(featureName)}]")}]//a[{XPathTextContains("Delete")}]";
+
+        
+        public static string btnThreeDotsAppXPath(string appName) => $"//*[@data-module='TreeApplications']//a[{XPathText(appName)}]/following-sibling::i";
+        public static string btnDeleteAppXPath(string appName) => $"//*[@data-module='TreeApplications']//li[{XPathHasElement($"a[{XPathText(appName)}]")}]//a[{XPathTextContains("Delete")}]";
+        public static string btnEditAppXPath(string appName) => $"//*[@data-module='TreeApplications']//li[{XPathHasElement($"a[{XPathText(appName)}]")}]//a[{XPathTextContains("Edit")}]";
+
 
         public const string btnAddObjXPath = "//form[@data-module='ObjectMapDiagram']//div/button";
         public static string btnAddWorklowXPath(string featureName) => $"//button[{U.XPathTextContains(featureName)}]/following-sibling::a";

@@ -1,5 +1,6 @@
 ﻿namespace Admin.Scope.Features
 {
+    using Pangolin;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -15,6 +16,10 @@
         public static string btnThreeDotsAppXPath = $"{thirdAppXPath}//i";
 
 
+        public static string applicationFormXPath = $"//form[@data-module='ApplicationForm']";
+        public static string deviceManagmentFormXPath = $"//form[@data-module='DeviceManagementForm']";
+        public static string changeDeviceFormXPath = $"//form[@data-module='ChangeDeviceForm']"; 
+
 
 
         public const string addedActor = "actor01";
@@ -28,5 +33,21 @@
 
         public const string addedIntegration = "integration01";
         public const string editedIntegration = "integration01 edited";
+
+        public const string addedDevice = U.Device_NormalScreen;
+        public const string editedDevice = U.Device_Mobile;
+
+        public static void OpenApplicationDetails(UITest uITest, string appName)
+        {
+            //*********** Edit application
+            // Three dots
+            //uITest.ClickXPath(C.btnThreeDotsAppXPath);
+            uITest.ClickXPath(U.btnThreeDotsAppXPath(appName));
+            // Edit
+            //var btnEditXPath = $"{C.thirdAppXPath}//a[{U.XPathText("Edit")}]";
+            var btnEditXPath = U.btnEditAppXPath(appName);
+            uITest.WaitToSeeXPath(btnEditXPath);
+            uITest.ClickXPath(btnEditXPath);
+        }
     }
 }

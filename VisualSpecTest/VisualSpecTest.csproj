@@ -283,6 +283,7 @@
     <Compile Include="Admin\Scope\Estimate\Activity\Edit Activity.cs" />
     <Compile Include="Admin\Scope\Estimate\Activity\Add Activity.cs" />
     <Compile Include="Admin\Scope\Features\Application\Add Application.cs" />
+    <Compile Include="Admin\Scope\Features\Application\Device\Edit Device.cs" />
     <Compile Include="Admin\Scope\Features\Application\Edit Application.cs" />
     <Compile Include="Admin\Scope\Features\C.cs" />
     <Compile Include="Admin\Scope\Features\Actor\Delete Actor.cs" />

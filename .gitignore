@@ -361,3 +361,14 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+
+
+# ******************* My gitignore *******************
+
+# igonre all file with an specific extension
+*.jpg
+# igonre all files in a folder
+VisualSpecTest/Screenshots/*
+
+# ******************* My gitignore *******************

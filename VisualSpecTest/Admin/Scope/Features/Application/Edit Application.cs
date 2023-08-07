@@ -15,16 +15,11 @@
 
 
 
-            //*********** Edit application
-            // Three dots
-            ClickXPath(C.btnThreeDotsAppXPath);
-            // Edit
-            var btnEditXPath = $"{C.thirdAppXPath}//a[{U.XPathText("Edit")}]";
-            WaitToSeeXPath(btnEditXPath);
-            ClickXPath(btnEditXPath);
-            Set("Name").To("application02");
+            C.OpenApplicationDetails(this, C.addedApp);
+
+            Set("Name").To(C.editedApp);
             Click("Save");
-            Expect("application02");
+            Expect(C.editedApp);
         }
 
 
