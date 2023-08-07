@@ -32,8 +32,10 @@
 
 
 
-
-        public const string AdminEmail = "admin@geeks.ltd.uk";
+        public const string credintialsFile_FolderPath = @"D:\0MyFiles\VS Testcases\More\";
+        public const string credintialsFile_FileName = "credintials.txt";
+        public const string credintialsFile_FullPath = credintialsFile_FolderPath + credintialsFile_FileName;
+        public static string AdminEmail => ReadFile_FirstLine(credintialsFile_FolderPath, credintialsFile_FileName, createFileIsNotExist: false);
         public const string AdminFullname = "Mohammad Geraily";
 
 
@@ -125,7 +127,7 @@
         public const string Device_WideScreen = "Wide screen";
         public const string Device_TabletPortrait = "Tablet - Portrait";
         public const string Device_TabletLandscape = "Tablet - Landscape";
-        public const string Device_Mobile = "Mobile"; 
+        public const string Device_Mobile = "Mobile";
 
 
 
@@ -252,11 +254,12 @@
             }
         }
 
-        public static string TestProjIdxFile_FullPath => TestProjtIdxFile_Folder + TestProjIdxFile_Name;
-        public static string TestProjIdx => ReadFile_FirstLine(TestProjIdxFile_FullPath);
+        public static string TestProjIdxFile_FullPath = TestProjtIdxFile_Folder + TestProjIdxFile_Name;
+        public static string TestProjIdx => ReadFile_FirstLine(TestProjtIdxFile_Folder, TestProjIdxFile_Name, createFileIsNotExist: true);
 
         private const string TestProjectNamePrefix = "xTest";
         public static string TestProjectName => $"{TestProjectNamePrefix}{TestProjIdx}";
+
 
 
 
@@ -296,16 +299,16 @@
                 switch (environment)
                 {
                     case Environment.Live:
-                        adminPassword = "DQ5woj@1jFji2q@!jd7qj42d8";
+                        adminPassword = ReadFileLine(2,credintialsFile_FullPath);
                         break;
                     case Environment.Prelive:
-                        adminPassword = "W84ojj!qj2dq!P8P!!6@7w3iod!1jo";
+                        adminPassword = ReadFileLine(4, credintialsFile_FullPath);
                         break;
                     case Environment.UAT:
-                        adminPassword = "FQJIFw11j1e!jqd@";
+                        adminPassword = ReadFileLine(6, credintialsFile_FullPath); 
                         break;
                     case Environment.Local:
-                        adminPassword = "P@ssw0rd";
+                        adminPassword = ReadFileLine(8, credintialsFile_FullPath);
                         break;
                 }
 
@@ -336,7 +339,7 @@
         //public static string btnDeleteFeatureXPath(int featureIndex) => $"//*[@data-module='TreeFeatures']//li[{featureIndex}]//a[{XPathTextContains("Delete")}]";
         public static string btnDeleteFeatureXPath(string featureName) => $"//*[@data-module='TreeFeatures']//li[{XPathHasElement($"a[{XPathText(featureName)}]")}]//a[{XPathTextContains("Delete")}]";
 
-        
+
         public static string btnThreeDotsAppXPath(string appName) => $"//*[@data-module='TreeApplications']//a[{XPathText(appName)}]/following-sibling::i";
         public static string btnDeleteAppXPath(string appName) => $"//*[@data-module='TreeApplications']//li[{XPathHasElement($"a[{XPathText(appName)}]")}]//a[{XPathTextContains("Delete")}]";
         public static string btnEditAppXPath(string appName) => $"//*[@data-module='TreeApplications']//li[{XPathHasElement($"a[{XPathText(appName)}]")}]//a[{XPathTextContains("Edit")}]";
@@ -629,22 +632,37 @@
             //string readText = File.ReadAllText(fullPath);
             //Console.WriteLine(readText);
         }
-        public static string ReadFile_FirstLine(string fullPath)
+        //public static string ReadFile_FirstLine(string fullPath)
+        public static string ReadFile_FirstLine(string folderPath, string fileName, bool createFileIsNotExist)
         {
-            // Create a file if don't exist
-            if (!File.Exists(fullPath))
-            {
-                if (!Directory.Exists(TestProjtIdxFile_Folder))
-                    Directory.CreateDirectory(TestProjtIdxFile_Folder);
+            string fullPath = folderPath + fileName;
 
-                File.WriteAllLines(fullPath, new string[] { "0" });
+
+            // Create a file if don't exist
+            if (createFileIsNotExist)
+            {
+                if (!File.Exists(fullPath))
+                {
+                    if (!Directory.Exists(folderPath))
+                        Directory.CreateDirectory(folderPath);
+
+                    File.WriteAllLines(fullPath, new string[] { "0" });
+                }
             }
 
 
-            //string readText = File.ReadAllText(fullPath);
-            string readText = File.ReadLines(fullPath).First(); ;
-
+            //string readText = File.ReadLines(fullPath).First();
+            string readText = ReadFileLine(lineNumber: 1, fullPath);
             return readText;
+        }
+
+        public static string ReadFileLine(int lineNumber, string fullPath)
+        {
+            //string readText = File.ReadAllText(fullPath);
+            ////string readText = File.ReadLines(fullPath).First();
+            var lines = File.ReadLines(fullPath);
+
+            return lines.ElementAt(lineNumber-1);
         }
 
         #region Opens
