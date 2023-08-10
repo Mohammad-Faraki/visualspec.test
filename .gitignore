@@ -369,6 +369,6 @@ FodyWeavers.xsd
 # igonre all file with an specific extension
 *.jpg
 # igonre all files in a folder
-VisualSpecTest/Screenshots/*
+VisualSpecTest/Screenshots/
 
 # ******************* My gitignore *******************
