@@ -325,6 +325,7 @@
     <Compile Include="Admin\Spec\Workflow\Add Workflow.cs" />
     <Compile Include="Admin\Spec\Workflow\C.cs" />
     <Compile Include="Admin\Spec\Workflow\Precon Workflow.cs" />
+    <Compile Include="Admin\Website\My Projects\C.cs" />
     <Compile Include="Admin\Website\My Projects\Paging.cs" />
     <Compile Include="Admin\Website\My Projects\UI My Projects.cs" />
     <Compile Include="Admin\Website\Open Register Page.cs" />
