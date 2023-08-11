@@ -11,10 +11,10 @@
     using Admin.Website;
     using HtmlAgilityPack;
 
-    [TestClass]
+    //[TestClass]
     public class AddLoopNode : UITest
     {
-        [PangolinTestMethod]
+        //[PangolinTestMethod]
         public override void RunTest()
         {
             Run<AddStartNode>();

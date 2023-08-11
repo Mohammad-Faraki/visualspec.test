@@ -28,10 +28,11 @@
 
             for (int i = 0; i < cards.Length; i++)
             {
-                if (cards[i] == "OthersForm")
+                if (cards[i] == "OthersForm" || cards[i] == "MidLongTermImpactsForm")
                 {
                     U.ScrollToElementXPath(this, "northstar-content", "//form[@data-module='DepthForm']", U.HtmlElementProp.Top);
                 }
+                
 
                 SetXPath($"//form[@data-module='{cards[i]}']//div[2]//textarea").To($"test text {i}");
 
@@ -50,7 +51,7 @@
             Thread.Sleep(1000);
             for (int i = 0; i < cards.Length; i++)
             {
-                if (cards[i] == "OthersForm")
+                if (cards[i] == "OthersForm" || cards[i] == "MidLongTermImpactsForm")
                 {
                     U.ScrollToElementXPath(this, "northstar-content", "//form[@data-module='DepthForm']", U.HtmlElementProp.Top);
                 }
@@ -66,7 +67,7 @@
 
             for (int i = 0; i < cards.Length; i++)
             {
-                if (cards[i] == "OthersForm")
+                if (cards[i] == "OthersForm" || cards[i] == "MidLongTermImpactsForm")
                 {
                     U.ScrollToElementXPath(this, "northstar-content", "//form[@data-module='DepthForm']", U.HtmlElementProp.Top);
                 }
@@ -86,7 +87,7 @@
             Thread.Sleep(1000);
             for (int i = 0; i < cards.Length; i++)
             {
-                if (cards[i] == "OthersForm")
+                if (cards[i] == "OthersForm" || cards[i] == "MidLongTermImpactsForm")
                 {
                     U.ScrollToElementXPath(this, "northstar-content", "//form[@data-module='DepthForm']", U.HtmlElementProp.Top);
                 }

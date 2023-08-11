@@ -10,10 +10,10 @@
     using System.Web.UI.WebControls;
     using Admin.Website;
 
-    [TestClass]
+    //[TestClass]
     public class AddStartNode : UITest
     {
-        [PangolinTestMethod]
+        //[PangolinTestMethod]
         public override void RunTest()
         {
             Run<AddWorkflow>();

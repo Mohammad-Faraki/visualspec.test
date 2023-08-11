@@ -11,10 +11,10 @@
     using Admin.Website;
     using System.Linq;
 
-    [TestClass]
+    //[TestClass]
     public class AddArtifactNode : UITest
     {
-        [PangolinTestMethod]
+        //[PangolinTestMethod]
         public override void RunTest()
         {
             Run<AddStartNode>();

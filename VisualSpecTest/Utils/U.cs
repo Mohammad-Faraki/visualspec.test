@@ -299,13 +299,13 @@
                 switch (environment)
                 {
                     case Environment.Live:
-                        adminPassword = ReadFileLine(2,credintialsFile_FullPath);
+                        adminPassword = ReadFileLine(2, credintialsFile_FullPath);
                         break;
                     case Environment.Prelive:
                         adminPassword = ReadFileLine(4, credintialsFile_FullPath);
                         break;
                     case Environment.UAT:
-                        adminPassword = ReadFileLine(6, credintialsFile_FullPath); 
+                        adminPassword = ReadFileLine(6, credintialsFile_FullPath);
                         break;
                     case Environment.Local:
                         adminPassword = ReadFileLine(8, credintialsFile_FullPath);
@@ -346,7 +346,7 @@
 
 
         public const string btnAddObjXPath = "//form[@data-module='ObjectMapDiagram']//div/button";
-        public static string btnAddWorklowXPath(string featureName) => $"//button[{U.XPathTextContains(featureName)}]/following-sibling::a";
+        public static string btnAddWorklowXPath(string featureName) => $"//button[{U.XPathHasElement($"*[{U.XPathTextContains(featureName)}]")}]/following-sibling::a";
 
         /// <summary>
         /// Plus icon to open nodes toolbox
@@ -863,14 +863,21 @@
             //uiTest.WaitToSeeLink("New Project");
             //Thread.Sleep(3000);
 
+
+
             //ScrollToTop_Website(uiTest);
-            uiTest.ClickLink("New Project");
-            uiTest.WaitToSee("Project Details");
+            uiTest.ClickButton("New Project");
+            U.WaitToSeePopup_ProjectDetails(uiTest);
             uiTest.Set(That.Contains, "Name").To(TestProjectName);
             uiTest.Set(That.Contains, "Description").To("Description01");
 
             uiTest.ClickLink("Save");
             uiTest.Expect(What.Contains, TestProjectName);
+        }
+        public static void WaitToSeePopup_ProjectDetails(UITest uiTest)
+        {
+            uiTest.AtXPath(Website.MyProjects.C.formProjectDetail + "//h2").WaitToSee(What.Contains, "Project");
+            uiTest.AtXPath(Website.MyProjects.C.formProjectDetail + "//h2").Expect(What.Contains, "Details");
         }
 
         public static void OpenProject(UITest uiTest)
@@ -906,7 +913,8 @@
         public static void OpenProjectDetails(UITest uiTest, int rowIdx)
         {
             uiTest.ClickXPath(btnEditProjectXPath(rowIdx));
-            uiTest.WaitToSee("Project Details");
+            //uiTest.WaitToSee("Project Details");
+            U.WaitToSeePopup_ProjectDetails(uiTest);
         }
 
         public static void GoToLandingPage(UITest uiTest)
