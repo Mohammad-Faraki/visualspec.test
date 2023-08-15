@@ -8,8 +8,8 @@
 
     public static class C
     {
-        public static string addedActiviy = "activity01";
-        public static string editedActiviy = "activity02";
+        public const string addedActiviy = "activity01";
+        public const string editedActiviy = "activity02";
 
     }
 }

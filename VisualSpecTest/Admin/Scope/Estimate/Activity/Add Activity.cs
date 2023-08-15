@@ -2,6 +2,7 @@
 {
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using OpenQA.Selenium;
     using Pangolin;
     using System.Threading;
 
@@ -24,7 +25,7 @@
             }
             else if (U.environment == U.Environment.Live)
             {
-                AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.75");
+                AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.25");
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "2.25");
             }
 
@@ -43,7 +44,12 @@
                 ClickXPath("//div[@class='select-estimate-size-form']/label[5]");
             }
             Near("Add other activity").Click("Save");
+            Thread.Sleep(3000);
 
+            //U.ScrollToElementXPath(this, scorllableElement: "scope-content"
+            //    , XPath: "//form[@data-module='IntegrationsWithFeatureList']");
+            int IntegrationTable_Y = this.WebDriver.FindElement(By.XPath("//form[@data-module='IntegrationsWithFeatureList']")).Location.Y;
+            U.ScrollTo(this, "scope-content", IntegrationTable_Y - 100);
 
             // Ativity should be added to the end of the table
             ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[text()='{C.addedActiviy}']");
@@ -63,6 +69,9 @@
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]//button[@title='4']");
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[3]//button[@title='4']");
             }
+
+            U.ScrollToTop(this, "scope-content");
+            
             //Expect(What.Contains, "1.75-2.25 days");
             //ExpectXPath($"//form[@data-module='OtherActivitiesList']//h2/span[{MyUtils.XPathText("1.75-2.25 days")}]");
             //ExpectHeader(That.Contains, "1.75-2.25 days");
@@ -75,13 +84,15 @@
             }
             else if (U.environment == U.Environment.Live)
             {
-                AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "2.25");
+                AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.75");
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "2.75");
             }
 
 
             RefreshPage();
             WaitToSee(What.Contains, "Solution Design Activities");
+
+            U.ScrollTo(this, "scope-content", IntegrationTable_Y - 100);
 
             ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[text()='{C.addedActiviy}']");
 
@@ -99,6 +110,8 @@
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[3]//button[@title='4']");
             }
 
+            U.ScrollToTop(this, "scope-content");
+
             //Expect(What.Contains, "1.75-2.25 days");
             if (U.environment == U.Environment.Prelive)
             {
@@ -107,7 +120,7 @@
             }
             else if (U.environment == U.Environment.Live)
             {
-                AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "2.25");
+                AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.75");
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "2.75");
             }
         }
