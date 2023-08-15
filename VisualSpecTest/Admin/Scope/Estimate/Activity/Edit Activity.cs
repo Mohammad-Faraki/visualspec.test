@@ -16,6 +16,7 @@
 
 
             //*********** Edit activity
+            C.ScrollToLastActivity(this);
             ClickXPath("//form[@data-module='OtherActivitiesList']//tr[last()]/td[5]/a[@name='Edit']/i");
             WaitToSee(What.Contains, "Edit other activity");
             Set(That.Contains, "Activity").To(C.editedActiviy);
@@ -30,6 +31,8 @@
             }
             Near(What.Contains, "Edit other activity").Click("Save");
 
+            //Thread.Sleep(5000);
+            //C.ScrollToLastActivity(this);
             ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[text()='{C.editedActiviy}']");
 
             //ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]/div/div[1][@class='selected']");
@@ -40,6 +43,8 @@
             {
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]//button[@title='1']");
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[3]//button[@title='4']");
+
+                C.ScrollToTop(this);
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "0.5");
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.75");
             }
@@ -47,19 +52,24 @@
             {
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]//button[@title='1']");
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[3]//button[@title='4']");
-                AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.75");
+
+                C.ScrollToTop(this);
+                AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.5");
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "2.75");
             }
 
             RefreshPage();
             WaitToSee(What.Contains, "Solution Design Activities");
 
+            C.ScrollToLastActivity(this);
             ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[text()='{C.editedActiviy}']");
 
             if (U.environment == U.Environment.Prelive)
             {
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]//button[@title='1']");
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[3]//button[@title='4']");
+
+                C.ScrollToTop(this);
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "0.5");
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.75");
             }
@@ -67,11 +77,15 @@
             {
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]//button[@title='1']");
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[3]//button[@title='4']");
-                AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.75");
+
+                Thread.Sleep(3000);
+                C.ScrollToTop(this);
+                AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.5");
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "2.75");
             }
 
             //*********** Edit only activity estimation, on screen
+            C.ScrollToLastActivity(this);
             //ClickXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]/div/div[2]");
             if (U.environment == U.Environment.Prelive)
             {
@@ -92,6 +106,8 @@
             {
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]//button[@title='0.5']");
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[3]//button[@title='4']");
+
+                C.ScrollToTop(this);
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "0.5");
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.75");
             }
@@ -99,17 +115,22 @@
             {
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]//button[@title='0.25']");
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[3]//button[@title='4']");
-                AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.75");
+
+                C.ScrollToTop(this);
+                AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.25");
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "2.75");
             }
 
             RefreshPage();
             WaitToSee(What.Contains, "Solution Design Activities");
 
+            C.ScrollToLastActivity(this);
             if (U.environment == U.Environment.Prelive)
             {
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]//button[@title='0.5']");
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[3]//button[@title='4']");
+
+                C.ScrollToTop(this);
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "0.5");
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.75");
             }
@@ -117,7 +138,9 @@
             {
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]//button[@title='0.25']");
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[3]//button[@title='4']");
-                AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.75");
+
+                C.ScrollToTop(this);
+                AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.25");
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "2.75");
             }
         }

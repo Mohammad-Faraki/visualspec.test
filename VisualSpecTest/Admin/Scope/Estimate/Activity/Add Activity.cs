@@ -48,8 +48,7 @@
 
             //U.ScrollToElementXPath(this, scorllableElement: "scope-content"
             //    , XPath: "//form[@data-module='IntegrationsWithFeatureList']");
-            int IntegrationTable_Y = this.WebDriver.FindElement(By.XPath("//form[@data-module='IntegrationsWithFeatureList']")).Location.Y;
-            U.ScrollTo(this, "scope-content", IntegrationTable_Y - 100);
+            C.ScrollToLastActivity(this);
 
             // Ativity should be added to the end of the table
             ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[text()='{C.addedActiviy}']");
@@ -92,7 +91,7 @@
             RefreshPage();
             WaitToSee(What.Contains, "Solution Design Activities");
 
-            U.ScrollTo(this, "scope-content", IntegrationTable_Y - 100);
+            C.ScrollToLastActivity(this);
 
             ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[text()='{C.addedActiviy}']");
 

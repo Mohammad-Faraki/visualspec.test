@@ -778,8 +778,8 @@
             uiTest.ClickXPath(scopeSidebarIconXPath);
 
             uiTest.ClickXPath($"//li[4]//span[{XPathTextContains("Spec")}]");
-            uiTest.WaitToSeeXPath($"//li[4]//ul//li[5]//a[{XPathTextContains("User Stories")}]");
-            uiTest.ClickXPath($"//li[4]//ul//li[5]//a[{XPathTextContains("User Stories")}]");
+            uiTest.WaitToSeeXPath($"//li[4]//ul//li//a[{XPathTextContains("User Stories")}]");
+            uiTest.ClickXPath($"//li[4]//ul//li//a[{XPathTextContains("User Stories")}]");
 
 
             uiTest.WaitToSeeXPath($"//form[@data-module='UserStoryList']//*[{XPathText("User Stories")}]");
@@ -1133,7 +1133,24 @@
             uiTest.ExpectRow("Admin_A Web App_Wide screen");
         }
 
+        /// <summary>
+        /// returns valued returned after execution of js code
+        /// </summary>
+        /// <param name="uiTest"></param>
+        /// <param name="js">js script like: window.innerHeight</param>
+        /// <returns></returns>
+        public static string ExecuteJS_ReturnValue(UITest uiTest, string js)
+        {
+            var jsExecutor = (IJavaScriptExecutor)uiTest.WebDriver;
+            var ret = Convert.ToInt64(jsExecutor.ExecuteScript($"return {js}")).ToString();
+            return ret;
+        }
 
+        public static int GetViewPortHeight(UITest uiTest)
+        {
+            var h = U.ExecuteJS_ReturnValue(uiTest, "window.innerHeight");
+            return Convert.ToInt32(h);
+        }
 
         public static void CheckWebsiteUI_Header_BeforeLogin(UITest uiTest)
         {
