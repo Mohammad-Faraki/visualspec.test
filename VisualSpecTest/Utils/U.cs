@@ -1,4 +1,4 @@
-﻿namespace Admin
+﻿namespace Tests
 {
     using Pangolin;
     using System;
@@ -8,14 +8,13 @@
     using System.Text;
     using System.Threading;
     using System.Threading.Tasks;
-    using Admin;
-    using Admin.Plan;
-    using Admin.Website;
-    using Admin.ObjectMap;
+    using Tests.Smoke.Admin;
+    using Tests.Smoke.Admin.Plan;
+    using Tests.Smoke.Admin.Website;
+    using Tests.Smoke.Admin.ObjectMap;
     using OpenQA.Selenium.Support.Extensions;
-    using Admin.Estimator;
+    using Tests.Smoke.Admin.Estimator;
     using OpenQA.Selenium;
-    using static Admin.U;
     using System.Configuration;
 
     public static class U
@@ -370,7 +369,7 @@
             uiTest.Set("Name").To(name);
             uiTest.Click("Save");
             Thread.Sleep(3000);
-            ScrollToBottom(uiTest, Scope.Features.C.scrollable_scopeFeatures_treeView);
+            ScrollToBottom(uiTest, Shared.Admin.Scope.Features.C.scrollable_scopeFeatures_treeView);
             uiTest.Expect(name);
         }
         public static void DeleteFeature(UITest uiTest, string featureName)
@@ -876,8 +875,8 @@
         }
         public static void WaitToSeePopup_ProjectDetails(UITest uiTest)
         {
-            uiTest.AtXPath(Website.MyProjects.C.formProjectDetail + "//h2").WaitToSee(What.Contains, "Project");
-            uiTest.AtXPath(Website.MyProjects.C.formProjectDetail + "//h2").Expect(What.Contains, "Details");
+            uiTest.AtXPath(Shared.Admin.Website.MyProjects.C.formProjectDetail + "//h2").WaitToSee(What.Contains, "Project");
+            uiTest.AtXPath(Shared.Admin.Website.MyProjects.C.formProjectDetail + "//h2").Expect(What.Contains, "Details");
         }
 
         public static void OpenProject(UITest uiTest)
@@ -1335,31 +1334,31 @@
             ////U.SetField(this, labelXPath: $"{addObjFormXPath}//*[{U.XPathTextContains("Name")}]"
             ////    , to: Constants.O1F1);
             uiTest.AtXPath(addExistingObjFormXPath).ClickButton("---Select---");
-            uiTest.NearButton("---Select---").ClickLink(C.O1F1);
+            uiTest.NearButton("---Select---").ClickLink(Shared.Admin.ObjectMap.C.O1F1);
             uiTest.ClickHeader("Add Existing Object");
 
             uiTest.AtXPath(addExistingObjFormXPath).ClickButton("Nothing selected");
-            for (int i = 0; i < (allPropertyTypes ? C.propTypes.Length : 1); i++)
+            for (int i = 0; i < (allPropertyTypes ? Shared.Admin.ObjectMap.C.propTypes.Length : 1); i++)
             {
-                uiTest.NearXPath(addExistingObjFormXPath).ClickLink($"P{i + 1}{C.O1F1}");
+                uiTest.NearXPath(addExistingObjFormXPath).ClickLink($"P{i + 1}{Shared.Admin.ObjectMap.C.O1F1}");
             }
-            for (int i = 0; i < (allPropertyTypes ? C.propTypesList.Length : 0); i++)
+            for (int i = 0; i < (allPropertyTypes ? Shared.Admin.ObjectMap.C.propTypesList.Length : 0); i++)
             {
-                uiTest.NearXPath(addExistingObjFormXPath).ClickLink($"P{i + 1 + C.propTypes.Length}{C.O1F1}");
+                uiTest.NearXPath(addExistingObjFormXPath).ClickLink($"P{i + 1 + Shared.Admin.ObjectMap.C.propTypes.Length}{Shared.Admin.ObjectMap.C.O1F1}");
             }
 
             uiTest.ClickXPath($"{addExistingObjFormXPath}//*[{U.XPathText("Save")}]");
             Thread.Sleep(3000);
-            uiTest.ExpectXPath($"//span[{U.XPathText($"{C.O1F1}_Clone")}]");
-            for (int i = 0; i < (allPropertyTypes ? C.propTypes.Length : 1); i++)
+            uiTest.ExpectXPath($"//span[{U.XPathText($"{Shared.Admin.ObjectMap.C.O1F1}_Clone")}]");
+            for (int i = 0; i < (allPropertyTypes ? Shared.Admin.ObjectMap.C.propTypes.Length : 1); i++)
             {
-                uiTest.NearXPath($"//span[{U.XPathText($"{C.O1F1}_Clone")}]")
-                    .Expect($"+{C.propTypes[i]} P{i + 1}{C.O1F1}");
+                uiTest.NearXPath($"//span[{U.XPathText($"{Shared.Admin.ObjectMap.C.O1F1}_Clone")}]")
+                    .Expect($"+{Shared.Admin.ObjectMap.C.propTypes[i]} P{i + 1}{Shared.Admin.ObjectMap.C.O1F1}");
             }
-            for (int i = 0; i < (allPropertyTypes ? C.propTypesList.Length : 0); i++)
+            for (int i = 0; i < (allPropertyTypes ? Shared.Admin.ObjectMap.C.propTypesList.Length : 0); i++)
             {
-                uiTest.NearXPath($"//span[{U.XPathText($"{C.O1F1}_Clone")}]")
-                    .Expect($"+{C.propTypesList[i]} P{i + 1 + C.propTypes.Length}{C.O1F1}");
+                uiTest.NearXPath($"//span[{U.XPathText($"{Shared.Admin.ObjectMap.C.O1F1}_Clone")}]")
+                    .Expect($"+{Shared.Admin.ObjectMap.C.propTypesList[i]} P{i + 1 + Shared.Admin.ObjectMap.C.propTypes.Length}{Shared.Admin.ObjectMap.C.O1F1}");
             }
         }
 
@@ -1391,34 +1390,34 @@
             switch (nodeType)
             {
                 case NodeType.Start:
-                    nodeCssClass = Workflow.C.cssClass_StartNode;
+                    nodeCssClass = Shared.Admin.Workflow.C.cssClass_StartNode;
                     break;
                 case NodeType.Step:
-                    nodeCssClass = Workflow.C.cssClass_StepNode;
+                    nodeCssClass = Shared.Admin.Workflow.C.cssClass_StepNode;
                     break;
                 case NodeType.End:
-                    nodeCssClass = Workflow.C.cssClass_EndNode;
+                    nodeCssClass = Shared.Admin.Workflow.C.cssClass_EndNode;
                     break;
                 case NodeType.Decision:
-                    nodeCssClass = Workflow.C.cssClass_DecisionNode;
+                    nodeCssClass = Shared.Admin.Workflow.C.cssClass_DecisionNode;
                     break;
                 case NodeType.Loop:
-                    nodeCssClass = Workflow.C.cssClass_LoopNode;
+                    nodeCssClass = Shared.Admin.Workflow.C.cssClass_LoopNode;
                     break;
                 case NodeType.Artifact:
-                    nodeCssClass = Workflow.C.cssClass_ArtifactNode;
+                    nodeCssClass = Shared.Admin.Workflow.C.cssClass_ArtifactNode;
                     break;
                 case NodeType.Start_LoopTarget:
-                    nodeCssClass = Workflow.C.cssClass_StartNode_LoopTarget;
+                    nodeCssClass = Shared.Admin.Workflow.C.cssClass_StartNode_LoopTarget;
                     break;
                 case NodeType.Step_LoopTarget:
-                    nodeCssClass = Workflow.C.cssClass_StepNode_LoopTarget;
+                    nodeCssClass = Shared.Admin.Workflow.C.cssClass_StepNode_LoopTarget;
                     break;
                 case NodeType.Decision_LoopTarget:
-                    nodeCssClass = Workflow.C.cssClass_DecisionNode_LoopTarget;
+                    nodeCssClass = Shared.Admin.Workflow.C.cssClass_DecisionNode_LoopTarget;
                     break;
                 case NodeType.Artifact_LoopTarget:
-                    nodeCssClass = Workflow.C.cssClass_ArtifactNode_LoopTarget;
+                    nodeCssClass = Shared.Admin.Workflow.C.cssClass_ArtifactNode_LoopTarget;
                     break;
             }
 
@@ -1470,10 +1469,10 @@
         {
             // Scroll to bottom
             if (featureIdx == 0)
-                uiTest.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(Scope.Features.C.scrollable_scopeFeatures_treeView));
+                uiTest.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(Shared.Admin.Scope.Features.C.scrollable_scopeFeatures_treeView));
             else
                 // Scroll to the feature above the current feature
-                U.ScrollToElementXPath(uiTest, Scope.Features.C.scrollable_scopeFeatures_treeView, $"//a[{U.XPathText(features[featureIdx - 1])}]");
+                U.ScrollToElementXPath(uiTest, Shared.Admin.Scope.Features.C.scrollable_scopeFeatures_treeView, $"//a[{U.XPathText(features[featureIdx - 1])}]");
         }
     }
 }
