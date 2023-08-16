@@ -24,11 +24,11 @@
             U.AddFeature(this, U.feature01);
 
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom("scope-tree"));
+            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(Scope.Features.C.scrollable_scopeFeatures_treeView));
             //*********** Add usecase
             U.AddUsecase(this, U.feature01, U.f1Usecase1, U.DefaultActors.Customer);
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom("scope-tree"));
+            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(Scope.Features.C.scrollable_scopeFeatures_treeView));
             Expect(U.f1Usecase1);
 
             Run<OpenEstimate>();

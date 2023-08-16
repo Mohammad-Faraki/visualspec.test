@@ -29,32 +29,32 @@
 
 
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom("scope-tree"));
+            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(Scope.Features.C.scrollable_scopeFeatures_treeView));
             U.AddUsecase(this, U.feature01, U.f1Usecase1, U.DefaultActors.Admin/*, MyUtils.DefaultApplications.WebApp*/
                 , new Tuple<U.Estimate, U.Estimate>(U.Estimate.XS, U.Estimate.M));
             Thread.Sleep(500);
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom("scope-tree"));
+            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(Scope.Features.C.scrollable_scopeFeatures_treeView));
             Expect(U.f1Usecase1);
 
 
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom("scope-tree"));
+            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(Scope.Features.C.scrollable_scopeFeatures_treeView));
             U.AddUsecase(this, U.feature01, U.f1Usecase2, U.DefaultActors.Admin
                 , new Tuple<U.Estimate, U.Estimate>(U.Estimate.XS, U.Estimate.M));
             Thread.Sleep(500);
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom("scope-tree"));
+            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(Scope.Features.C.scrollable_scopeFeatures_treeView));
             Expect(U.f1Usecase2);
 
 
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom("scope-tree"));
+            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(Scope.Features.C.scrollable_scopeFeatures_treeView));
             U.AddUsecase(this, U.feature02, U.f2Usecase1, U.DefaultActors.Admin
                 , new Tuple<U.Estimate, U.Estimate>(U.Estimate.XS, U.Estimate.M));
             Thread.Sleep(500);
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom("scope-tree"));
+            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(Scope.Features.C.scrollable_scopeFeatures_treeView));
             Expect(U.f2Usecase1);
 
 

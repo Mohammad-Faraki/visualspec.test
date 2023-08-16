@@ -370,7 +370,7 @@
             uiTest.Set("Name").To(name);
             uiTest.Click("Save");
             Thread.Sleep(3000);
-            ScrollToBottom(uiTest, "scope-tree");
+            ScrollToBottom(uiTest, Scope.Features.C.scrollable_scopeFeatures_treeView);
             uiTest.Expect(name);
         }
         public static void DeleteFeature(UITest uiTest, string featureName)
@@ -1470,10 +1470,10 @@
         {
             // Scroll to bottom
             if (featureIdx == 0)
-                uiTest.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom("scope-tree"));
+                uiTest.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(Scope.Features.C.scrollable_scopeFeatures_treeView));
             else
                 // Scroll to the feature above the current feature
-                U.ScrollToElementXPath(uiTest, "scope-tree", $"//a[{U.XPathText(features[featureIdx - 1])}]");
+                U.ScrollToElementXPath(uiTest, Scope.Features.C.scrollable_scopeFeatures_treeView, $"//a[{U.XPathText(features[featureIdx - 1])}]");
         }
     }
 }

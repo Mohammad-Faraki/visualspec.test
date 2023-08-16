@@ -1,4 +1,4 @@
-﻿namespace Admin.Scope.Features.Usecase
+﻿namespace Admin.Scope.Features
 {
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;

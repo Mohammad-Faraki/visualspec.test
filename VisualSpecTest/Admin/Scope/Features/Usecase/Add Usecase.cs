@@ -1,4 +1,4 @@
-﻿namespace Admin.Scope.Features.Usecase
+﻿namespace Admin.Scope.Features
 {
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -28,10 +28,10 @@
 
             //*********** Add usecase
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom("scope-tree"));
+            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(C.scrollable_scopeFeatures_treeView));
             U.AddUsecase(this, U.feature01, U.f1Usecase1, U.DefaultActors.Admin);
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom("scope-tree"));
+            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(C.scrollable_scopeFeatures_treeView));
             Expect(U.f1Usecase1);
 
 

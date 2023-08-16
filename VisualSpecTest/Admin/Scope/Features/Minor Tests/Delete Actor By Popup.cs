@@ -1,4 +1,4 @@
-﻿namespace Admin.Scope.Features
+﻿namespace Admin.Scope.Features.Minor
 {
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;

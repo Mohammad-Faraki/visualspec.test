@@ -18,7 +18,7 @@
             C.OpenApplicationDetails(this, C.addedApp);
 
 
-            AtXPath(C.formApplicationXPath).Click("Devices management");
+            AtXPath(C.formApplicationDetailsXPath).Click("Devices management");
 
             AtXPath(C.formDeviceManagmentXPath).ClickXPath("//a[@name='ChangeTo'][1]");
             WaitToSee($"Change device of {C.addedApp}");
@@ -29,9 +29,9 @@
 
             // Checked if changes are applied
             C.OpenApplicationDetails(this, C.addedApp);
-            AtXPath(C.formApplicationXPath).Click("Devices management");
-            AtXPath(C.formApplicationXPath).ExpectNo(What.Contains, C.addedDevice);
-            AtXPath(C.formApplicationXPath).Expect(C.editedDevice);
+            AtXPath(C.formApplicationDetailsXPath).Click("Devices management");
+            AtXPath(C.formApplicationDetailsXPath).ExpectNo(What.Contains, C.addedDevice);
+            AtXPath(C.formApplicationDetailsXPath).Expect(C.editedDevice);
 
             AtXPath(C.formDeviceManagmentXPath).ClickXPath("//a[@name='ChangeTo'][1]");
             WaitToSee($"Change device of {C.addedApp}");

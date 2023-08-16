@@ -15,15 +15,18 @@
         public const string thirdAppXPath = "//*[@data-module='TreeApplications']//ul/li[3]";
         public static string btnThreeDotsAppXPath = $"{thirdAppXPath}//i";
 
+        public const string firstIntegrationXPath = "//*[@data-module='TreeIntegrations']//li[1]";
+        public static string btnEditIntegrationXPath = $"{firstIntegrationXPath}//a[{U.XPathText("Edit")}]";
 
 
-
-        public static string formApplicationXPath = $"//form[@data-module='ApplicationForm']";
+        public static string formApplicationDetailsXPath = $"//form[@data-module='ApplicationForm']";
         public static string formDeviceManagmentXPath = $"//form[@data-module='DeviceManagementForm']";
         public static string formChangeDeviceXPath = $"//form[@data-module='ChangeDeviceForm']";
 
         public static string formActorDetails = "//form[@data-module='ActorForm']";
-
+        public static string formIntegrationDetails = "//form[@data-module='IntegrationForm']";
+        public static string formFeatureDetails = "//form[@data-module='FeatureForm']";
+        public static string formUsecaseDetails = "//form[@data-module='UseCaseForm']";
 
 
 
@@ -41,6 +44,9 @@
 
         public const string addedDevice = U.Device_NormalScreen;
         public const string editedDevice = U.Device_Mobile;
+
+
+        public const string scrollable_scopeFeatures_treeView = "scope-tree";
 
         public static void OpenApplicationDetails(UITest uITest, string appName)
         {
