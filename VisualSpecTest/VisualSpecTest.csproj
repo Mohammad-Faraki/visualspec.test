@@ -292,6 +292,7 @@
     <Compile Include="Admin\Scope\Features\Feature\Add Feature.cs" />
     <Compile Include="Admin\Scope\Features\Integration\Edit Integration.cs" />
     <Compile Include="Admin\Scope\Features\Integration\Add Integration.cs" />
+    <Compile Include="Admin\Scope\Features\Minor Tests\Delete Actor By Popup.cs" />
     <Compile Include="Admin\Scope\Features\Usecase\Add Usecase.cs" />
     <Compile Include="Admin\Scope\Features\Usecase\Delete Usecase.cs" />
     <Compile Include="Admin\Scope\Features\Usecase\Edit Usecase.cs" />

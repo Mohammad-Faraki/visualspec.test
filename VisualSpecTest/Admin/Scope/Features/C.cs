@@ -16,9 +16,14 @@
         public static string btnThreeDotsAppXPath = $"{thirdAppXPath}//i";
 
 
-        public static string applicationFormXPath = $"//form[@data-module='ApplicationForm']";
-        public static string deviceManagmentFormXPath = $"//form[@data-module='DeviceManagementForm']";
-        public static string changeDeviceFormXPath = $"//form[@data-module='ChangeDeviceForm']"; 
+
+
+        public static string formApplicationXPath = $"//form[@data-module='ApplicationForm']";
+        public static string formDeviceManagmentXPath = $"//form[@data-module='DeviceManagementForm']";
+        public static string formChangeDeviceXPath = $"//form[@data-module='ChangeDeviceForm']";
+
+        public static string formActorDetails = "//form[@data-module='ActorForm']";
+
 
 
 

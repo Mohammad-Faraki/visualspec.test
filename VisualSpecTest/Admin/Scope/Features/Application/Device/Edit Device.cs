@@ -18,26 +18,26 @@
             C.OpenApplicationDetails(this, C.addedApp);
 
 
-            AtXPath(C.applicationFormXPath).Click("Devices management");
+            AtXPath(C.formApplicationXPath).Click("Devices management");
 
-            AtXPath(C.deviceManagmentFormXPath).ClickXPath("//a[@name='ChangeTo'][1]");
+            AtXPath(C.formDeviceManagmentXPath).ClickXPath("//a[@name='ChangeTo'][1]");
             WaitToSee($"Change device of {C.addedApp}");
-            AtXPath(C.changeDeviceFormXPath).ClickButton("---Select---");
-            NearXPath(C.changeDeviceFormXPath).ClickLink(C.editedDevice);
-            AtXPath(C.changeDeviceFormXPath).ClickButton("Save");
+            AtXPath(C.formChangeDeviceXPath).ClickButton("---Select---");
+            NearXPath(C.formChangeDeviceXPath).ClickLink(C.editedDevice);
+            AtXPath(C.formChangeDeviceXPath).ClickButton("Save");
 
 
             // Checked if changes are applied
             C.OpenApplicationDetails(this, C.addedApp);
-            AtXPath(C.applicationFormXPath).Click("Devices management");
-            AtXPath(C.applicationFormXPath).ExpectNo(What.Contains, C.addedDevice);
-            AtXPath(C.applicationFormXPath).Expect(C.editedDevice);
+            AtXPath(C.formApplicationXPath).Click("Devices management");
+            AtXPath(C.formApplicationXPath).ExpectNo(What.Contains, C.addedDevice);
+            AtXPath(C.formApplicationXPath).Expect(C.editedDevice);
 
-            AtXPath(C.deviceManagmentFormXPath).ClickXPath("//a[@name='ChangeTo'][1]");
+            AtXPath(C.formDeviceManagmentXPath).ClickXPath("//a[@name='ChangeTo'][1]");
             WaitToSee($"Change device of {C.addedApp}");
-            AtXPath(C.changeDeviceFormXPath).ClickButton("---Select---");
-            NearXPath(C.changeDeviceFormXPath).ExpectNoLink(C.editedDevice);
-            NearXPath(C.changeDeviceFormXPath).ExpectLink(C.addedDevice);
+            AtXPath(C.formChangeDeviceXPath).ClickButton("---Select---");
+            NearXPath(C.formChangeDeviceXPath).ExpectNoLink(C.editedDevice);
+            NearXPath(C.formChangeDeviceXPath).ExpectLink(C.addedDevice);
         }
 
 
