@@ -10,6 +10,7 @@
     using System.Web.UI.WebControls;
     using Tests.Smoke.Admin.Website;
     using Tests.Shared.Admin.ObjectMap;
+    using Tests.Minor.Admin.ObjectMap;
 
     [TestClass]
     public class ChangeOwnerFeature : UITest

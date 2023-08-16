@@ -1,10 +1,11 @@
-﻿namespace Tests.Smoke.Admin.Scope.Features
+﻿namespace Tests.Minor.Admin.Scope.Features
 {
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Pangolin;
     using System;
     using System.Threading;
+    using Tests.Smoke.Admin.Scope.Features;
     using Tests.Smoke.Admin.Website;
 
     [TestClass]

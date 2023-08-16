@@ -1,4 +1,4 @@
-﻿namespace Tests.Smoke.Admin.ObjectMap
+﻿namespace Tests.Minor.Admin.ObjectMap
 {
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -10,6 +10,7 @@
     using System.Web.UI.WebControls;
     using Tests.Smoke.Admin.Website;
     using Tests.Shared.Admin.ObjectMap;
+    using Tests.Smoke.Admin.ObjectMap;
 
     [TestClass]
     public class AddProperty_AllTypes : UITest

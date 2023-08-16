@@ -1,10 +1,11 @@
-﻿namespace Tests.Smoke.Admin.Scope.Features
+﻿namespace Tests.Minor.Admin.Scope.Features
 {
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Pangolin;
     using Tests.Smoke.Admin.Website;
     using Tests.Shared.Admin.Scope.Features;
+    using Tests.Smoke.Admin.Scope.Features;
 
     [TestClass]
     public class DeleteIntegrationByPopup : UITest

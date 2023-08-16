@@ -1,4 +1,4 @@
-﻿namespace Tests.Smoke.Admin.ObjectMap
+﻿namespace Tests.Minor.Admin.ObjectMap
 {
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
