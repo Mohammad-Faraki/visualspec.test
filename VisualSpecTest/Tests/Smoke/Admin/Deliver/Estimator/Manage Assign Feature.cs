@@ -2,11 +2,12 @@
 {
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using OpenQA.Selenium;
     using Pangolin;
     using System;
     using System.Threading;
     using Tests.Smoke.Admin.Website;
-    using OpenQA.Selenium;
+    
 
     [TestClass]
     public class ManageAssignFeature : UITest

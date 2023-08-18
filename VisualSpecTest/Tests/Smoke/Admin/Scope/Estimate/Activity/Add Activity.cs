@@ -2,7 +2,7 @@
 {
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using OpenQA.Selenium;
+    
     using Pangolin;
     using System.Threading;
     using Tests.Shared.Admin.Scope.Estimate;

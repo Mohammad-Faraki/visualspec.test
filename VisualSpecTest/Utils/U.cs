@@ -14,15 +14,18 @@
     using Tests.Smoke.Admin.ObjectMap;
     using OpenQA.Selenium.Support.Extensions;
     using Tests.Smoke.Admin.Estimator;
-    using OpenQA.Selenium;
+
     using System.Configuration;
+    using AngleSharp.Dom;
+    using OpenQA.Selenium;
+    using System.Runtime.InteropServices.WindowsRuntime;
 
     public static class U
     {
         #region Test variables
 
         // Only change this environment value to test different environments
-        public const Environment environment = Environment.Live;
+        public const Environment environment = Environment.Prelive;
 
 
 
@@ -390,14 +393,15 @@
         /// <param name="actor"></param>
         /// <param name="application"></param>
         /// <param name="estimateFromTo"></param>
+        /// <param name="unselectIfSelected">If it's flase, it won't unselect the actor if it's already selected</param>
         public static void AddUsecase(UITest uiTest, string featureName, string usecaseName,
-            DefaultActors actor, /*DefaultApplications application,*/ Tuple<Estimate, Estimate> estimateFromTo = null)
+            DefaultActors actor, /*DefaultApplications application,*/ Tuple<Estimate, Estimate> estimateFromTo = null, bool unselectIfSelected = true)
         {
             string actorName = DefaultActorsDic[actor];
             //string applicationName = DefaultApplicationsDic[application];
 
-            string descriptionXPath = "//form[@data-module='UseCaseForm']//textarea[@name='Description']";
-
+            string usecaseFormXPath = "//form[@data-module='UseCaseForm']";
+            string descriptionXPath = $"{usecaseFormXPath}//textarea[@name='Description']";
 
             //ScrollToBottom(uiTest, "scope-tree", webDriver);
 
@@ -412,20 +416,29 @@
 
 
             #region Commented select feature
-            //uiTest.ClickXPath("//form[@data-module='UseCaseForm']//div[2]//button");
+            //uiTest.ClickXPath($"{usecaseFormXPath}//div[2]//button");
             //// +1 is becase there is a default "nothing selected" option
-            //uiTest.ClickXPath($"//form[@data-module='UseCaseForm']//div[2]//li[{featureIndex + 1}]//a");
+            //uiTest.ClickXPath($"{usecaseFormXPath}//div[2]//li[{featureIndex + 1}]//a");
             //// To close actors popup
             //uiTest.ClickXPath(descriptionXPath); 
             #endregion
 
 
             // Actors
-            uiTest.ClickXPath("//form[@data-module='UseCaseForm']//div[5]//button");
+            uiTest.ClickXPath($"{usecaseFormXPath}//div[5]//button");
             // select "Customer" actor
-            //uiTest.ClickXPath($"//form[@data-module='UseCaseForm']//div[5]//span[text()='{actorName}']");
-            //uiTest.NearXPath("//form[@data-module='UseCaseForm']").ClickLink(actorName);
-            uiTest.AtXPath("//form[@data-module='UseCaseForm']//div[5]//div[@role='listbox']").ClickLink(actorName);
+            //uiTest.ClickXPath($"{usecaseFormXPath}//div[5]//span[text()='{actorName}']");
+            //uiTest.NearXPath($"{usecaseFormXPath}").ClickLink(actorName);
+            var actorDropdownXPath = $"{usecaseFormXPath}//div[5]//div[@role='listbox']";
+            var actorCheckBoxXPath = $"{actorDropdownXPath}//a[{XPathHasDirectElement($"*[{U.XPathText(actorName)}]")}]";
+            var attributeName = "aria-selected";
+            //var checkBoxElement_Js = JsCodeToGetHTMLElementJS_ByXPath(actorCheckBoxXPath);
+            //var selectedAttributeVal = U.ExecuteJS_ReturnValue(uiTest, $"{checkBoxElement_Js}.getAttribute('{attributeName}')");
+            var selectedAttributeVal = U.GetHtmlElementAttribute(uiTest, actorCheckBoxXPath, attributeName);
+            bool wasSelected = selectedAttributeVal == "true" ? true : false;
+
+            if (!wasSelected || (wasSelected && unselectIfSelected == true))
+                uiTest.AtXPath(actorDropdownXPath).ClickLink(actorName);
             // To close actors popup
             uiTest.ClickXPath(descriptionXPath);
 
@@ -433,10 +446,10 @@
 
             #region Commented application select
             //// Applications
-            //uiTest.ClickXPath("//form[@data-module='UseCaseForm']//div[6]//button");
+            //uiTest.ClickXPath($"{usecaseFormXPath}//div[6]//button");
             //// select "A Web App" application
-            ////uiTest.ClickXPath($"//form[@data-module='UseCaseForm']//div[6]//span[text()='{applicationName}']");
-            //uiTest.NearXPath("//form[@data-module='UseCaseForm']//div[6]//button[@data-id='ApplicationItems']").ClickLink(applicationName); 
+            ////uiTest.ClickXPath($"{usecaseFormXPath}//div[6]//span[text()='{applicationName}']");
+            //uiTest.NearXPath($"{usecaseFormXPath}//div[6]//button[@data-id='ApplicationItems']").ClickLink(applicationName); 
             #endregion
 
 
@@ -483,7 +496,7 @@
                 }
 
 
-                string usecaseFormXPath = "//form[@data-module='UseCaseForm']";
+
                 uiTest.ClickXPath($"{usecaseFormXPath}//label[@data-index='{from}']");
                 uiTest.ClickXPath($"{usecaseFormXPath}//label[@data-index='{to}']");
             }
@@ -537,7 +550,7 @@
         /// <summary>
         /// It searchs in all levels under the element, not just dircet child
         /// </summary>
-        /// <param name="xpathElement">dont put // or / before element tag</param>
+        /// <param name="xpathElement">don't put // or / before element tag</param>
         /// <returns></returns>
         public static string XPathHasElement(string xpathElement)
             => $"descendant::{xpathElement}";
@@ -545,7 +558,7 @@
         /// <summary>
         /// It searchs for dircet child
         /// </summary> 
-        /// <param name="xpathElement"></param>
+        /// <param name="xpathElement">don't put // or / before element tag</param>
         /// <returns></returns>
         public static string XPathHasDirectElement(string xpathElement)
             => xpathElement;
@@ -985,6 +998,12 @@
             uiTest.ExpectXPath($"{labelXPath}/following-sibling::div/input[@value='{value}']");
         }
 
+        public static string GetHtmlElementAttribute(UITest uiTest, string XPath, string attributeName)
+        {
+            string ret = uiTest.WebDriver.FindElement(By.XPath(XPath)).GetAttribute(attributeName);
+            return ret;
+        }
+
         /// <summary>
         /// Scroll to bottom of page
         /// </summary>
@@ -1031,7 +1050,7 @@
         /// <param name="Y"></param>
         public static void ScrollToElementXPath_Website(UITest uiTest, string XPath, HtmlElementProp elementSide = HtmlElementProp.Top)
         {
-            string elementPosition = XPathGetHTMLElementPropJSVal(XPath, elementSide);
+            string elementPosition = GetHTMLElementPropJSVal_ByXPath(XPath, elementSide);
             uiTest.WebDriver.ExecuteJavaScript($"window.scrollTo(0,{elementPosition});");
         }
         /// <summary>
@@ -1042,7 +1061,7 @@
         /// <param name="scorllableElement">value of data-scrollbar-name attribute</param>
         public static void ScrollToElementXPath(UITest uiTest, string scorllableElement, string XPath, HtmlElementProp elementSide = HtmlElementProp.Top)
         {
-            string elementPosition = XPathGetHTMLElementPropJSVal(XPath, elementSide);
+            string elementPosition = GetHTMLElementPropJSVal_ByXPath(XPath, elementSide);
             //uiTest.WebDriver.ExecuteJavaScript($"window.scrollTo(0,{elementPosition});");
             uiTest.WebDriver.ExecuteJavaScript($"window[`scrolls.{scorllableElement}`].scrollTo(0,{elementPosition},0);");
 
@@ -1064,7 +1083,7 @@
         /// <param name="XPath"></param>
         /// <param name="elementSide"></param>
         /// <returns></returns>
-        public static string XPathGetHTMLElementPropJSVal(string XPath, HtmlElementProp elementSide)
+        public static string GetHTMLElementPropJSVal_ByXPath(string XPath, HtmlElementProp elementSide)
         {
             string elementPropJS = "";
             switch (elementSide)
@@ -1448,15 +1467,19 @@
                 ScrollToFeature(uiTest, i, features);
                 Thread.Sleep(1000);
 
+                int usecaseIdx_assignedToThisFeature = 0;
                 foreach (var usecase in usecases)
                 {
                     // extract feature 
                     var featureNameInUsecaseName = usecase.Split(' ')[0];
                     if (featureNameInUsecaseName == features[i])
                     {
+                        usecaseIdx_assignedToThisFeature++;
+
                         U.AddUsecase(uiTest, features[i], usecase
                             , U.DefaultActors.Admin
-                            , new Tuple<U.Estimate, U.Estimate>(U.Estimate.XS, U.Estimate.M));
+                            , new Tuple<U.Estimate, U.Estimate>(U.Estimate.XS, U.Estimate.M)
+                            , unselectIfSelected: usecaseIdx_assignedToThisFeature > 1 ? false : true);
                         Thread.Sleep(500);
                         ScrollToFeature(uiTest, i, features);
                         uiTest.Expect(usecase);

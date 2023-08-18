@@ -2,7 +2,7 @@
 {
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using OpenQA.Selenium;
+    
     using OpenQA.Selenium.Support.Extensions;
     using Pangolin;
     using System;
@@ -11,6 +11,7 @@
     using Tests.Smoke.Admin.Website;
     using System.Linq;
     using Tests.Shared.Admin.Workflow;
+    using OpenQA.Selenium;
 
     //[TestClass]
     public class AddArtifactNode : UITest

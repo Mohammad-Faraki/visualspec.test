@@ -2,7 +2,7 @@
 {
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using OpenQA.Selenium;
+    
     using OpenQA.Selenium.Support.Extensions;
     using Pangolin;
     using System;
@@ -42,7 +42,7 @@
             // Scroll to bottom
             this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(Shared.Admin.Scope.Features.C.scrollable_scopeFeatures_treeView));
             U.AddUsecase(this, U.feature01, U.f1Usecase2, U.DefaultActors.Admin
-                , new Tuple<U.Estimate, U.Estimate>(U.Estimate.XS, U.Estimate.M));
+                , new Tuple<U.Estimate, U.Estimate>(U.Estimate.XS, U.Estimate.M), unselectIfSelected: false);
             Thread.Sleep(500);
             // Scroll to bottom
             this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(Shared.Admin.Scope.Features.C.scrollable_scopeFeatures_treeView));
