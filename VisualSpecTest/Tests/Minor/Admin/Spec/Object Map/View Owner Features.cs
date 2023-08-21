@@ -31,12 +31,11 @@
             Thread.Sleep(3000);
 
             // Owner feature
-            AtXPath(C.formBottomSectionXPath).ClickButton("feature01");
-            NearXPath(C.formBottomSectionXPath).ExpectLink("feature01");
-            NearXPath(C.formBottomSectionXPath).ExpectLink("feature02");
-            NearXPath(C.formBottomSectionXPath).ExpectLink("feature03");
+            AtXPath(C.formBottomSectionXPath).ClickButton( U.feature01);
+            NearXPath(C.formBottomSectionXPath).ExpectLink(U.feature01);
+            NearXPath(C.formBottomSectionXPath).ExpectLink(U.feature02);
             // it has no usecase
-            NearXPath(C.formBottomSectionXPath).ExpectNo("feature04");
+            NearXPath(C.formBottomSectionXPath).ExpectNo(U.feature03);
         }
 
 

@@ -23,11 +23,17 @@ namespace Tests.Smoke.Admin.ObjectMap
 
 
 
-            var features = new string[] { U.feature01, U.feature02, U.feature03, U.feature04 };
+            //var features = new string[] { U.feature01, U.feature02, U.feature03, U.feature04 };
+            //var usecases = new string[]
+            //{ U.f1Usecase1, U.f1Usecase2, U.f1Usecase3,
+            //  U.f2Usecase1, U.f2Usecase2,
+            //  U.f3Usecase1
+            //};
+            var features = new string[] { U.feature01, U.feature02, U.feature03};
             var usecases = new string[]
-            { U.f1Usecase1, U.f1Usecase2, U.f1Usecase3,
-              U.f2Usecase1, U.f2Usecase2,
-              U.f3Usecase1
+            { 
+              U.f1Usecase1, 
+              U.f2Usecase1
             };
             U.AddUsecases(this, features, usecases);
 

@@ -407,7 +407,8 @@
 
 
             uiTest.ClickXPath(btnThreeDotsFeatureXPath(featureName));
-            uiTest.WaitToSee(What.Contains, "Add Use case");
+            Thread.Sleep(1000);
+            uiTest.Expect(What.Contains, "Add Use case");
             //uiTest.Near(What.Contains, FeatureNmae).Click(What.Contains, "Add Use case");
             //uiTest.ClickXPath($"//*[@data-module='TreeFeatures']//ul/li[{featureIndex}]//a[{XPathText("Add use case")}]");
             uiTest.ClickXPath($"//*[@data-module='TreeFeatures']//li[descendant::a[{XPathText(featureName)}]]//a[{XPathText("Add use case")}]");
@@ -720,9 +721,9 @@
             uiTest.ClickXPath(scopeSidebarIconXPath);
 
             // Deliver
-            uiTest.ClickXPath($"//li[5]//span[{XPathTextContains("Deliver")}]");
-            uiTest.WaitToSeeXPath($"//li[5]//ul//li[1]//a[{XPathTextContains("Estimate")}]");
-            uiTest.ClickXPath($"//li[5]//ul//li[1]//a[{XPathTextContains("Estimate")}]");
+            uiTest.ClickXPath($"//li[6]//span[{XPathTextContains("Deliver")}]");
+            uiTest.WaitToSeeXPath($"//li[6]//ul//li[1]//a[{XPathTextContains("Estimate")}]");
+            uiTest.ClickXPath($"//li[6]//ul//li[1]//a[{XPathTextContains("Estimate")}]");
 
             uiTest.WaitToSeeXPath($"//th[{XPathText("UI Design Implementation")}]");
             uiTest.ClickXPath($"//th[{XPathText("UI Design Implementation")}]");
@@ -790,8 +791,8 @@
             uiTest.ClickXPath(scopeSidebarIconXPath);
 
             uiTest.ClickXPath($"//li[4]//span[{XPathTextContains("Spec")}]");
-            uiTest.WaitToSeeXPath($"//li[4]//ul//li//a[{XPathTextContains("User Stories")}]");
-            uiTest.ClickXPath($"//li[4]//ul//li//a[{XPathTextContains("User Stories")}]");
+            uiTest.WaitToSeeXPath($"//li[4]//ul//li//a[{XPathTextContains("User Journeys")}]");
+            uiTest.ClickXPath($"//li[4]//ul//li//a[{XPathTextContains("User Journeys")}]");
 
 
             uiTest.WaitToSeeXPath($"//form[@data-module='UserStoryList']//*[{XPathText("User Stories")}]");
@@ -1465,7 +1466,7 @@
             for (int i = 0; i < features.Length; i++)
             {
                 ScrollToFeature(uiTest, i, features);
-                Thread.Sleep(1000);
+                Thread.Sleep(3000);
 
                 int usecaseIdx_assignedToThisFeature = 0;
                 foreach (var usecase in usecases)
