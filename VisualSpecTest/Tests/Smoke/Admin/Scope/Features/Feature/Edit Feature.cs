@@ -21,14 +21,14 @@
 
             //*********** Edit features
             ClickXPath(U.btnThreeDotsFeatureXPath(U.feature01));
-            WaitToSee(What.Contains, "Add Use case");
+            Expect(What.Contains, "Add Use case");
             Near(What.Contains, U.feature01).Below(What.Contains, "Add Use case").Click(What.Contains, "Edit");
             Set("Name").To(C.editedFeature01);
             Click("Save");
             Expect(C.editedFeature01);
 
             ClickXPath(U.btnThreeDotsFeatureXPath(U.feature02));
-            WaitToSee(What.Contains, "Add Use case");
+            Expect(What.Contains, "Add Use case");
             Near(What.Contains, U.feature02).Below(What.Contains, "Add Use case").Click(What.Contains, "Edit");
             Set("Name").To(C.editedFeature02);
             Click("Save");

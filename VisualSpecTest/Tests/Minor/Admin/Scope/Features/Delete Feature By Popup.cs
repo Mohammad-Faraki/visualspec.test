@@ -22,7 +22,7 @@
 
             //*********** Edit features
             ClickXPath(U.btnThreeDotsFeatureXPath(U.feature01));
-            WaitToSee(What.Contains, "Add Use case");
+            Expect(What.Contains, "Add Use case");
             Near(What.Contains, U.feature01).Below(What.Contains, "Add Use case").Click(What.Contains, "Edit");
 
             AtXPath(C.formFeatureDetails).Click("Delete");

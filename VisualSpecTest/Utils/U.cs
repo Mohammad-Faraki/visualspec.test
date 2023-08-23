@@ -25,7 +25,7 @@
         #region Test variables
 
         // Only change this environment value to test different environments
-        public const Environment environment = Environment.Prelive;
+        public const Environment environment = Environment.Live;
 
 
 
@@ -378,7 +378,7 @@
         public static void DeleteFeature(UITest uiTest, string featureName)
         {
             uiTest.ClickXPath(btnThreeDotsFeatureXPath(featureName));
-            uiTest.WaitToSee(What.Contains, "Add Use case");
+            uiTest.Expect(What.Contains, "Add Use case");
             //Near(What.Contains, feature02).Below(What.Contains, "Add Use case").Click(What.Contains, "Delete");
             uiTest.ClickXPath(btnDeleteFeatureXPath(featureName));
             uiTest.WaitToSee("Deleting this feature will delete all its associated data in other microservices. Are you sure you want to delete this feature?");
