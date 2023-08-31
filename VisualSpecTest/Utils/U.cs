@@ -795,9 +795,9 @@
             uiTest.ClickXPath($"//li[4]//ul//li//a[{XPathTextContains("User Journeys")}]");
 
 
-            uiTest.WaitToSeeXPath($"//form[@data-module='UserStoryList']//*[{XPathText("User Stories")}]");
+            uiTest.WaitToSeeXPath($"//form[@data-module='UserStoryList']//*[{XPathText("User Journeys")}]");
             //uiTest.ClickHeader("User Stories");
-            uiTest.ClickXPath($"//form[@data-module='UserStoryList']//*[{XPathText("User Stories")}]");
+            uiTest.ClickXPath($"//form[@data-module='UserStoryList']//*[{XPathText("User Journeys")}]");
             //Thread.Sleep(2000);
         }
         public static void OpenWorkflow(UITest uiTest)

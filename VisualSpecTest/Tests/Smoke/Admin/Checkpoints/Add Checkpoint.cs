@@ -25,7 +25,8 @@
 
             Set(That.Contains,"Name").To(U.checkpoint1);
             Click(What.Contains,"Save");
-            Expect(U.checkpoint1);
+            Thread.Sleep(4000);
+            AtXPath("//form[@data-module='CheckpointList']//tr//td[1]").Expect(U.checkpoint1);
 
         }
 
