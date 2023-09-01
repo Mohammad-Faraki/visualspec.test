@@ -405,9 +405,8 @@
 
             //ScrollToBottom(uiTest, "scope-tree", webDriver);
 
-
             uiTest.ClickXPath(btnThreeDotsFeatureXPath(featureName));
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
             uiTest.Expect(What.Contains, "Add Use case");
             //uiTest.Near(What.Contains, FeatureNmae).Click(What.Contains, "Add Use case");
             //uiTest.ClickXPath($"//*[@data-module='TreeFeatures']//ul/li[{featureIndex}]//a[{XPathText("Add use case")}]");

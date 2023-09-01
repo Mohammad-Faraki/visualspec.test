@@ -11,6 +11,7 @@
     using Tests.Smoke.Admin.Website;
     using Tests.Shared.Admin.ObjectMap;
     using Tests.Minor.Admin.ObjectMap;
+    using OpenQA.Selenium;
 
     [TestClass]
     public class ChangeOwnerFeature : UITest
@@ -21,7 +22,10 @@
             Run<ViewOwnerFeatures>();
 
 
-            AtXPath(C.formBottomSectionXPath).ClickLink("feature02");
+            //Near(C.formBottomSectionXPath).ClickLink(U.feature02);
+            ////AtXPath("//*[class='right-panel']").ClickLink(U.feature02);
+            var x = this.WebDriver.FindElements(By.XPath($"//a[{U.XPathHasElement($"*[{U.XPathText(U.feature02)}]")}]"));
+            x[0].Click();
 
             AtXPath(C.formBottomSectionXPath).ClickButton("Save");
 
@@ -30,7 +34,7 @@
             ExpectNoXPath($"//span[{U.XPathText(C.O1F1)}]");
 
 
-            C.OpenFeaturePage(this, "feature02");
+            C.OpenFeaturePage(this, U.feature02);
             ExpectXPath($"//span[{U.XPathText(C.O1F1)}]");
         }
 
