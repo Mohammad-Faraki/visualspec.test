@@ -25,7 +25,7 @@
         #region Test variables
 
         // Only change this environment value to test different environments
-        public const Environment environment = Environment.Live;
+        public const Environment environment = Environment.Prelive;
 
 
 
