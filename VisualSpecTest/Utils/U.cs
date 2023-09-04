@@ -19,6 +19,8 @@
     using AngleSharp.Dom;
     using OpenQA.Selenium;
     using System.Runtime.InteropServices.WindowsRuntime;
+    using OpenQA.Selenium.Support.UI;
+    using SeleniumExtras.WaitHelpers;
 
     public static class U
     {
@@ -347,7 +349,7 @@
         public static string btnEditAppXPath(string appName) => $"//*[@data-module='TreeApplications']//li[{XPathHasElement($"a[{XPathText(appName)}]")}]//a[{XPathTextContains("Edit")}]";
 
 
-        public const string btnAddObjXPath = "//form[@data-module='ObjectMapDiagram']//div/button";
+        public static string btnAddObjXPath = $"//form[@data-module='ObjectMapDiagram']//div[{U.XPathAttributeContains("class", "dropstart")}]/button";
         public static string btnAddWorklowXPath(string featureName) => $"//button[{U.XPathHasElement($"*[{U.XPathTextContains(featureName)}]")}]/following-sibling::a";
 
         /// <summary>
@@ -830,6 +832,14 @@
             // To close it
             uiTest.ClickXPath(U.btnAddObjXPath);
             //Thread.Sleep(2000);
+
+            //WebDriverWait w = new WebDriverWait(uiTest.WebDriver, TimeSpan.FromSeconds(100));
+            //w.Until(ExpectedConditions
+            //        .PresenceOfAllElementsLocatedBy(By.XPath(U.btnAddObjXPath)));
+            //var x = uiTest.WebDriver.FindElements(By.XPath(U.btnAddObjXPath)).ElementAt(0);
+            //x.Click();
+            //// To close it
+            //x.Click();
         }
         public static void OpenCheckpoints(UITest uiTest)
         {
