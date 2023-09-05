@@ -27,12 +27,13 @@
             WaitToSee(What.Contains, "Acceptance Criteria");
 
             ClickLink(That.Contains, "Edit");
-            WaitToSee("Edit user story");
+            WaitToSee("Edit User Journey");
 
             ClickButton(That.Contains, "Delete");
             ClickButton("OK");
-            WaitToSee("User Stories");
-            ExpectNoXPath($"//tr[last()]//strong[text()='{C.addedUserstory}']");
+            WaitToSeeXPath($"//form[@data-module='UserStoryList']//*[{U.XPathText("User Journeys")}]");
+            U.ScrollToBottom(this, Shared.Admin.Userstories.C.scrollable_mainContent);
+            ExpectNoXPath($"//tr[last()]//*[text()='{C.addedUserstory}']");
         }
     }
 }

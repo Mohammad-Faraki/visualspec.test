@@ -23,23 +23,42 @@
             U.AddFeature(this, U.feature01);
             U.AddFeature(this, U.feature02);
 
-            Run<OpenUserstories>();
+            // Scroll to bottom
+            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(Shared.Admin.Scope.Features.C.scrollable_scopeFeatures_treeView));
+            U.AddUsecase(this, U.feature01, U.f1Usecase1, U.DefaultActors.Admin/*, MyUtils.DefaultApplications.WebApp*/
+                , new Tuple<U.Estimate, U.Estimate>(U.Estimate.XS, U.Estimate.M));
+            Thread.Sleep(500);
+            // Scroll to bottom
+            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(Shared.Admin.Scope.Features.C.scrollable_scopeFeatures_treeView));
+            Expect(U.f1Usecase1);
+
+            U.OpenUserstories(this);
             Thread.Sleep(2000);
 
 
             //*********** Create userstory
-            ClickXPath("//a[@name='UserStory']");
-            WaitToSee("User story details");
+            ClickXPath("//a[@name='NewUserJourney']");
+            string pageTitle = "User Journeys Details";
+            WaitToSee(pageTitle);
 
             // Set fields of userstory 
-            Set(That.Contains, "Title").To(C.addedUserstory);
+            Set(That.Contains, "Description").To(C.addedUserstory);
+
             ClickButton("Nothing selected");
             ClickLink(U.feature01);
-            ClickHeader("User story details");
-            ClickButton(That.Contains, "Save and next");
+            ClickHeader(pageTitle);
 
-            ClickXPath("//a[@name='UserStoriesList']");
-            WaitToSee("User Stories");
+            Thread.Sleep(3000);
+
+            ClickButton("---Select---");
+            ClickLink(U.f1Usecase1);
+            ClickHeader(pageTitle);
+
+            ClickButton(That.Contains, "Save and next");
+            Thread.Sleep(5000);
+
+            U.OpenUserstories(this);
+            Thread.Sleep(2000);
 
             //*** unsuccessfull scrolling (since scrollbar is custom in visual spec)
             //var loc = this.WebDriver.FindElement(By).Location;
@@ -53,7 +72,8 @@
             //////this.WebDriver.ExecuteJavaScript($"window[`scrolls.{scorllableElement}`].scrollTo(0,100,0);");
 
             //Expect(newUserstory);
-            ExpectXPath($"//tr[last()]//strong[text()='{C.addedUserstory}']");
+            U.ScrollToBottom(this, Shared.Admin.Userstories.C.scrollable_mainContent);
+            ExpectXPath($"//tr[last()]//*[text()='{C.addedUserstory}']");
         }
     }
 }

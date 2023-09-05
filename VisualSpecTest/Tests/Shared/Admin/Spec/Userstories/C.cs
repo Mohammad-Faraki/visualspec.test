@@ -10,5 +10,9 @@
     {
         public const string addedUserstory = "story01";
         public const string editedUserstory = "story01 edited";
+
+        public const string scrollable_mainContent = "stories-content";
     }
 }
+
+
