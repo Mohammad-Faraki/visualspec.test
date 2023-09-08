@@ -38,7 +38,7 @@
 
             //*********** Create userstory
             ClickXPath("//a[@name='NewUserJourney']");
-            string pageTitle = "User Journeys Details";
+            string pageTitle = "User Journey Details";
             WaitToSee(pageTitle);
 
             // Set fields of userstory 

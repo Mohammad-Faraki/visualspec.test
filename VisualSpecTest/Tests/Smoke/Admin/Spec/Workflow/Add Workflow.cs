@@ -25,8 +25,10 @@
             Set("Name").To(C.workflow1);
             Click("Save");
 
-            ExpectLink(C.workflow1);
-            ClickLink(C.workflow1);
+            // To-Be : workflow1
+            var WorkflowName_Sidebar = $"To-Be : {C.workflow1}";
+            ExpectLink(WorkflowName_Sidebar);
+            ClickLink(WorkflowName_Sidebar);
             AtXPath(C.workflowTopSectionXPath).ExpectHeader(That.Contains, C.workflow1);
         }
 

@@ -29,21 +29,22 @@
             Click("Save");
 
 
-
-            ExpectLink(C.workflow1_Edited);
+            // To-Be : workflow1
+            var WorkflowName_Sidebar = $"As-Is : {C.workflow1_Edited}";
+            ExpectLink(WorkflowName_Sidebar);
             ExpectHeader(That.Contains, "As-Is:");
             ExpectHeader(That.Contains, C.workflow1_Edited);
 
             RefreshPage();
             WaitToSeeHeader("Workflow Models");
 
-            ExpectLink(C.workflow1_Edited);
+            ExpectLink(WorkflowName_Sidebar);
             ExpectHeader(That.Contains, "As-Is:");
             ExpectHeader(That.Contains, C.workflow1_Edited);
 
 
 
-            ClickLink(C.workflow1_Edited);
+            ClickLink(WorkflowName_Sidebar);
             ClickXPath(btnEdit);
             ExpectHeader(That.Contains, "Edit Workflow Model");
             U.ExpectField(this, $"//label[{U.XPathTextContains("Name")}]", C.workflow1_Edited);
