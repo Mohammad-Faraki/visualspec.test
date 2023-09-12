@@ -1158,7 +1158,7 @@
             uiTest.ExpectNo(What.Contains, "0 pages were scanned, Please press the search button");
             uiTest.Click("OK");
 
-            uiTest.ExpectRow("Admin_A Web App_Wide screen");
+            uiTest.ExpectRow("Admin");
         }
 
         /// <summary>

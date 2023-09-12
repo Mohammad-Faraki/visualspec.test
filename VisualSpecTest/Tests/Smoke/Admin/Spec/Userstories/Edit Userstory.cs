@@ -27,7 +27,7 @@
             WaitToSee(What.Contains, "Acceptance Criteria");
 
             ClickLink(That.Contains, "Edit");
-            WaitToSee("Edit User Journey");
+            WaitToSee("User Journey Details");
 
             Set(That.Contains, "Description").To(C.editedUserstory);
 

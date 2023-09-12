@@ -23,17 +23,18 @@
 
 
             // Actor filter
-            NearLabel(That.Contains, "User types").ClickButton("Nothing selected");
+            NearLabel(That.Contains, "Actor").ClickButton("Nothing selected");
             // Select Admin_A Web App_Wide screen
-            NearLabel(That.Contains, "User types").ClickLink("Admin_A Web App_Wide ..");
+            NearLabel(That.Contains, "Actor").ClickLink("Customer");
 
             // Search btn
-            NearLabel(That.Contains, "User types").ClickButton(That.Contains, "Search");
+            NearLabel(That.Contains, "Actor").ClickButton(That.Contains, "Search");
             Thread.Sleep(5000);
 
             // Not see any item with Customer_A Mobile App_Mobile actor in table
             //BelowCSS(".grid.grid--no-flex.pages-estimates-list").WaitToSeeNo(What.Contains, "Customer_A Mobile App_Mobile");
-            ExpectNoRow(That.Contains, "Customer_A Mobile App_Mobile");
+            ExpectNoRow(That.Contains, "Admin");
+            ExpectRow(That.Contains, "Customer");
         }
 
 

@@ -44,13 +44,13 @@
             // Set fields of userstory 
             Set(That.Contains, "Description").To(C.addedUserstory);
 
-            ClickButton("Nothing selected");
+            NearLabel("Features").ClickButton("Nothing selected");
             ClickLink(U.feature01);
             ClickHeader(pageTitle);
 
             Thread.Sleep(3000);
 
-            ClickButton("---Select---");
+            NearLabel("Use case").ClickButton("Nothing selected");
             ClickLink(U.f1Usecase1);
             ClickHeader(pageTitle);
 
