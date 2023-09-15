@@ -27,7 +27,7 @@
         #region Test variables
 
         // Only change this environment value to test different environments
-        public const Environment environment = Environment.Prelive;
+        public const Environment environment = Environment.Live;
 
 
 
@@ -857,6 +857,21 @@
             uiTest.ClickXPath($"//th[{XPathText("Last Modified Date")}]");
             //Thread.Sleep(2000);
         }
+        public static void OpenCognitive(UITest uiTest)
+        {
+            uiTest.ClickXPath(scopeSidebarIconXPath);
+
+            uiTest.ClickXPath($"//li[5]//span[{XPathTextContains("Test")}]");
+            uiTest.ExpectXPath($"//li[5]//ul/li//a[{XPathTextContains("Cognitive Walkthroughs")}]");
+            uiTest.ClickXPath($"//li[5]//ul/li//a[{XPathTextContains("Cognitive Walkthroughs")}]");
+
+
+            uiTest.ClickXPath("//div[@class='right-panel']");
+            uiTest.WaitToSeeHeader("Cognitive Walkthroughs");
+            uiTest.ClickHeader("Cognitive Walkthroughs");
+            //Thread.Sleep(2000);
+        }
+        
         public static void OpenWireframes(UITest uiTest)
         {
             ////uiTest.ClickXPath(scopeSidebarIconXPath);

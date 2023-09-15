@@ -275,6 +275,7 @@
     <Compile Include="Tests\Smoke\Admin\Deliver\Estimator\Scan Pages.cs" />
     <Compile Include="Tests\Smoke\Admin\Deliver\Estimator\Manage Route.cs" />
     <Compile Include="Tests\Smoke\Admin\Deliver\Estimator\Manage Override.cs" />
+    <Compile Include="Tests\Smoke\Admin\Hub\Open Cognitive.cs" />
     <Compile Include="Tests\Smoke\Admin\Hub\Sidebar Texts MSs.cs" />
     <Compile Include="Tests\Smoke\Admin\Hub\Open Estimator.cs" />
     <Compile Include="Tests\Smoke\Admin\Deliver\Estimator\Manage Assign Feature.cs" />
