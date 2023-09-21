@@ -23,7 +23,7 @@
             // Edit
             ClickXPath(C.btnEditIntegrationXPath);
 
-            AtXPath(C.formIntegrationDetails).Click("Delete");
+            AtXPath(C.formIntegration).Click("Delete");
             WaitToSee("Deleting this integration will delete all its associated data in other microservices. Are you sure you want to delete this integration?");
             Click("OK");
             ExpectNo(C.addedIntegration);

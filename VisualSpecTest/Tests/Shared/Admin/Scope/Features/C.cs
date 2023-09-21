@@ -23,10 +23,10 @@
         public static string formDeviceManagmentXPath = $"//form[@data-module='DeviceManagementForm']";
         public static string formChangeDeviceXPath = $"//form[@data-module='ChangeDeviceForm']";
 
-        public static string formActorDetails = "//form[@data-module='ActorForm']";
-        public static string formIntegrationDetails = "//form[@data-module='IntegrationForm']";
-        public static string formFeatureDetails = "//form[@data-module='FeatureForm']";
-        public static string formUsecaseDetails = "//form[@data-module='UseCaseForm']";
+        public static string formActor = "//form[@data-module='ActorForm']";
+        public static string formIntegration = "//form[@data-module='IntegrationForm']";
+        public static string formFeature = "//form[@data-module='FeatureForm']";
+        public static string formUsecase = "//form[@data-module='UseCaseForm']";
 
 
 

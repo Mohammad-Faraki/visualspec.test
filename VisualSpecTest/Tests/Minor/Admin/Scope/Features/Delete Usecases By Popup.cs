@@ -25,7 +25,7 @@
             ClickXPath($"{U.usecaseXPath(featureIndex: 1, usecaseIdx: 1)}//a[@name='EditUseCase']");
             WaitToSee(What.Contains, "Edit usecase");
 
-            AtXPath(C.formUsecaseDetails).Click("Delete");
+            AtXPath(C.formUsecase).Click("Delete");
             Expect("Deleting this use case will delete all its associated data in other microservices. Are you sure you want to delete this use case?");
             Click("OK");
             Thread.Sleep(4000);

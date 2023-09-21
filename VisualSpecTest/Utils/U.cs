@@ -359,6 +359,21 @@
             => $"//*[@id='menu-{GetNodeId_Workflow(uiTest, actorColumnIdx, nodeName, nodeType)}']//button";
         //public static string workflow_iconNodesToolbox(string nodeName) => $"//*[{XPathTextContains(nodeName)}]/{U.following_sibling}::div//button";
 
+        /// <summary>
+        /// Use // or / before this function
+        /// </summary>
+        /// <param name="btnText"></param>
+        /// <returns></returns>
+        //public static string btnOpenDropdownXPath(string btnText) => $"button[{U.XPathHasElement($"*[{U.XPathText(btnText)}]")}]";
+        public static string btnOpenDropdownXPath(string btnText) => $"*[{U.XPathText(btnText)}]";
+        public static void OpenDropdown(UITest uiTest, string dropdownBtnText, string atXPath = "")
+        {
+            if (atXPath != "")
+                uiTest.ClickXPath($"{atXPath}//{btnOpenDropdownXPath(dropdownBtnText)}");
+            else
+                uiTest.ClickXPath(btnOpenDropdownXPath(dropdownBtnText));
+        }
+
         #region Website
         public static string frmProjectDetailsXPath = $"//form[{XPathAttributeContains("action", "Edit-project")}]";
         public static string btnEditProjectXPath(int rowIdx) => $"//tr[{rowIdx}]//*[{XPathAttributeContains("name", "btnEdit")}]";
@@ -427,7 +442,7 @@
 
 
             // Actors
-            uiTest.ClickXPath($"{usecaseFormXPath}//div[5]//button");
+            uiTest.ClickXPath($"{usecaseFormXPath}//div[5]//button/div/div/div");
             // select "Customer" actor
             //uiTest.ClickXPath($"{usecaseFormXPath}//div[5]//span[text()='{actorName}']");
             //uiTest.NearXPath($"{usecaseFormXPath}").ClickLink(actorName);
@@ -871,7 +886,7 @@
             uiTest.ClickHeader("Cognitive Walkthroughs");
             //Thread.Sleep(2000);
         }
-        
+
         public static void OpenWireframes(UITest uiTest)
         {
             ////uiTest.ClickXPath(scopeSidebarIconXPath);

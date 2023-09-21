@@ -28,7 +28,7 @@
             WaitToSeeXPath(btnEdit);
             ClickXPath(btnEdit);
 
-            AtXPath(C.formActorDetails).Click("Delete");
+            AtXPath(C.formActor).Click("Delete");
             Expect("Deleting this actor will delete all its associated data in other microservices. Are you sure you want to delete this actor?");
             Click("OK");
             ExpectNo(C.addedActor);

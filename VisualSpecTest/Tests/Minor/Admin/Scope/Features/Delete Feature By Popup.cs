@@ -25,7 +25,7 @@
             Expect(What.Contains, "Add Use case");
             Near(What.Contains, U.feature01).Below(What.Contains, "Add Use case").Click(What.Contains, "Edit");
 
-            AtXPath(C.formFeatureDetails).Click("Delete");
+            AtXPath(C.formFeature).Click("Delete");
             WaitToSee("Deleting this feature will delete all its associated data in other microservices. Are you sure you want to delete this feature?");
             Click("OK");
             ExpectNo(U.feature01);

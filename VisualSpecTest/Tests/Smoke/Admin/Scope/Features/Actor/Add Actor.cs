@@ -5,6 +5,7 @@
     using Pangolin;
     using Tests.Smoke.Admin.Website;
     using Tests.Shared.Admin.Scope.Features;
+    using OpenQA.Selenium;
 
     [TestClass]
     public class AddActor : UITest
@@ -25,7 +26,15 @@
             Set("Name").To(C.addedActor);
             // Applications
             //ClickCSS(".bootstrap-select.dropdown.form-check.show-tick > button[role='combobox']");
-            AtXPath("//form[@data-module='ActorForm']").ClickButton("Nothing selected");
+            //AtXPath("//form[@data-module='ActorForm']").ClickButton("Nothing selected");
+            ////var btnDropdownXPath = $"{C.formActor}//*[{U.XPathText("Nothing selected")}]";
+            ////var btnDropdownXPath = $"{C.formActor}//{U.btnOpenDropdownXPath("Nothing selected")}";
+            //////this.WebDriver.FindElement(By.XPath(btnDropdownXPath)).Click();
+            ////ClickXPath(btnDropdownXPath);
+            U.OpenDropdown(this, "Nothing selected", C.formActor);
+
+
+
             // A Web App
             //ClickCSS("li:nth-of-type(1) > a[role='option'] > .text");
             //AtXPath("//form[@data-module='ActorForm']").ClickLink("A Web App");
