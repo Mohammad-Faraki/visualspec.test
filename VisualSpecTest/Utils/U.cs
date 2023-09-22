@@ -27,7 +27,7 @@
         #region Test variables
 
         // Only change this environment value to test different environments
-        public const Environment environment = Environment.Live;
+        public const Environment environment = Environment.Prelive;
 
 
 
@@ -1400,7 +1400,7 @@
             uiTest.ClickHeader("Add Existing Object");
 
             //uiTest.AtXPath(addExistingObjFormXPath).ClickButton("Nothing selected");
-            OpenDropdown(uiTest, "Nothing selected", addExistingObjFormXPath)
+            OpenDropdown(uiTest, "Nothing selected", addExistingObjFormXPath);
             for (int i = 0; i < (allPropertyTypes ? Shared.Admin.ObjectMap.C.propTypes.Length : 1); i++)
             {
                 uiTest.NearXPath(addExistingObjFormXPath).ClickLink($"P{i + 1}{Shared.Admin.ObjectMap.C.O1F1}");

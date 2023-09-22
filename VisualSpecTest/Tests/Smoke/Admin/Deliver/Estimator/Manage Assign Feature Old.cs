@@ -7,12 +7,12 @@
     using System;
     using System.Threading;
     using Tests.Smoke.Admin.Website;
-    
 
-    [TestClass]
-    public class ManageAssignFeature : UITest
+
+    //[TestClass]
+    public class ManageAssignFeatureOld : UITest
     {
-        [PangolinTestMethod]
+        //[PangolinTestMethod]
         public override void RunTest()
         {
 
@@ -58,34 +58,29 @@
 
             // Click off the features popup
             ClickXPath($"//th[{U.XPathText("UI Design Implementation")}]");
-            Thread.Sleep(2000);
             //ClickRow(2);
 
-            #region Commneted submit estimate button
-            ////WaitToSee("Please press 'Start estimation' button");
-            ////Click("OK");
-            ////Thread.Sleep(1000);
-            ////ClickButton("Start estimate");
-            ////Thread.Sleep(3000); 
-            #endregion
+            WaitToSee("Please press 'Start estimation' button");
+            Click("OK");
+            Thread.Sleep(1000);
+            ClickButton("Start estimate");
+            Thread.Sleep(3000);
 
 
 
             //*********** Assign a features 
-            #region Commneted submit estimate button
-            //U.ScrollToElementCSS(this, helpIconCss);
-            //// Open featuers popup of second page
-            ////ClickCSS($"tr:nth-of-type({rowIndex}) > .grid-dropdown-column-multi-select.pages-estimates-list__col-features.pages-estimates-list__col-help > form[role='form'] button[role='combobox']");
-            //////AtRow(rowIndex).ClickButton("Nothing selected");
-            //U.OpenDropdown(this, "Nothing selected", $"//tr[{rowIndex}]");
+            U.ScrollToElementCSS(this, helpIconCss);
+            // Open featuers popup of second page
+            //ClickCSS($"tr:nth-of-type({rowIndex}) > .grid-dropdown-column-multi-select.pages-estimates-list__col-features.pages-estimates-list__col-help > form[role='form'] button[role='combobox']");
+            ////AtRow(rowIndex).ClickButton("Nothing selected");
+            U.OpenDropdown(this, "Nothing selected", $"//tr[{rowIndex}]");
 
-            //// Select first features
-            //ClickCSS("li:nth-of-type(1) > a[role='option']");
+            // Select first features
+            ClickCSS("li:nth-of-type(1) > a[role='option']");
 
-            //// Click off the features popup
-            //ClickXPath($"//th[{U.XPathText("UI Design Implementation")}]");
-            //Thread.Sleep(2000); 
-            #endregion
+            // Click off the features popup
+            ClickXPath($"//th[{U.XPathText("UI Design Implementation")}]");
+            Thread.Sleep(2000);
 
             RefreshPage();
             WaitToSee(What.Contains, "Page Estimates");
@@ -181,9 +176,7 @@
 
 
 
-            #region Commneted submit estimate button
-            //ClickButton("Submit estimate"); 
-            #endregion
+            ClickButton("Submit estimate");
         }
     }
 }
