@@ -2,6 +2,7 @@
 {
 
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using OpenQA.Selenium;
     using Pangolin;
     using System;
     using System.Threading;
@@ -15,8 +16,6 @@
             LoginAs<AdminUser>();
 
             U.CreateProject(this);
-
-
         }
 
 

@@ -19,14 +19,14 @@
         public static string btnEditIntegrationXPath = $"{firstIntegrationXPath}//a[{U.XPathText("Edit")}]";
 
 
-        public static string formApplicationDetailsXPath = $"//form[@data-module='ApplicationForm']";
-        public static string formDeviceManagmentXPath = $"//form[@data-module='DeviceManagementForm']";
-        public static string formChangeDeviceXPath = $"//form[@data-module='ChangeDeviceForm']";
+        public const string formApplicationXPath = "//form[@data-module='ApplicationForm']";
+        public const string formDeviceManagmentXPath = "//form[@data-module='DeviceManagementForm']";
+        public const string formChangeDeviceXPath = "//form[@data-module='ChangeDeviceForm']";
 
-        public static string formActor = "//form[@data-module='ActorForm']";
-        public static string formIntegration = "//form[@data-module='IntegrationForm']";
-        public static string formFeature = "//form[@data-module='FeatureForm']";
-        public static string formUsecase = "//form[@data-module='UseCaseForm']";
+        public const string formActor = "//form[@data-module='ActorForm']";
+        public const string formIntegration = "//form[@data-module='IntegrationForm']";
+        public const string formFeature = "//form[@data-module='FeatureForm']";
+        public const string formUsecase = "//form[@data-module='UseCaseForm']";
 
 
 

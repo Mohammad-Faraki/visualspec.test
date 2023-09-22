@@ -19,24 +19,26 @@
             C.OpenApplicationDetails(this, C.addedApp);
 
 
-            AtXPath(C.formApplicationDetailsXPath).Click("Devices management");
+            AtXPath(C.formApplicationXPath).Click("Devices management");
 
             AtXPath(C.formDeviceManagmentXPath).ClickXPath("//a[@name='ChangeTo'][1]");
             WaitToSee($"Change device of {C.addedApp}");
-            AtXPath(C.formChangeDeviceXPath).ClickButton("---Select---");
+            //AtXPath(C.formChangeDeviceXPath).ClickButton("---Select---");
+            string btnChangeDeviceDropdown = "---Select---";
+            U.OpenDropdown(this, btnChangeDeviceDropdown, C.formChangeDeviceXPath);
             NearXPath(C.formChangeDeviceXPath).ClickLink(C.editedDevice);
             AtXPath(C.formChangeDeviceXPath).ClickButton("Save");
 
 
             // Checked if changes are applied
             C.OpenApplicationDetails(this, C.addedApp);
-            AtXPath(C.formApplicationDetailsXPath).Click("Devices management");
-            AtXPath(C.formApplicationDetailsXPath).ExpectNo(What.Contains, C.addedDevice);
-            AtXPath(C.formApplicationDetailsXPath).Expect(C.editedDevice);
+            AtXPath(C.formApplicationXPath).Click("Devices management");
+            AtXPath(C.formDeviceManagmentXPath).ExpectNo(What.Contains, C.addedDevice);
+            AtXPath(C.formDeviceManagmentXPath).Expect(C.editedDevice);
 
             AtXPath(C.formDeviceManagmentXPath).ClickXPath("//a[@name='ChangeTo'][1]");
             WaitToSee($"Change device of {C.addedApp}");
-            AtXPath(C.formChangeDeviceXPath).ClickButton("---Select---");
+            U.OpenDropdown(this, btnChangeDeviceDropdown, C.formChangeDeviceXPath);
             //NearXPath(C.formChangeDeviceXPath).ExpectNoLink(C.editedDevice);
             //NearXPath(C.formChangeDeviceXPath).ExpectLink(C.addedDevice);
             ////AtXPath(C.formChangeDeviceXPath).BelowButton("---Select---").ExpectNoLink(C.editedDevice);

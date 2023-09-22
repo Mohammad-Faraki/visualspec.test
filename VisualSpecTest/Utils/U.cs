@@ -365,7 +365,8 @@
         /// <param name="btnText"></param>
         /// <returns></returns>
         //public static string btnOpenDropdownXPath(string btnText) => $"button[{U.XPathHasElement($"*[{U.XPathText(btnText)}]")}]";
-        public static string btnOpenDropdownXPath(string btnText) => $"*[{U.XPathText(btnText)}]";
+        ////public static string btnOpenDropdownXPath(string btnText) => $"*[{U.XPathText(btnText)}]";
+        public static string btnOpenDropdownXPath(string btnText) => $"div[{U.XPathText(btnText)}]";
         public static void OpenDropdown(UITest uiTest, string dropdownBtnText, string atXPath = "")
         {
             if (atXPath != "")

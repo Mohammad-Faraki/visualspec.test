@@ -20,7 +20,7 @@
 
             C.OpenApplicationDetails(this, C.addedApp);
 
-            AtXPath(C.formApplicationDetailsXPath).Click("Delete");
+            AtXPath(C.formApplicationXPath).Click("Delete");
             Expect("Deleting this application will delete all its associated data in other microservices. Are you sure you want to delete this application?");
             Click("OK");
             ExpectNo(C.addedApp);
