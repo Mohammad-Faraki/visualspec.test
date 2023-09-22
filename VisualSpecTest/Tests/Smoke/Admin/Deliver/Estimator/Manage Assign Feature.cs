@@ -50,7 +50,8 @@
             // Open featuers popup of second page
             //AtRow(2).ClickCSS("[data-toggle]");
             //ClickCSS($"tr:nth-of-type({rowIndex}) > .grid-dropdown-column-multi-select.pages-estimates-list__col-features.pages-estimates-list__col-help > form[role='form'] button[role='combobox']");
-            AtRow(rowIndex).ClickButton("Nothing selected");
+            ////AtRow(rowIndex).ClickButton("Nothing selected");
+            U.OpenDropdown(this, "Nothing selected", $"//tr[{rowIndex}]");
 
             // Select first features
             ClickCSS("li:nth-of-type(1) > a[role='option']");
@@ -71,7 +72,8 @@
             U.ScrollToElementCSS(this, helpIconCss);
             // Open featuers popup of second page
             //ClickCSS($"tr:nth-of-type({rowIndex}) > .grid-dropdown-column-multi-select.pages-estimates-list__col-features.pages-estimates-list__col-help > form[role='form'] button[role='combobox']");
-            AtRow(rowIndex).ClickButton("Nothing selected");
+            ////AtRow(rowIndex).ClickButton("Nothing selected");
+            U.OpenDropdown(this, "Nothing selected", $"//tr[{rowIndex}]");
 
             // Select first features
             ClickCSS("li:nth-of-type(1) > a[role='option']");
@@ -98,7 +100,8 @@
             // Open featuers popup of second page
             //AtRow(2).ClickCSS("[data-toggle]");
             //ClickCSS($"tr:nth-of-type({rowIndex}) > .grid-dropdown-column-multi-select.pages-estimates-list__col-features.pages-estimates-list__col-help > form[role='form'] button[role='combobox']");
-            AtRow(rowIndex).ClickButton("feature01");
+            ////AtRow(rowIndex).ClickButton("feature01");
+            U.OpenDropdown(this, U.feature01, $"//tr[{rowIndex}]");
 
             // Select second features
             ClickCSS("li:nth-of-type(2) > a[role='option']");
@@ -128,7 +131,8 @@
 
             // Open featuers popup of second page
             //ClickCSS($"tr:nth-of-type({rowIndex}) > .grid-dropdown-column-multi-select.pages-estimates-list__col-features.pages-estimates-list__col-help > form[role='form'] button[role='combobox']");
-            AtRow(rowIndex).ClickButton("2 items selected");
+            ////AtRow(rowIndex).ClickButton("2 items selected");
+            U.OpenDropdown(this, "2 items selected", $"//tr[{rowIndex}]");
 
             // Select first features
             ClickCSS("li:nth-of-type(1) > a[role='option']");
@@ -152,7 +156,8 @@
 
             // Open featuers popup of second page
             //ClickCSS($"tr:nth-of-type({rowIndex}) > .grid-dropdown-column-multi-select.pages-estimates-list__col-features.pages-estimates-list__col-help > form[role='form'] button[role='combobox']");
-            AtRow(rowIndex).ClickButton(U.feature02);
+            ////AtRow(rowIndex).ClickButton(U.feature02);
+            U.OpenDropdown(this, U.feature02, $"//tr[{rowIndex}]");
 
             // Select second features
             ClickCSS("li:nth-of-type(2) > a[role='option']");

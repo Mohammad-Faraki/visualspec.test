@@ -1393,11 +1393,14 @@
             //SetXPath($"{addObjFormXPath}//*[{MyUtils.XPathTextContains("Name")}]").To(Constants.O1F1);
             ////U.SetField(this, labelXPath: $"{addObjFormXPath}//*[{U.XPathTextContains("Name")}]"
             ////    , to: Constants.O1F1);
-            uiTest.AtXPath(addExistingObjFormXPath).ClickButton("---Select---");
-            uiTest.NearButton("---Select---").ClickLink(Shared.Admin.ObjectMap.C.O1F1);
+            //uiTest.AtXPath(addExistingObjFormXPath).ClickButton("---Select---");
+            string btnExistingObjDropdown = "---Select---";
+            U.OpenDropdown(uiTest, btnExistingObjDropdown, addExistingObjFormXPath);
+            uiTest.NearButton(btnExistingObjDropdown).ClickLink(Shared.Admin.ObjectMap.C.O1F1);
             uiTest.ClickHeader("Add Existing Object");
 
-            uiTest.AtXPath(addExistingObjFormXPath).ClickButton("Nothing selected");
+            //uiTest.AtXPath(addExistingObjFormXPath).ClickButton("Nothing selected");
+            OpenDropdown(uiTest, "Nothing selected", addExistingObjFormXPath)
             for (int i = 0; i < (allPropertyTypes ? Shared.Admin.ObjectMap.C.propTypes.Length : 1); i++)
             {
                 uiTest.NearXPath(addExistingObjFormXPath).ClickLink($"P{i + 1}{Shared.Admin.ObjectMap.C.O1F1}");

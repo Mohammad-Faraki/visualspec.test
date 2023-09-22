@@ -5,6 +5,7 @@
     using Pangolin;
     using System;
     using System.Threading;
+    using Tests.Shared.Admin.Scope.Features;
     using Tests.Smoke.Admin.Website;
 
     [TestClass]
@@ -29,13 +30,14 @@
             // Actors
             //ClickXPath("//form[@data-module='UseCaseForm']//div[5]//button");
             //AtXPath("//form[@data-module='UseCaseForm']").ClickButton("Admin");
-            NearXPath("//form[@data-module='UseCaseForm']").ClickButton("Admin");
+            ////NearXPath("//form[@data-module='UseCaseForm']").ClickButton("Admin");
+            U.OpenDropdown(this, "Admin", C.formUsecase);
 
             // select "Customer" actor
             //ClickXPath($"//form[@data-module='UseCaseForm']//div[5]//span[{MyUtils.XPathText("Customer")}]");
-            AtXPath("//form[@data-module='UseCaseForm']//div[@role='listbox']").ClickLink("Customer");
+            AtXPath($"{C.formUsecase}//div[@role='listbox']").ClickLink("Customer");
             // To close actors popup
-            ClickXPath($"//form[@data-module='UseCaseForm']//textarea[@name='Description']");
+            ClickXPath($"{C.formUsecase}//textarea[@name='Description']");
 
 
             #region Commented application select
