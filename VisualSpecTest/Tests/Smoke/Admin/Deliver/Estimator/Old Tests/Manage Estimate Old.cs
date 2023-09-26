@@ -8,17 +8,16 @@
     using Tests.Smoke.Admin.Website;
     
 
-    [TestClass]
-    public class ManageEstimate : UITest
+    //[TestClass]
+    public class ManageEstimateOld : UITest
     {
-        [PangolinTestMethod]
+        //[PangolinTestMethod]
         public override void RunTest()
         {
             Run<CreateOpenProject>();
             // Open a new tab
             this.WebDriver.SwitchTo().NewWindow(WindowType.Tab);
             U.ScanPages(this);
-            Thread.Sleep(3000);
 
             int rowIndex = 1;
 
@@ -32,16 +31,14 @@
             rowIndex += 1;
 
 
-            #region Commneted submit estimate button
-            //// Clicking a star
-            //ClickCSS($"tr:nth-of-type({rowIndex}) > td:nth-of-type(6) a[title='Give 2 points']");
-            //WaitToSee("Please press 'Start estimation' button");
-            //Click("OK");
-            //Thread.Sleep(1000);
+            // Clicking a star
+            ClickCSS($"tr:nth-of-type({rowIndex}) > td:nth-of-type(6) a[title='Give 2 points']");
+            WaitToSee("Please press 'Start estimation' button");
+            Click("OK");
+            Thread.Sleep(1000);
 
-            //ClickButton("Start estimate");
-            //Thread.Sleep(2000); 
-            #endregion
+            ClickButton("Start estimate");
+            Thread.Sleep(2000);
 
 
             //*********** Set estimates
@@ -70,12 +67,8 @@
             ClickCSS($"tr:nth-of-type({rowIndex + 2}) > td:nth-of-type(8) a[title='Give 2 points']");
             Thread.Sleep(500);
 
-            #region Commneted submit estimate button
-            //ClickButton("Submit estimate");
-            //Thread.Sleep(2000); 
-            #endregion
-            U.ScanPages(this);
-            Thread.Sleep(3000);
+            ClickButton("Submit estimate");
+            Thread.Sleep(2000);
 
 
             AtRow(rowIndex).Expect(What.Contains, "2");
@@ -95,10 +88,8 @@
 
             //*********** Edit estimates
 
-            #region Commented submit estimate button
-            //ClickButton("Start estimate");
-            //Thread.Sleep(2000); 
-            #endregion
+            ClickButton("Start estimate");
+            Thread.Sleep(2000);
 
             // Row 1   
             ClickCSS($"tr:nth-of-type({rowIndex}) > td:nth-of-type(6) a[title='Give 1 point']");
@@ -124,12 +115,9 @@
             ClickCSS($"tr:nth-of-type({rowIndex + 2}) > td:nth-of-type(8) a[title='Give 1 point']");
             Thread.Sleep(500);
 
-            #region Commented submit estimate button
-            //ClickButton("Submit estimate");
-            //Thread.Sleep(2000); 
-            #endregion
-            U.ScanPages(this);
-            Thread.Sleep(3000);
+            ClickButton("Submit estimate");
+            Thread.Sleep(2000);
+
 
             AtRow(rowIndex).Expect(What.Contains, "0.25");
             AtRow(rowIndex + 1).Expect(What.Contains, "0.5");
@@ -147,10 +135,8 @@
 
             //*********** Clear estimates
 
-            #region Commented submit estimate button
-            //ClickButton("Start estimate");
-            //Thread.Sleep(2000); 
-            #endregion
+            ClickButton("Start estimate");
+            Thread.Sleep(2000);
 
             // Row 1
             ClickCSS($"tr:nth-of-type({rowIndex}) > td:nth-of-type(6) a[title='Give 1 point']");
@@ -176,12 +162,9 @@
             ClickCSS($"tr:nth-of-type({rowIndex + 2}) > td:nth-of-type(8) a[title='Give 1 point']");
             Thread.Sleep(500);
 
-            #region Commented submit estimate button
-            //ClickButton("Submit estimate");
-            //Thread.Sleep(2000); 
-            #endregion
-            U.ScanPages(this);
-            Thread.Sleep(3000);
+            ClickButton("Submit estimate");
+            Thread.Sleep(2000);
+
 
             AtRow(rowIndex).Expect(What.Contains, "0");
             AtRow(rowIndex + 1).Expect(What.Contains, "0");

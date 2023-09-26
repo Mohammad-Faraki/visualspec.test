@@ -1170,26 +1170,32 @@
             uiTest.WebDriver.ExecuteJavaScript($"window.scrollTo(0,0);");
         }
 
-        public static void ScanPages(UITest uiTest)
+        public static void ScanPages(UITest uiTest, bool isFirstProjectLoad = true)
         {
-            //uiTest.WebDriver.SwitchTo().NewWindow(WindowType.Tab);
-            //Goto("https://live-visualspec.on.uat.co/Home.html");
-            OpenWireframes(uiTest);
-            Thread.Sleep(3000);
-            //uiTest.CloseTab($"{MyUtils.TestProjectName} » Admin_A Web App_Wide screen");
-            uiTest.SwitchToTab(TitleScopeFeatures);
+            if (isFirstProjectLoad)
+            {
+                //uiTest.WebDriver.SwitchTo().NewWindow(WindowType.Tab);
+                //Goto("https://live-visualspec.on.uat.co/Home.html");
+                OpenWireframes(uiTest);
+                Thread.Sleep(3000);
+                //uiTest.CloseTab($"{MyUtils.TestProjectName} » Admin_A Web App_Wide screen");
+                uiTest.SwitchToTab(TitleScopeFeatures);
 
 
 
-            OpenEstimator(uiTest);
-            Thread.Sleep(2000);
+                OpenEstimator(uiTest);
+                Thread.Sleep(2000);
+            }
 
             uiTest.Click("Scan pages");
             uiTest.WaitToSee(What.Contains, "pages were scanned, Please press the search button");
             uiTest.ExpectNo(What.Contains, "0 pages were scanned, Please press the search button");
             uiTest.Click("OK");
 
-            uiTest.ExpectRow("Admin");
+            if (isFirstProjectLoad)
+            {
+                uiTest.ExpectRow("Admin");
+            }
         }
 
         /// <summary>

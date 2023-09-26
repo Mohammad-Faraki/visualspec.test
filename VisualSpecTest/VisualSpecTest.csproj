@@ -271,8 +271,11 @@
     <Compile Include="Tests\Smoke\Admin\Checkpoints\Edit Checkpoint.cs" />
     <Compile Include="Tests\Smoke\Admin\Checkpoints\Add Checkpoint.cs" />
     <Compile Include="Tests\Smoke\Admin\Deliver\Estimator\Export Form Fields\Export Form Fields.cs" />
-    <Compile Include="Tests\Smoke\Admin\Deliver\Estimator\Manage Assign Feature Old.cs" />
+    <Compile Include="Tests\Smoke\Admin\Deliver\Estimator\Old Tests\Manage Assign Feature Old.cs" />
+    <Compile Include="Tests\Smoke\Admin\Deliver\Estimator\Old Tests\Manage Estimate Old.cs" />
     <Compile Include="Tests\Smoke\Admin\Deliver\Estimator\Manage Estimate.cs" />
+    <Compile Include="Tests\Smoke\Admin\Deliver\Estimator\Old Tests\Manage Override Old.cs" />
+    <Compile Include="Tests\Smoke\Admin\Deliver\Estimator\Old Tests\Manage Route Old.cs" />
     <Compile Include="Tests\Smoke\Admin\Deliver\Estimator\Scan Pages.cs" />
     <Compile Include="Tests\Smoke\Admin\Deliver\Estimator\Manage Route.cs" />
     <Compile Include="Tests\Smoke\Admin\Deliver\Estimator\Manage Override.cs" />
