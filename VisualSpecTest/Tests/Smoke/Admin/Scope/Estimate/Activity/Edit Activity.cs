@@ -90,12 +90,14 @@
             //ClickXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]/div/div[2]");
             if (U.environment == U.Environment.Prelive)
             {
-                ClickXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]//button[@title='1']");
+                //ClickXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]//button[@title='1']");
+                U.OpenDropdown(this, "1", $"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]//button[@title='1']");
                 NearXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]").ClickLink("0.5");
             }
             else if (U.environment == U.Environment.Live)
             {
-                ClickXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]//button[@title='1']");
+                //ClickXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]//button[@title='1']");
+                U.OpenDropdown(this, "1", $"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]//button[@title='1']");
                 NearXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]").ClickLink("0.25");
             }
             // Save

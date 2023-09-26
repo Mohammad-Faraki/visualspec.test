@@ -27,14 +27,18 @@
             WaitToSee(What.Contains, "Acceptance Criteria");
 
             ClickLink(That.Contains, "Edit");
+            string title = "User Journey Details";
             WaitToSee("User Journey Details");
 
             Set(That.Contains, "Description").To(C.editedUserstory);
 
-            ClickButton(U.feature01);
+            //ClickButton(U.feature01);
+            U.OpenDropdown(this, U.feature01);
             ClickLink(U.feature01);
             ClickLink(U.feature02);
-            ClickButton(U.feature02);
+            //ClickButton(U.feature02);
+            ClickHeader(title);
+
 
             //ClickLabel("Designed"); doesn't exists anymore
 

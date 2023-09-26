@@ -20,7 +20,8 @@
             
             AtRow(1).Click("Co-design workshop");
             WaitToSee("All Use Cases / Integrations");
-            ClickButton("Co-design workshop");
+            //ClickButton("Co-design workshop");
+            U.OpenDropdown(this, "Co-design workshop");
             Click("Product design");
             Click("Save");
             WaitToSeeButton("Generate Activities");

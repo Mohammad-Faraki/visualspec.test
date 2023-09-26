@@ -31,7 +31,8 @@
             Thread.Sleep(3000);
 
             // Owner feature
-            AtXPath(C.formBottomSectionXPath).ClickButton( U.feature01);
+            //AtXPath(C.formBottomSectionXPath).ClickButton( U.feature01);
+            U.OpenDropdown(this, U.feature01, C.formBottomSectionXPath);
             NearXPath(C.formBottomSectionXPath).ExpectLink(U.feature01);
             NearXPath(C.formBottomSectionXPath).ExpectLink(U.feature02);
             // it has no usecase
