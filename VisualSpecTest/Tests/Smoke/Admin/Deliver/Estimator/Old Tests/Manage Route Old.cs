@@ -8,10 +8,10 @@
     using Tests.Smoke.Admin.Website;
     
 
-    [TestClass]
+    //[TestClass]
     public class ManageRouteOld : UITest
     {
-        [PangolinTestMethod]
+        //[PangolinTestMethod]
         public override void RunTest()
         {
             //** bugs
@@ -20,7 +20,7 @@
             Run<CreateOpenProject>();
             // Open a new tab
             this.WebDriver.SwitchTo().NewWindow(WindowType.Tab);
-            U.ScanPages(this);
+            U.ScanPages(this, true);
 
             // first row edit has bug that shod be fixed
             int rowIndex = 1;

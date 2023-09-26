@@ -20,7 +20,7 @@
             Run<CreateOpenProject>();
             // Open a new tab
             this.WebDriver.SwitchTo().NewWindow(WindowType.Tab);
-            U.ScanPages(this);
+            U.ScanPages(this, true);
 
             // first row edit has bug that shod be fixed
             int rowIndex = 1;
@@ -46,27 +46,32 @@
             //ClickCSS(".scroll-content > .content");
             Press(Pangolin.Keys.Enter);
 
-            WaitToSee("You have to start estimation first!");
-            Click("OK");
-            Thread.Sleep(1000);
+            #region Commented start estimate
+            //WaitToSee("You have to start estimation first!");
+            //Click("OK");
+            //Thread.Sleep(1000);
 
-            ClickButton("Start estimate");
-            Thread.Sleep(2000);
-
-
-
-            ClickXPath($"//tr[{rowIndex}]//td[5]//p");
-            Thread.Sleep(1000);
-            SetXPath($"//tr[{rowIndex}]//td[5]//input").To(newRouteName);
-            // Click off the route input
-            //ClickCSS(".scroll-content > .content");
-            Press(Pangolin.Keys.Enter);
-            Thread.Sleep(1000);
+            //ClickButton("Start estimate");
+            //Thread.Sleep(2000); 
 
 
 
-            ClickButton("Submit estimate");
-            Thread.Sleep(1000);
+
+            //ClickXPath($"//tr[{rowIndex}]//td[5]//p");
+            //Thread.Sleep(1000);
+            //SetXPath($"//tr[{rowIndex}]//td[5]//input").To(newRouteName);
+            //// Click off the route input
+            ////ClickCSS(".scroll-content > .content");
+            //Press(Pangolin.Keys.Enter);
+            //Thread.Sleep(1000);
+
+
+
+            //ClickButton("Submit estimate");
+            //Thread.Sleep(1000);
+            #endregion
+            U.ScanPages(this, true);
+            Thread.Sleep(3000);
 
             RefreshPage();
             WaitToSee(What.Contains, "Page Estimates");

@@ -26,7 +26,7 @@
             // Open a new tab
             this.WebDriver.SwitchTo().NewWindow(WindowType.Tab);
             //CloseTab()
-            U.ScanPages(this);
+            U.ScanPages(this, true);
 
             int rowIndex = 1;
 

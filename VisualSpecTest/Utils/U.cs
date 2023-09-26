@@ -1170,7 +1170,7 @@
             uiTest.WebDriver.ExecuteJavaScript($"window.scrollTo(0,0);");
         }
 
-        public static void ScanPages(UITest uiTest, bool isFirstProjectLoad = true)
+        public static void ScanPages(UITest uiTest, bool isFirstProjectLoad)
         {
             if (isFirstProjectLoad)
             {
