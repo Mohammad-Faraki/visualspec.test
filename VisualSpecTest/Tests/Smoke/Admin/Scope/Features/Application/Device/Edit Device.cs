@@ -43,8 +43,8 @@
             //NearXPath(C.formChangeDeviceXPath).ExpectLink(C.addedDevice);
             ////AtXPath(C.formChangeDeviceXPath).BelowButton("---Select---").ExpectNoLink(C.editedDevice);
             ////AtXPath(C.formChangeDeviceXPath).BelowButton("---Select---").ExpectLink(C.addedDevice);
-            ExpectNoXPath($"//label[{U.XPathTextContains("To device")}]/{U.following_sibling}::div[{U.XPathHasElement($"*[{U.XPathText(C.editedDevice)}]")}]");
-            ExpectXPath($"//label[{U.XPathTextContains("To device")}]/{U.following_sibling}::div[{U.XPathHasElement($"*[{U.XPathText(C.addedDevice)}]")}]");
+            ExpectNoXPath($"//label[{U.XPathTextContains("To device")}]/{U.following_sibling_XPath}::div[{U.XPathHasElement($"*[{U.XPathText(C.editedDevice)}]")}]");
+            ExpectXPath($"//label[{U.XPathTextContains("To device")}]/{U.following_sibling_XPath}::div[{U.XPathHasElement($"*[{U.XPathText(C.addedDevice)}]")}]");
         }
 
 

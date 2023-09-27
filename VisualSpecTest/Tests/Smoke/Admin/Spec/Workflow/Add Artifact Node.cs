@@ -43,7 +43,7 @@
             //var artifactIconXPath = $"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", C.cssClass_ArtifactNode)}]//*[{U.XPathTextContains(C.nodeArtifact1)}]/{U.preceding_sibling}::i[@class='fas fa-file']";
             //ExpectXPath(artifactIconXPath);
             //ClickXPath(artifactIconXPath);
-            var artifactNodeDirectParentXPath = $"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", C.cssClass_ArtifactNode)}]//*[{U.XPathTextContains(C.nodeArtifact1)}]/{U.parent}::div";
+            var artifactNodeDirectParentXPath = $"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", C.cssClass_ArtifactNode)}]//*[{U.XPathTextContains(C.nodeArtifact1)}]/{U.parent_XPath}::div";
             string bgImageURL = this.WebDriver.FindElements(By.XPath(artifactNodeDirectParentXPath)).FirstOrDefault().GetCssValue("background-image");
             if (!bgImageURL.Contains("artifact.svg"))
             {

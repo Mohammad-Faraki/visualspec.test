@@ -19,7 +19,7 @@
 
             Run<CreateOpenProject>();
 
-            ClickXPath(U.scopeSidebarIconXPath);
+            ClickXPath(U.scopeSidebarIcon_XPath);
 
 
 

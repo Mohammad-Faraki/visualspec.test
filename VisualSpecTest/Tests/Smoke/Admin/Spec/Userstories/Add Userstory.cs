@@ -45,14 +45,14 @@
             Set(That.Contains, "Description").To(C.addedUserstory);
 
             //NearLabel("Features").ClickButton("Nothing selected");
-            U.OpenDropdown(this, "Nothing selected", $"//label[{U.XPathTextContains("Features")}]/{U.following_sibling}::div");
+            U.OpenDropdown(this, "Nothing selected", $"//label[{U.XPathTextContains("Features")}]/{U.following_sibling_XPath}::div");
             ClickLink(U.feature01);
             ClickHeader(pageTitle);
 
             Thread.Sleep(3000);
 
             //NearLabel("Use case").ClickButton("Nothing selected");
-            U.OpenDropdown(this, "Nothing selected", $"//label[{U.XPathTextContains("Use case")}]/{U.following_sibling}::div");
+            U.OpenDropdown(this, "Nothing selected", $"//label[{U.XPathTextContains("Use case")}]/{U.following_sibling_XPath}::div");
             ClickLink(U.f1Usecase1);
             ClickHeader(pageTitle);
 

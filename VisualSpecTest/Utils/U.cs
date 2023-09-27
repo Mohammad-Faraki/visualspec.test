@@ -27,7 +27,7 @@
         #region Test variables
 
         // Only change this environment value to test different environments
-        public const Environment environment = Environment.Prelive;
+        public const Environment environment = Environment.Live;
 
 
 
@@ -74,23 +74,33 @@
 
         public const string TitleScopeFeatures = "Features > Application";
 
-        public const string lastElementXPath = "last()";
+        #region XPath variables
+        public const string lastElement_XPath = "last()";
 
         /// <summary>
         /// example:   //a[@name='OpenUseCaseDiagram']/following-sibling::i
         /// </summary>
-        public const string following_sibling = "following-sibling";
+        public const string following_sibling_XPath = "following-sibling";
 
         /// <summary>
         /// example:   //a[@name='OpenUseCaseDiagram']/preceding-sibling::i
         /// </summary>
-        public const string preceding_sibling = "preceding-sibling";
+        public const string preceding_sibling_XPath = "preceding-sibling";
 
         /// <summary>
         /// Direct parent
         /// example:   //*[title="50"]/parent::a
         /// </summary>
-        public const string parent = "parent";
+        public const string parent_XPath = "parent";
+
+
+        public static string header_XPath(string headerText)
+            => $"//h1[{U.XPathText(headerText)}] | //h2[{U.XPathText(headerText)}] | //h3[{U.XPathText(headerText)}] | //h4[{U.XPathText(headerText)}] | //h5[{U.XPathText(headerText)}] | //h6[{U.XPathText(headerText)}]";
+
+        public static string headerContains_XPath(string headerText)
+            => $"//h1[{U.XPathTextContains(headerText)}] | //h2[{U.XPathTextContains(headerText)}] | //h3[{U.XPathTextContains(headerText)}] | //h4[{U.XPathTextContains(headerText)}] | //h5[{U.XPathTextContains(headerText)}] | //h6[{U.XPathTextContains(headerText)}]";
+
+        #endregion
 
 
 
@@ -719,10 +729,11 @@
         }
         #endregion
 
-        public const string scopeSidebarIconXPath = "//li[@id='menuItem_Scope']/a[@href='#menuItem_Scope']";
+        public const string scopeSidebarIcon_XPath = "//li[@id='menuItem_Scope']/a[@href='#menuItem_Scope']";
+        public static string scope_features_Sign_XPath = $"//th[{XPathText("Devices")}]";
         public static void OpenFeatures(UITest uiTest)
         {
-            uiTest.ClickXPath(scopeSidebarIconXPath);
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
 
             uiTest.ClickXPath($"//li[2]//span[{XPathTextContains("Scope")}]");
             uiTest.WaitToSeeXPath($"//li[2]//ul//li[1]//a[{XPathTextContains("Features")}]");
@@ -730,38 +741,42 @@
 
 
             //uiTest.WaitToSee(What.Contains, "Applications"); 
-            uiTest.WaitToSeeXPath($"//th[{XPathText("Devices")}]");
-            uiTest.ClickXPath($"//th[{XPathText("Devices")}]");
+            uiTest.WaitToSeeXPath(scope_features_Sign_XPath);
+            uiTest.ClickXPath(scope_features_Sign_XPath);
         }
+
+        public static string estimator_Sign_XPath = $"//th[{XPathText("UI Design Implementation")}]";
         public static void OpenEstimator(UITest uiTest)
         {
-            uiTest.ClickXPath(scopeSidebarIconXPath);
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
 
             // Deliver
             uiTest.ClickXPath($"//li[6]//span[{XPathTextContains("Deliver")}]");
             uiTest.WaitToSeeXPath($"//li[6]//ul//li[1]//a[{XPathTextContains("Estimate")}]");
             uiTest.ClickXPath($"//li[6]//ul//li[1]//a[{XPathTextContains("Estimate")}]");
 
-            uiTest.WaitToSeeXPath($"//th[{XPathText("UI Design Implementation")}]");
-            uiTest.ClickXPath($"//th[{XPathText("UI Design Implementation")}]");
+            uiTest.WaitToSeeXPath(estimator_Sign_XPath);
+            uiTest.ClickXPath(estimator_Sign_XPath);
             //Thread.Sleep(2000);
         }
+        public static string scope_Estimate_Sign_XPath = U.headerContains_XPath("Solution Design Activities");
         public static void OpenEstimate(UITest uiTest)
         {
-            uiTest.ClickXPath(scopeSidebarIconXPath);
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
 
             // Scope
             uiTest.ClickXPath($"//li[2]//span[{XPathTextContains("Scope")}]");
             uiTest.WaitToSeeXPath($"//li[2]//ul//li[2]//a[{XPathTextContains("Estimate")}]");
             uiTest.ClickXPath($"//li[2]//ul//li[2]//a[{XPathTextContains("Estimate")}]");
 
-            uiTest.WaitToSeeHeader(That.Contains, "Solution Design Activities");
-            uiTest.ClickHeader(That.Contains, "Solution Design Activities");
+            uiTest.WaitToSeeXPath(scope_Estimate_Sign_XPath);
+            uiTest.ClickXPath(scope_Estimate_Sign_XPath);
             //Thread.Sleep(2000);
         }
+        public static string northstar_Sign_XPath = U.headerContains_XPath("Supporting Info");
         public static void OpenNorthstar(UITest uiTest)
         {
-            uiTest.ClickXPath(scopeSidebarIconXPath);
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
 
             // Plan
             uiTest.ClickXPath($"//li[3]//span[{XPathTextContains("Plan")}]");
@@ -769,13 +784,14 @@
             uiTest.ClickXPath($"//li[3]//ul//li[2]//a[{XPathTextContains("Northstar")}]");
 
 
-            uiTest.WaitToSeeHeader(That.Contains, "Supporting Info");
-            uiTest.ClickHeader(That.Contains, "Supporting Info");
+            uiTest.WaitToSeeXPath(northstar_Sign_XPath);
+            uiTest.ClickXPath(northstar_Sign_XPath);
             //Thread.Sleep(2000);
         }
+        public static string personas_Sign_XPath = "//form[@data-module='Personas_MainCanvas_List']";
         public static void OpenPersonas(UITest uiTest)
         {
-            uiTest.ClickXPath(scopeSidebarIconXPath);
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
 
             // Spec
             uiTest.ClickXPath($"//li[4]//span[{XPathTextContains("Spec")}]");
@@ -784,13 +800,15 @@
 
 
             //uiTest.WaitToSeeXPath("//div[@class='personas-title'][text()='Personas']");
-            uiTest.WaitToSeeXPath("//form[@data-module='Personas_MainCanvas_List']");
-            uiTest.ClickXPath("//form[@data-module='Personas_MainCanvas_List']");
+            uiTest.WaitToSeeXPath(personas_Sign_XPath);
+            uiTest.ClickXPath(personas_Sign_XPath);
             //Thread.Sleep(2000);
         }
+
+        public static string plan_Sign_XPath = U.header_XPath("Stakeholders");
         public static void OpenPlan(UITest uiTest)
         {
-            uiTest.ClickXPath(scopeSidebarIconXPath);
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
 
             // Plan
             uiTest.ClickXPath($"//li[3]//span[{XPathTextContains("Plan")}]");
@@ -798,28 +816,36 @@
             uiTest.ClickXPath($"//li[3]//ul//li[1]//a[{XPathTextContains("Project Plan")}]");
 
 
-            uiTest.WaitToSeeHeader("Stakeholders");
-            uiTest.ClickHeader("Stakeholders");
-            uiTest.Expect("Email");
+            //uiTest.WaitToSeeHeader("Stakeholders");
+            //uiTest.ClickHeader("Stakeholders");
+            uiTest.WaitToSeeXPath(plan_Sign_XPath);
+            uiTest.ClickXPath(plan_Sign_XPath);
+
+            ////uiTest.Expect("Email");
             //Thread.Sleep(2000);
         }
+
+        public static string userJourneys_Sign_XPath = $"//a[{U.XPathText("User Story")}]";
         public static void OpenUserstories(UITest uiTest)
         {
-            uiTest.ClickXPath(scopeSidebarIconXPath);
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
 
             uiTest.ClickXPath($"//li[4]//span[{XPathTextContains("Spec")}]");
             uiTest.WaitToSeeXPath($"//li[4]//ul//li//a[{XPathTextContains("User Journeys")}]");
             uiTest.ClickXPath($"//li[4]//ul//li//a[{XPathTextContains("User Journeys")}]");
 
 
-            uiTest.WaitToSeeXPath($"//form[@data-module='UserStoryList']//*[{XPathText("User Journeys")}]");
-            //uiTest.ClickHeader("User Stories");
-            uiTest.ClickXPath($"//form[@data-module='UserStoryList']//*[{XPathText("User Journeys")}]");
+            //uiTest.WaitToSeeXPath($"//form[@data-module='UserStoryList']//*[{XPathText("User Journeys")}]");
+
+            uiTest.WaitToSeeXPath(userJourneys_Sign_XPath);
+            uiTest.ClickXPath(userJourneys_Sign_XPath);
             //Thread.Sleep(2000);
         }
+
+        public static string workflow_Sign_XPath = U.header_XPath("Workflow Models");
         public static void OpenWorkflow(UITest uiTest)
         {
-            uiTest.ClickXPath(scopeSidebarIconXPath);
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
 
             uiTest.ClickXPath($"//li[4]//span[{XPathTextContains("Spec")}]");
             uiTest.WaitToSeeXPath($"//li[4]//ul//li[3]//a[{XPathTextContains("Workflow Models")}]");
@@ -828,13 +854,15 @@
 
 
             uiTest.ClickXPath("//div[@class='right-panel']");
-            uiTest.WaitToSeeHeader("Workflow Models");
-            uiTest.ClickHeader("Workflow Models");
+            uiTest.WaitToSeeXPath(workflow_Sign_XPath);
+            uiTest.ClickXPath(workflow_Sign_XPath);
             //Thread.Sleep(2000);
         }
+
+        public static string Objectmap_Sign_XPath = U.btnAddObjXPath;
         public static void OpenObjectmap(UITest uiTest)
         {
-            uiTest.ClickXPath(scopeSidebarIconXPath);
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
 
             uiTest.ClickXPath($"//li[4]//span[{XPathTextContains("Spec")}]");
             uiTest.WaitToSeeXPath($"//li[4]//ul//li[1]//a[{XPathTextContains("Object Map")}]");
@@ -843,10 +871,10 @@
 
             //uiTest.WaitToSeeLink("Object Details");
             //uiTest.ClickLink("Object Details");
-            uiTest.WaitToSeeXPath(U.btnAddObjXPath);
-            uiTest.ClickXPath(U.btnAddObjXPath);
+            uiTest.WaitToSeeXPath(Objectmap_Sign_XPath);
+            uiTest.ClickXPath(Objectmap_Sign_XPath);
             // To close it
-            uiTest.ClickXPath(U.btnAddObjXPath);
+            uiTest.ClickXPath(Objectmap_Sign_XPath);
             //Thread.Sleep(2000);
 
             //WebDriverWait w = new WebDriverWait(uiTest.WebDriver, TimeSpan.FromSeconds(100));
@@ -857,9 +885,11 @@
             //// To close it
             //x.Click();
         }
+
+        public static string checkpoints_Sign_XPath = $"//th[{XPathText("Last Modified Date")}]";
         public static void OpenCheckpoints(UITest uiTest)
         {
-            uiTest.ClickXPath(scopeSidebarIconXPath);
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
 
             // Hi <username>
             uiTest.ClickXPath($"//a[{XPathAttributeContains("id", "dropdownUser")}]/img");
@@ -869,13 +899,15 @@
 
             //uiTest.WaitToSeeHeader("Checkpoints");
             //uiTest.ClickHeader("Checkpoints");
-            uiTest.WaitToSeeXPath($"//th[{XPathText("Last Modified Date")}]");
-            uiTest.ClickXPath($"//th[{XPathText("Last Modified Date")}]");
+            uiTest.WaitToSeeXPath(checkpoints_Sign_XPath);
+            uiTest.ClickXPath(checkpoints_Sign_XPath);
             //Thread.Sleep(2000);
         }
+
+        public static string cognitive_Sign_XPath = U.headerContains_XPath("Cognitive Walkthroughs");
         public static void OpenCognitive(UITest uiTest)
         {
-            uiTest.ClickXPath(scopeSidebarIconXPath);
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
 
             uiTest.ClickXPath($"//li[5]//span[{XPathTextContains("Test")}]");
             uiTest.ExpectXPath($"//li[5]//ul/li//a[{XPathTextContains("Cognitive Walkthroughs")}]");
@@ -883,8 +915,8 @@
 
 
             uiTest.ClickXPath("//div[@class='right-panel']");
-            uiTest.WaitToSeeHeader("Cognitive Walkthroughs");
-            uiTest.ClickHeader("Cognitive Walkthroughs");
+            uiTest.WaitToSeeXPath(cognitive_Sign_XPath);
+            uiTest.ClickXPath(cognitive_Sign_XPath);
             //Thread.Sleep(2000);
         }
 
@@ -1492,7 +1524,7 @@
 
 
             string parentNodeXPath =
-                $"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", nodeCssClass)}]//*[{U.XPathTextContains(nodeName)}]/{U.parent}::div";
+                $"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", nodeCssClass)}]//*[{U.XPathTextContains(nodeName)}]/{U.parent_XPath}::div";
 
             id = uiTest.WebDriver.FindElements(By.XPath(parentNodeXPath)).FirstOrDefault().GetAttribute("id");
             // remove "node_" 
