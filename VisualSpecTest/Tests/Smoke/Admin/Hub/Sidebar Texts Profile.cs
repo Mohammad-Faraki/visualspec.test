@@ -28,9 +28,9 @@
 
             // Hi <username>
             ClickXPath($"//a[{U.XPathAttributeContains("id", "dropdownUser")}]/img");
-            WaitToSeeXPath($"//li[1]//a[{U.XPathTextContains("Account")}]");
-            ExpectXPath($"//li[2]//a[{U.XPathTextContains("Checkpoints")}]");
-            ExpectXPath($"//li[3]//a[{U.XPathTextContains("Log out")}]");
+            WaitToSeeXPath($"//li[1]//a[{U.XPathTextContains(Casing.Exact, "Account")}]");
+            ExpectXPath($"//li[2]//a[{U.XPathTextContains(Casing.Exact, "Checkpoints")}]");
+            ExpectXPath($"//li[3]//a[{U.XPathTextContains(Casing.Exact, "Log out")}]");
 
         }
 

@@ -30,7 +30,7 @@
 
             int actorColumnIdx = U.GetActorColumnIdx_Workflow(this, U.DefaultActorsDic[U.DefaultActors.Admin] );
             // check design of the node
-            ExpectXPath($"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", C.cssClass_StartNode)}]//*[{U.XPathTextContains(C.nodeStart)}]");
+            ExpectXPath($"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", C.cssClass_StartNode)}]//*[{U.XPathTextContains(Casing.Exact, C.nodeStart)}]");
         }
 
 

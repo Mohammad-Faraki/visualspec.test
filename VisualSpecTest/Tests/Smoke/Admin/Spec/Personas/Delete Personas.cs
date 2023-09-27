@@ -28,7 +28,7 @@
             ClickXPath("//div[@id='personasMainCanvas']//div[1]//a[text()='Delete ']");
             WaitToSee("Are you sure you want to delete it?");
             ClickButton("OK");
-            ExpectNoXPath($"{C.lastPersonaOfFirstActorSidebar}//a[{U.XPathText("Name")}]");
+            ExpectNoXPath($"{C.lastPersonaOfFirstActorSidebar}//a[{U.XPathText(Casing.Exact, "Name")}]");
         }
 
 

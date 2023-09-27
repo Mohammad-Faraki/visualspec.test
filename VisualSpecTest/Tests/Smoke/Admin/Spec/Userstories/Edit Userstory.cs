@@ -63,7 +63,7 @@
             ////ClickLink(That.Contains, "Edit");
             ////WaitToSee("Edit User Journey");
             ////// Check if Designed radio is selected
-            ////ExpectXPath($"//label[{U.XPathText("Designed")}]/{U.preceding_sibling}::input[{U.XPathAttribute("checked", "checked")}]"); 
+            ////ExpectXPath($"//label[{U.XPathText(Casing.Exact, "Designed")}]/{U.preceding_sibling}::input[{U.XPathAttribute("checked", "checked")}]"); 
             #endregion
         }
     }

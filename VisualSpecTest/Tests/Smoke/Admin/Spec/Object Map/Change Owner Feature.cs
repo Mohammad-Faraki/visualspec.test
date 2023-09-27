@@ -24,18 +24,18 @@
 
             //Near(C.formBottomSectionXPath).ClickLink(U.feature02);
             ////AtXPath("//*[class='right-panel']").ClickLink(U.feature02);
-            var x = this.WebDriver.FindElements(By.XPath($"//a[{U.XPathHasElement($"*[{U.XPathText(U.feature02)}]")}]"));
+            var x = this.WebDriver.FindElements(By.XPath($"//a[{U.XPathHasElement($"*[{U.XPathText(Casing.Exact, U.feature02)}]")}]"));
             x[0].Click();
 
             AtXPath(C.formBottomSectionXPath).ClickButton("Save");
 
             Thread.Sleep(4000);
             U.ScrollToTop(this, "objectmap-content");
-            ExpectNoXPath($"//span[{U.XPathText(C.O1F1)}]");
+            ExpectNoXPath($"//span[{U.XPathText(Casing.Exact, C.O1F1)}]");
 
 
             C.OpenFeaturePage(this, U.feature02);
-            ExpectXPath($"//span[{U.XPathText(C.O1F1)}]");
+            ExpectXPath($"//span[{U.XPathText(Casing.Exact, C.O1F1)}]");
         }
 
 

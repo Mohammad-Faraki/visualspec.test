@@ -35,7 +35,7 @@
             Expect(C.nodeStep1);
 
             // check design of the node
-            ExpectXPath($"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", C.cssClass_StepNode)}]//*[{U.XPathTextContains(C.nodeStep1)}]");
+            ExpectXPath($"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", C.cssClass_StepNode)}]//*[{U.XPathTextContains(Casing.Exact, C.nodeStep1)}]");
         }
 
 

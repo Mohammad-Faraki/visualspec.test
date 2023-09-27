@@ -47,7 +47,7 @@
             ClickXPath($"{C.firstPersonaOfFirstActor}//input[@id='Name']");
             Thread.Sleep(3000);
             // in sidebar
-            ExpectXPath($"{C.firstPersonaOfFirstActorSidebar}//a[{U.XPathText("persona01")}]");
+            ExpectXPath($"{C.firstPersonaOfFirstActorSidebar}//a[{U.XPathText(Casing.Exact, "persona01")}]");
 
 
             RefreshPage();
@@ -59,7 +59,7 @@
             // in sidebar
             //ExpectXPath("/html/body//div[@class='left-panel']//li[1]//a[1]//div[text()='persona01']");
             ////Expect("persona01");
-            ExpectXPath($"{C.firstPersonaOfFirstActorSidebar}//a[{U.XPathText("persona01")}]");
+            ExpectXPath($"{C.firstPersonaOfFirstActorSidebar}//a[{U.XPathText(Casing.Exact, "persona01")}]");
 
             ExpectXPath($"{C.firstPersonaOfFirstActor}//input[@id='Name'][@value='persona01']");
             ExpectXPath($"{C.firstPersonaOfFirstActor}//input[@id='Age'][@value='25']");

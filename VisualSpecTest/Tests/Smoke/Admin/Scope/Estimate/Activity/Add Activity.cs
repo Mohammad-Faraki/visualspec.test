@@ -73,9 +73,9 @@
             U.ScrollToTop(this, "scope-content");
             
             //Expect(What.Contains, "1.75-2.25 days");
-            //ExpectXPath($"//form[@data-module='OtherActivitiesList']//h2/span[{MyUtils.XPathText("1.75-2.25 days")}]");
+            //ExpectXPath($"//form[@data-module='OtherActivitiesList']//h2/span[{MyUtils.XPathText(Casing.Exact, "1.75-2.25 days")}]");
             //ExpectHeader(That.Contains, "1.75-2.25 days");
-            //ExpectXPath($"//*[@id='SolutionDesignActivitiesEstimateDays'][{MyUtils.XPathText("1.75-2.25 days")}]");
+            //ExpectXPath($"//*[@id='SolutionDesignActivitiesEstimateDays'][{MyUtils.XPathText(Casing.Exact, "1.75-2.25 days")}]");
             //ExpectXPath("//form[1]/h2[@innertext='Solution Design Activities          ']/span[@id='SolutionDesignActivitiesEstimateDays']");
             if (U.environment == U.Environment.Prelive)
             {

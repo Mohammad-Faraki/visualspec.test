@@ -57,7 +57,7 @@
             ClickCSS("li:nth-of-type(1) > a[role='option']");
 
             // Click off the features popup
-            ClickXPath($"//th[{U.XPathText("UI Design Implementation")}]");
+            ClickXPath($"//th[{U.XPathText(Casing.Exact, "UI Design Implementation")}]");
             //ClickRow(2);
 
             WaitToSee("Please press 'Start estimation' button");
@@ -79,7 +79,7 @@
             ClickCSS("li:nth-of-type(1) > a[role='option']");
 
             // Click off the features popup
-            ClickXPath($"//th[{U.XPathText("UI Design Implementation")}]");
+            ClickXPath($"//th[{U.XPathText(Casing.Exact, "UI Design Implementation")}]");
             Thread.Sleep(2000);
 
             RefreshPage();
@@ -107,7 +107,7 @@
             ClickCSS("li:nth-of-type(2) > a[role='option']");
 
             // Click off the features popup
-            ClickXPath($"//th[{U.XPathText("UI Design Implementation")}]");
+            ClickXPath($"//th[{U.XPathText(Casing.Exact, "UI Design Implementation")}]");
             Thread.Sleep(2000);
             //ClickRow(2);
 
@@ -138,7 +138,7 @@
             ClickCSS("li:nth-of-type(1) > a[role='option']");
 
             // Click off the features popup
-            ClickXPath($"//th[{U.XPathText("UI Design Implementation")}]");
+            ClickXPath($"//th[{U.XPathText(Casing.Exact, "UI Design Implementation")}]");
             Thread.Sleep(2000);
             //Thread.Sleep(2000);
 
@@ -163,7 +163,7 @@
             ClickCSS("li:nth-of-type(2) > a[role='option']");
 
             // Click off the features popup
-            ClickXPath($"//th[{U.XPathText("UI Design Implementation")}]");
+            ClickXPath($"//th[{U.XPathText(Casing.Exact, "UI Design Implementation")}]");
             Thread.Sleep(2000);
             //Thread.Sleep(2000);
 

@@ -38,9 +38,9 @@
 
             //ExpectLink(C.nodeStart);
             // Check loop node text and design
-            ExpectXPath($"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", C.cssClass_LoopNode)}]//*[{U.XPathTextContains(C.nodeLoop1)}]");
+            ExpectXPath($"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", C.cssClass_LoopNode)}]//*[{U.XPathTextContains(Casing.Exact, C.nodeLoop1)}]");
             // Check start node text and design
-            ExpectXPath($"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", C.cssClass_StartNode_LoopTarget)}]//*[{U.XPathTextContains(C.nodeStart)}]");
+            ExpectXPath($"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", C.cssClass_StartNode_LoopTarget)}]//*[{U.XPathTextContains(Casing.Exact, C.nodeStart)}]");
         }
 
 

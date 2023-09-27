@@ -24,16 +24,16 @@
             U.CheckContactUsUI(this);
 
             // Check mandatory signs
-            ExpectXPath($"//label[{U.XPathTextContains("Your name")}][{U.XPathHasElement($"*[{U.XPathTextContains("*")}]")}]");
-            ExpectXPath($"//label[{U.XPathTextContains("Email")}][{U.XPathHasElement($"*[{U.XPathTextContains("*")}]")}]");
+            ExpectXPath($"//label[{U.XPathTextContains(Casing.Exact, "Your name")}][{U.XPathHasElement($"*[{U.XPathTextContains(Casing.Exact, "*")}]")}]");
+            ExpectXPath($"//label[{U.XPathTextContains(Casing.Exact, "Email")}][{U.XPathHasElement($"*[{U.XPathTextContains(Casing.Exact, "*")}]")}]");
 
             // inputs should be filled with user's information
             U.ExpectField(this
-                , $"//div[{U.XPathHasElement($"label[{U.XPathTextContains("Your name")}]")}]"
+                , $"//div[{U.XPathHasElement($"label[{U.XPathTextContains(Casing.Exact, "Your name")}]")}]"
                 , U.AdminFullname);
 
             U.ExpectField(this
-                , $"//div[{U.XPathHasElement($"label[{U.XPathTextContains("Email")}]")}]"
+                , $"//div[{U.XPathHasElement($"label[{U.XPathTextContains(Casing.Exact, "Email")}]")}]"
                 , U.AdminEmail);
 
 

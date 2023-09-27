@@ -16,7 +16,7 @@
         public static string btnThreeDotsAppXPath = $"{thirdAppXPath}//i";
 
         public const string firstIntegrationXPath = "//*[@data-module='TreeIntegrations']//li[1]";
-        public static string btnEditIntegrationXPath = $"{firstIntegrationXPath}//a[{U.XPathText("Edit")}]";
+        public static string btnEditIntegrationXPath = $"{firstIntegrationXPath}//a[{U.XPathText(Casing.Exact, "Edit")}]";
 
 
         public const string formApplicationXPath = "//form[@data-module='ApplicationForm']";
@@ -55,7 +55,7 @@
             //uITest.ClickXPath(C.btnThreeDotsAppXPath);
             uITest.ClickXPath(U.btnThreeDotsAppXPath(appName));
             // Edit
-            //var btnEditXPath = $"{C.thirdAppXPath}//a[{U.XPathText("Edit")}]";
+            //var btnEditXPath = $"{C.thirdAppXPath}//a[{U.XPathText(Casing.Exact, "Edit")}]";
             var btnEditXPath = U.btnEditAppXPath(appName);
             uITest.WaitToSeeXPath(btnEditXPath);
             uITest.ClickXPath(btnEditXPath);

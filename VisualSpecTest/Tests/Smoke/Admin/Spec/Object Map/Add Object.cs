@@ -39,13 +39,13 @@
             WaitToSeeHeader("Object Details");
             string addObjFormXPath = "//form[@data-module='ObjectCreateForm']";
 
-            //SetXPath($"{addObjFormXPath}//*[{MyUtils.XPathTextContains("Name")}]").To(Constants.O1F1);
-            U.SetField(this, labelXPath: $"{addObjFormXPath}//*[{U.XPathTextContains("Name")}]"
+            //SetXPath($"{addObjFormXPath}//*[{MyUtils.XPathTextContains(Casing.Exact, "Name")}]").To(Constants.O1F1);
+            U.SetField(this, labelXPath: $"{addObjFormXPath}//*[{U.XPathTextContains(Casing.Exact, "Name")}]"
                 , to: C.O1F1);
 
-            ClickXPath($"{addObjFormXPath}//*[{U.XPathText("Save")}]");
+            ClickXPath($"{addObjFormXPath}//*[{U.XPathText(Casing.Exact, "Save")}]");
             Thread.Sleep(3000);
-            ExpectXPath($"//span[{U.XPathText(C.O1F1)}]");
+            ExpectXPath($"//span[{U.XPathText(Casing.Exact, C.O1F1)}]");
         }
 
 

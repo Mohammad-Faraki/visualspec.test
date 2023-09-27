@@ -38,16 +38,16 @@
 
                 //ClickXPath($"//form[@data-module='{cards[i]}']//a");
                 //ClickHeader(That.Contains, "North Star Metric");
-                ////ClickXPath($"//h3[{U.XPathTextContains("North Star Metric")}]");
+                ////ClickXPath($"//h3[{U.XPathTextContains(Casing.Exact, "North Star Metric")}]");
                 Thread.Sleep(1000);
             }
             SetXPath($"//form[@data-module='MetricForm']//textarea").To($"test text MetricForm");
             //ClickXPath($"//form[@data-module='MetricForm']//a");
-            ClickXPath($"//h3[{U.XPathTextContains("North Star Metric")}]");
+            ClickXPath($"//h3[{U.XPathTextContains(Casing.Exact, "North Star Metric")}]");
             Thread.Sleep(1000);
 
             RefreshPage();
-            WaitToSeeXPath($"//h3[{U.XPathTextContains("North Star Metric")}]");
+            WaitToSeeXPath($"//h3[{U.XPathTextContains(Casing.Exact, "North Star Metric")}]");
             Thread.Sleep(1000);
             for (int i = 0; i < cards.Length; i++)
             {
@@ -74,16 +74,16 @@
                 
                 SetXPath($"//form[@data-module='{cards[i]}']//div[2]//textarea").To($"test text {i} edited");
                 //ClickXPath($"//form[@data-module='{cards[i]}']//a");
-                ////ClickXPath($"//h3[{U.XPathTextContains("North Star Metric")}]");
+                ////ClickXPath($"//h3[{U.XPathTextContains(Casing.Exact, "North Star Metric")}]");
                 Thread.Sleep(1000);
             }
             SetXPath($"//form[@data-module='MetricForm']//textarea").To($"test text MetricForm edited");
             //ClickXPath($"//form[@data-module='MetricForm']//a");
-            ClickXPath($"//h3[{U.XPathTextContains("North Star Metric")}]");
+            ClickXPath($"//h3[{U.XPathTextContains(Casing.Exact, "North Star Metric")}]");
             Thread.Sleep(1000);
 
             RefreshPage();
-            WaitToSeeXPath($"//h3[{U.XPathTextContains("North Star Metric")}]");
+            WaitToSeeXPath($"//h3[{U.XPathTextContains(Casing.Exact, "North Star Metric")}]");
             Thread.Sleep(1000);
             for (int i = 0; i < cards.Length; i++)
             {

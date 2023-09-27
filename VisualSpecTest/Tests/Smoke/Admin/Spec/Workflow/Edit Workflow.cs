@@ -47,8 +47,8 @@
             ClickLink(WorkflowName_Sidebar);
             ClickXPath(btnEdit);
             ExpectHeader(That.Contains, "Edit Workflow Model");
-            U.ExpectField(this, $"//label[{U.XPathTextContains("Name")}]", C.workflow1_Edited);
-            ExpectXPath($"{editFormXPath}//label[{U.XPathText("As-Is")}]/preceding-sibling::input[@name='Type'][@checked='checked']");
+            U.ExpectField(this, $"//label[{U.XPathTextContains(Casing.Exact, "Name")}]", C.workflow1_Edited);
+            ExpectXPath($"{editFormXPath}//label[{U.XPathText(Casing.Exact, "As-Is")}]/preceding-sibling::input[@name='Type'][@checked='checked']");
         }
 
 

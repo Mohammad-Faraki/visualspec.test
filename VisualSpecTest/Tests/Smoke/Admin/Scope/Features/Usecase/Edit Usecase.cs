@@ -34,7 +34,7 @@
             U.OpenDropdown(this, "Admin", C.formUsecase);
 
             // select "Customer" actor
-            //ClickXPath($"//form[@data-module='UseCaseForm']//div[5]//span[{MyUtils.XPathText("Customer")}]");
+            //ClickXPath($"//form[@data-module='UseCaseForm']//div[5]//span[{MyUtils.XPathText(Casing.Exact, "Customer")}]");
             AtXPath($"{C.formUsecase}//div[@role='listbox']").ClickLink("Customer");
             // To close actors popup
             ClickXPath($"{C.formUsecase}//textarea[@name='Description']");
@@ -45,8 +45,8 @@
             ////ClickXPath("//form[@data-module='UseCaseForm']//div[6]//button");
             //NearXPath("//form[@data-module='UseCaseForm']").ClickButton("A Web App");
             //// select "A Web App" application
-            ////ClickXPath($"//form[@data-module='UseCaseForm']//div[6]//span[{MyUtils.XPathText("A Web App")}]");
-            ////ClickXPath($"//form[@data-module='UseCaseForm']//div[6]//span[{MyUtils.XPathText("A Mobile App")}]");
+            ////ClickXPath($"//form[@data-module='UseCaseForm']//div[6]//span[{MyUtils.XPathText(Casing.Exact, "A Web App")}]");
+            ////ClickXPath($"//form[@data-module='UseCaseForm']//div[6]//span[{MyUtils.XPathText(Casing.Exact, "A Mobile App")}]");
             //NearXPath("//form[@data-module='UseCaseForm']//div[6]//button[@data-id='ApplicationItems']").ClickLink("A Web App");
             //NearXPath("//form[@data-module='UseCaseForm']//div[6]//button[@data-id='ApplicationItems']").ClickLink("A Mobile App"); 
             #endregion

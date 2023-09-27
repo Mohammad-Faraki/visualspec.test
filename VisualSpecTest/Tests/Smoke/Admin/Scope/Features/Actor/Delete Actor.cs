@@ -22,7 +22,7 @@
             // Three dots
             ClickXPath(C.btnThreeDotsActorXPath);
             // Delete
-            var btnDeleteXPath = $"{C.thirdActorXPath}//a[{U.XPathTextContains("Delete")}]";
+            var btnDeleteXPath = $"{C.thirdActorXPath}//a[{U.XPathTextContains(Casing.Exact, "Delete")}]";
             WaitToSeeXPath(btnDeleteXPath);
             ClickXPath(btnDeleteXPath);
             WaitToSee("Deleting this actor will delete all its associated data in other microservices. Are you sure you want to delete this actor?");

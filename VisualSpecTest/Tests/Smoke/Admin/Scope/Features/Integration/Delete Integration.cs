@@ -22,7 +22,7 @@
             // Three dots
             ClickXPath(U.btnThreeDotsIntegrationXPath(C.addedIntegration));
             // Delete
-            var btnDeleteXPath = $"//*[@data-module='TreeIntegrations']//li[1]//a[{U.XPathTextContains("Delete")}]";
+            var btnDeleteXPath = $"//*[@data-module='TreeIntegrations']//li[1]//a[{U.XPathTextContains(Casing.Exact, "Delete")}]";
             WaitToSeeXPath(btnDeleteXPath);
             ClickXPath(btnDeleteXPath);
             WaitToSee("Deleting this integration will delete all its associated data in other microservices. Are you sure you want to delete this integration?");

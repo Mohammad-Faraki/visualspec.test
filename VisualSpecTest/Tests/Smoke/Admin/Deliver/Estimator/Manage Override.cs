@@ -43,7 +43,7 @@
             Thread.Sleep(2000);
 
             // Click off the override input
-            ClickXPath($"//th[{U.XPathText("UI Design Implementation")}]");
+            ClickXPath($"//th[{U.XPathText(Casing.Exact, "UI Design Implementation")}]");
 
             //ClickButton("Submit estimate");
             U.ScanPages(this, false);

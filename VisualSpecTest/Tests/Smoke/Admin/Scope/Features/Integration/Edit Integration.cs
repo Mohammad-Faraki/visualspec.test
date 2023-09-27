@@ -21,7 +21,7 @@
             // Three dots
             ClickXPath(U.btnThreeDotsIntegrationXPath(C.addedIntegration));
             // Edit
-            var btnEditXPath = $"//*[@data-module='TreeIntegrations']//li[1]//a[{U.XPathText("Edit")}]";
+            var btnEditXPath = $"//*[@data-module='TreeIntegrations']//li[1]//a[{U.XPathText(Casing.Exact, "Edit")}]";
             WaitToSeeXPath(btnEditXPath);
             ClickXPath(btnEditXPath);
             Set("Name").To(C.editedIntegration);

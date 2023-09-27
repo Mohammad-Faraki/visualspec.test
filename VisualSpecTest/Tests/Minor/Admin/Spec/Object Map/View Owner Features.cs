@@ -21,7 +21,7 @@
             Run<AddObject>();
 
 
-            ClickXPath($"//span[{U.XPathText(C.O1F1)}]");
+            ClickXPath($"//span[{U.XPathText(Casing.Exact, C.O1F1)}]");
             Thread.Sleep(3000);
             //MyUtils.ScrollToBottom(this, "objectmap-content", this.WebDriver);
             // Scroll to bottom

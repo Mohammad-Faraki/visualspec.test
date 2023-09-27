@@ -27,7 +27,7 @@
             // Applications
             //ClickCSS(".bootstrap-select.dropdown.form-check.show-tick > button[role='combobox']");
             //AtXPath("//form[@data-module='ActorForm']").ClickButton("Nothing selected");
-            ////var btnDropdownXPath = $"{C.formActor}//*[{U.XPathText("Nothing selected")}]";
+            ////var btnDropdownXPath = $"{C.formActor}//*[{U.XPathText(Casing.Exact, "Nothing selected")}]";
             ////var btnDropdownXPath = $"{C.formActor}//{U.btnOpenDropdownXPath("Nothing selected")}";
             //////this.WebDriver.FindElement(By.XPath(btnDropdownXPath)).Click();
             ////ClickXPath(btnDropdownXPath);

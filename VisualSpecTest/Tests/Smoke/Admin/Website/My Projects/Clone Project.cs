@@ -29,7 +29,7 @@
             Expect(clonedProjName);
             ClickLink("Clone");
 
-            ExpectXPath($"//tr[1]//*[{U.XPathTextContains(U.TestProjectName)}]");
+            ExpectXPath($"//tr[1]//*[{U.XPathTextContains(Casing.Exact, U.TestProjectName)}]");
         }
 
 

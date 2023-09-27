@@ -21,7 +21,7 @@
             U.SearchProject(this);
             U.OpenProjectDetails(this, 1);
             ExpectXPath($"{U.frmProjectDetailsXPath}//input[{U.XPathAttribute("value",U.TestProjectName)}]");
-            ExpectXPath($"{U.frmProjectDetailsXPath}//*[{U.XPathText("Description01")}]");
+            ExpectXPath($"{U.frmProjectDetailsXPath}//*[{U.XPathText(Casing.Exact, "Description01")}]");
 
             string editedProjectName = $"{U.TestProjectName} edited";
             string editedDescription = "Description01 edited";
@@ -39,7 +39,7 @@
 
             U.OpenProjectDetails(this, 1);
             ExpectXPath($"{U.frmProjectDetailsXPath}//input[{U.XPathAttribute("value", editedProjectName)}]");
-            ExpectXPath($"{U.frmProjectDetailsXPath}//*[{U.XPathText(editedDescription)}]");
+            ExpectXPath($"{U.frmProjectDetailsXPath}//*[{U.XPathText(Casing.Exact, editedDescription)}]");
         }
 
 

@@ -23,7 +23,7 @@
 
 
 
-            U.ScrollToElementXPath_Website(this, $"//*[{U.XPathTextContains("Prove what")}]");
+            U.ScrollToElementXPath_Website(this, $"//*[{U.XPathTextContains(Casing.Exact, "Prove what")}]");
             Thread.Sleep(3000);
             Expect(What.Contains, "About VisualSpec?", Casing.Exact);
             Expect(What.Contains, "VisualSpec is a rapid software wireframing tool built on a proven solution design framework.", Casing.Exact);
@@ -34,7 +34,7 @@
 
 
 
-            U.ScrollToElementXPath_Website(this, $"//*[{U.XPathTextContains("View sample")}]");
+            U.ScrollToElementXPath_Website(this, $"//*[{U.XPathTextContains(Casing.Exact, "View sample")}]");
             Thread.Sleep(3000);
             Expect(What.Contains, "Interactive", Casing.Exact);
             Expect(What.Contains, "prototyping", Casing.Exact);
@@ -43,7 +43,7 @@
             ExpectXPath("//img[@src='/Images/svg/interactive-prototype.svg'][@alt='interactive-prototype']");
 
 
-            U.ScrollToElementXPath_Website(this, $"//*[{U.XPathTextContains("No more long spreadsheets and ambiguous")}]");
+            U.ScrollToElementXPath_Website(this, $"//*[{U.XPathTextContains(Casing.Exact, "No more long spreadsheets and ambiguous")}]");
             Thread.Sleep(3000);
             Expect(What.Contains, "Collaborate in", Casing.Exact);
             Expect(What.Contains, "real time", Casing.Exact);
@@ -53,7 +53,7 @@
 
 
 
-            U.ScrollToElementXPath_Website(this, $"//*[{U.XPathTextContains("clarifications or suggest refinements instantly")}]");
+            U.ScrollToElementXPath_Website(this, $"//*[{U.XPathTextContains(Casing.Exact, "clarifications or suggest refinements instantly")}]");
             Thread.Sleep(3000);
             Expect(What.Contains, "A friendly", Casing.Exact);
             Expect(What.Contains, "visual language", Casing.Exact);
@@ -63,7 +63,7 @@
 
 
 
-            U.ScrollToElementXPath_Website(this, $"//*[{U.XPathTextContains("The clickable low fidelity prototype")}]");
+            U.ScrollToElementXPath_Website(this, $"//*[{U.XPathTextContains(Casing.Exact, "The clickable low fidelity prototype")}]");
             Thread.Sleep(3000);
             Expect(What.Contains, "Design for", Casing.Exact);
             Expect(What.Contains, "any device", Casing.Exact);
@@ -73,7 +73,7 @@
 
 
 
-            U.ScrollToElementXPath_Website(this, $"//*[{U.XPathTextContains("Define each users needs as a distinct point of view")}]");
+            U.ScrollToElementXPath_Website(this, $"//*[{U.XPathTextContains(Casing.Exact, "Define each users needs as a distinct point of view")}]");
             Thread.Sleep(3000);
             Expect(What.Contains, "100s of software projects have succeeded", Casing.Exact);
             Expect(What.Contains, "with", Casing.Exact);
