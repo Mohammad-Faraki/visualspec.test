@@ -94,11 +94,23 @@
         public const string parent_XPath = "parent";
 
 
-        public static string header_XPath(string headerText)
-            => $"//h1[{U.XPathText(headerText)}] | //h2[{U.XPathText(headerText)}] | //h3[{U.XPathText(headerText)}] | //h4[{U.XPathText(headerText)}] | //h5[{U.XPathText(headerText)}] | //h6[{U.XPathText(headerText)}]";
+        /// <summary>
+        /// Return value will be a xpath, so you can add it to another xpath or before another xpath. return value:  $"//h1[{U.XPathText(headerText)}] | //h2[{U.XPathText(headerText)}] | //h3[{U.XPathText(headerText)}] | //h4[{U.XPathText(headerText)}] | //h5[{U.XPathText(headerText)}] | //h6[{U.XPathText(headerText)}]"
+        /// </summary>
+        /// <param name="headerText"></param>
+        /// <returns></returns>
+        public static string header_XPath(string headerText, Casing casing)
+            => $"//h1[{U.XPathText(Casing.Exact, headerText)}] | //h2[{U.XPathText(casing, headerText)}] | //h3[{U.XPathText(casing, headerText)}] | //h4[{U.XPathText(casing, headerText)}] | //h5[{U.XPathText(casing, headerText)}] | //h6[{U.XPathText(casing, headerText)}]";
 
-        public static string headerContains_XPath(string headerText)
-            => $"//h1[{U.XPathTextContains(headerText)}] | //h2[{U.XPathTextContains(headerText)}] | //h3[{U.XPathTextContains(headerText)}] | //h4[{U.XPathTextContains(headerText)}] | //h5[{U.XPathTextContains(headerText)}] | //h6[{U.XPathTextContains(headerText)}]";
+        /// <summary>
+        /// Return value will be a xpath, so you can add it to another xpath or before another xpath. return value: $"//h1[{U.XPathTextContains(headerText)}] | //h2[{U.XPathTextContains(headerText)}] | //h3[{U.XPathTextContains(headerText)}] | //h4[{U.XPathTextContains(headerText)}] | //h5[{U.XPathTextContains(headerText)}] | //h6[{U.XPathTextContains(headerText)}]";
+        /// </summary>
+        /// <param name="headerText"></param>
+        /// <returns></returns>
+        public static string headerContains_XPath(string headerText, Casing casing)
+            => $"//h1[{U.XPathTextContains(casing, headerText)}] | //h2[{U.XPathTextContains(casing, headerText)} ] | //h3[ {U.XPathTextContains(casing, headerText)}] | //h4[{U.XPathTextContains(casing, headerText)} ] | //h5[ {U.XPathTextContains(casing, headerText)}] | //h6[{U.XPathTextContains(casing, headerText)}]";
+
+
 
         #endregion
 
@@ -551,15 +563,64 @@
 
 
         /// <summary>
-        /// e.g., write a[GetXPathTextAtrribute("feature01")] instead of a[text()='feature01']
+        /// e.g., write a[XPathText("feature01")] instead of a[text()='feature01']
         /// </summary>
         /// <param name="elementText"></param>
         /// <returns></returns>
-        public static string XPathText(string elementText)
-            => $"text()='{elementText}'";
+        public static string XPathText(Casing casing, string elementText)
+        {
+            string ret = "";
+            switch (casing)
+            {
+                case Casing.Exact:
+                    ret = $"text()='{elementText}'";
+                    break;
+                case Casing.Ignore:
+                    //CD[lower-case(@title)='empire burlesque']
+                    var lowercasedText = elementText.ToLower();
+                    //ret = $"lower-case(text())='{lowercasedText}'";
+                    ret = $"{U.XPathFunction_ToLowerCase("text()")}='{lowercasedText}'";
+                    break;
+            }
 
-        public static string XPathTextContains(string elementText)
-            => $"contains(text(), '{elementText}')";
+            return ret;
+        }
+        public static string XPathTextContains(Casing casing, string elementText)
+        {
+            string ret = "";
+            switch (casing)
+            {
+                case Casing.Exact:
+                    ret = $"contains(text(), '{elementText}')";
+                    break;
+                case Casing.Ignore:
+                    //CD[lower-case(@title)='empire burlesque']
+                    var lowercasedText = elementText.ToLower();
+                    ret = $"contains({U.XPathFunction_ToLowerCase("text()")}, '{lowercasedText}')";
+                    break;
+            }
+
+            return ret;
+        }
+        //public static string XPathText(string elementText)
+        //    => $"text()='{elementText}'";
+
+        //public static string XPathTextContains(string elementText)
+        //    => $"contains(text(), '{elementText}')";
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="xpathTextToTranslate"></param>
+        /// <returns>translate({xpathTextToTranslate}, 'ABCDEFGHIJKLMNOPURSTUWXYZ', 'abcdefghijklmnopurstuwxyz')"</returns>
+        public static string XPathFunction_ToLowerCase(string xpathTextToTranslate)
+        {
+            return $"translate({xpathTextToTranslate}, 'ABCDEFGHIJKLMNOPURSTUWXYZ', 'abcdefghijklmnopurstuwxyz')";
+        }
+        
+        
+
+
 
         /// <summary>
         /// Find elements that have "attribute" with value that contains "attributeVal".
@@ -842,7 +903,7 @@
             //Thread.Sleep(2000);
         }
 
-        public static string workflow_Sign_XPath = U.header_XPath("Workflow Models");
+        public static string workflow_Sign_XPath = U.header_XPath("Workflow Models", Casing.Ignore);
         public static void OpenWorkflow(UITest uiTest)
         {
             uiTest.ClickXPath(scopeSidebarIcon_XPath);
