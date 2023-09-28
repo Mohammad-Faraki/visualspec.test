@@ -371,4 +371,7 @@ FodyWeavers.xsd
 # igonre all files in a folder
 VisualSpecTest/Screenshots/
 
+packages.config
+app.config
+
 # ******************* My gitignore *******************
