@@ -372,6 +372,5 @@ FodyWeavers.xsd
 VisualSpecTest/Screenshots/
 
 VisualSpecTest/app.config
-VisualSpecTest/packages.config
 
 # ******************* My gitignore *******************
