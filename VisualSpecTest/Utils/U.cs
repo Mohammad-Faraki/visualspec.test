@@ -36,10 +36,10 @@
 
 
 
-        public const string credintialsFile_FolderPath = @"D:\0MyFiles\VS Testcases\More\";
+        public static string moreFiles_FolderPath = ConfigurationManager.AppSettings.Get("MoreFiles"); 
         public const string credintialsFile_FileName = "credintials.txt";
-        public const string credintialsFile_FullPath = credintialsFile_FolderPath + credintialsFile_FileName;
-        public static string AdminEmail => ReadFile_FirstLine(credintialsFile_FolderPath, credintialsFile_FileName, createFileIsNotExist: false);
+        public static string credintialsFile_FullPath = moreFiles_FolderPath + "/" + credintialsFile_FileName;
+        public static string AdminEmail => ReadFile_FirstLine(moreFiles_FolderPath, credintialsFile_FileName, createFileIsNotExist: false);
         public const string AdminFullname = "Mohammad Geraily";
 
 
@@ -253,7 +253,7 @@
         //} 
         #endregion
 
-        private static string TestProjtIdxFile_Folder = @"D:\0MyFiles\VS Testcases\TestProjectNames\";
+        //private static string TestProjtIdxFile_Folder = @"D:\0MyFiles\VS Testcases\TestProjectNames\";
         private static string TestProjIdxFile_Name
         {
             get
@@ -280,8 +280,8 @@
             }
         }
 
-        public static string TestProjIdxFile_FullPath = TestProjtIdxFile_Folder + TestProjIdxFile_Name;
-        public static string TestProjIdx => ReadFile_FirstLine(TestProjtIdxFile_Folder, TestProjIdxFile_Name, createFileIsNotExist: true);
+        public static string TestProjIdxFile_FullPath = moreFiles_FolderPath + "/" + TestProjIdxFile_Name;
+        public static string TestProjIdx => ReadFile_FirstLine(moreFiles_FolderPath, TestProjIdxFile_Name, createFileIsNotExist: true);
 
         private const string TestProjectNamePrefix = "xTest";
         public static string TestProjectName => $"{TestProjectNamePrefix}{TestProjIdx}";
@@ -735,7 +735,7 @@
         //public static string ReadFile_FirstLine(string fullPath)
         public static string ReadFile_FirstLine(string folderPath, string fileName, bool createFileIsNotExist)
         {
-            string fullPath = folderPath + fileName;
+            string fullPath = folderPath + "/" + fileName;
 
 
             // Create a file if don't exist

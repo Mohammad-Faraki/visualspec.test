@@ -267,6 +267,7 @@
     <Compile Include="Tests\Shared\Admin\Spec\Userstories\C.cs" />
     <Compile Include="Tests\Shared\Admin\Spec\Workflow\C.cs" />
     <Compile Include="Tests\Shared\Admin\Website\My Projects\C.cs" />
+    <Compile Include="Tests\Smoke\Admin\Checkpoints\Upload Checkpoint.cs" />
     <Compile Include="Tests\Smoke\Admin\Checkpoints\Delete Checkpoint.cs" />
     <Compile Include="Tests\Smoke\Admin\Checkpoints\Edit Checkpoint.cs" />
     <Compile Include="Tests\Smoke\Admin\Checkpoints\Add Checkpoint.cs" />
