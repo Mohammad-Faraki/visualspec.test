@@ -26,9 +26,32 @@
     {
         #region Test variables
 
-        // Only change this environment value to test different environments
-        public const Environment environment = Environment.Live;
+        private static string env = ConfigurationManager.AppSettings.Get("TestEnv");
+        public static Environment environment
+        {
+            get
+            {
+                var ret = Environment.Prelive;
 
+                switch (env)
+                {
+                    case "Live":
+                        ret = Environment.Live;
+                        break;
+                    case "Prelive":
+                        ret = Environment.Prelive;
+                        break;
+                    case "UAT":
+                        ret = Environment.UAT;
+                        break;
+                    case "Local":
+                        ret = Environment.Local;
+                        break;
+                }
+
+                return ret;
+            }
+        }
 
 
 
