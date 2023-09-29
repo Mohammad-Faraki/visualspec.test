@@ -1,5 +1,6 @@
 ﻿namespace Tests.Shared.Admin.Personas
 {
+    using Pangolin;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -15,5 +16,11 @@
         public const string firstPersonaOfFirstActor = "//*[@id='personasMainCanvas']//div[1]";
 
         public const string scorllableElement = "personas-content";
+
+
+        public const string addedPersona = "Name";
+        public const string editedPersona = "edited persona";
+
+        public static string firstPersonaThreeDotsContainer_XPath = $"{C.firstPersonaOfFirstActorSidebar}/div/a/{U.following_sibling_XPath}::div";
     }
 }

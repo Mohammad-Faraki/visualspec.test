@@ -24,7 +24,7 @@
             //*********** Edit persona (first persona of first actor)
             //string firstPersonaOfFirstActor = $"//*[@id='personasMainCanvas']//div[1]";
 
-            SetXPath($"{C.firstPersonaOfFirstActor}//input[@id='Name']").To("persona01");
+            SetXPath($"{C.firstPersonaOfFirstActor}//input[@id='Name']").To(C.editedPersona);
             SetXPath($"{C.firstPersonaOfFirstActor}//input[@id='Age']").To("25");
             SetXPath($"{C.firstPersonaOfFirstActor}//input[@id= 'Occupation']").To("test Occupation");
             SetXPath($"{C.firstPersonaOfFirstActor}//input[@id='PrimaryInterface']").To("test Primary Interface");
@@ -47,7 +47,7 @@
             ClickXPath($"{C.firstPersonaOfFirstActor}//input[@id='Name']");
             Thread.Sleep(3000);
             // in sidebar
-            ExpectXPath($"{C.firstPersonaOfFirstActorSidebar}//a[{U.XPathText(Casing.Exact, "persona01")}]");
+            ExpectXPath($"{C.firstPersonaOfFirstActorSidebar}//a[{U.XPathText(Casing.Exact, C.editedPersona)}]");
 
 
             RefreshPage();
@@ -58,8 +58,8 @@
 
             // in sidebar
             //ExpectXPath("/html/body//div[@class='left-panel']//li[1]//a[1]//div[text()='persona01']");
-            ////Expect("persona01");
-            ExpectXPath($"{C.firstPersonaOfFirstActorSidebar}//a[{U.XPathText(Casing.Exact, "persona01")}]");
+            ////Expect(C.editedPersona);
+            ExpectXPath($"{C.firstPersonaOfFirstActorSidebar}//a[{U.XPathText(Casing.Exact, C.editedPersona)}]");
 
             ExpectXPath($"{C.firstPersonaOfFirstActor}//input[@id='Name'][@value='persona01']");
             ExpectXPath($"{C.firstPersonaOfFirstActor}//input[@id='Age'][@value='25']");

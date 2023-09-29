@@ -9,7 +9,7 @@
 
     public static class C
     {
-        public const string formBottomSectionXPath = "//form[@data-module='FooterForm']";
+        public const string formBottomSectionXPath = "//div[@data-module='FooterForm']";
         public const string bottomSectionViewModeXPath = "//*[@data-module='ObjectView']";
 
 

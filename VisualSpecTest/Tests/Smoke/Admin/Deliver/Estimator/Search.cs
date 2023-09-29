@@ -23,7 +23,9 @@
 
 
             // Actor filter
-            NearLabel(That.Contains, "Actor").ClickButton("Nothing selected");
+            //NearLabel(That.Contains, "Actor").ClickButton("Nothing selected");
+            U.OpenDropdown(this, "Nothing selected",
+                $"//label[{U.XPathTextContains(Casing.Exact, "Actor")}]/{U.following_sibling_XPath}::div");
             // Select Admin_A Web App_Wide screen
             NearLabel(That.Contains, "Actor").ClickLink("Customer");
 

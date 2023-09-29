@@ -417,7 +417,7 @@
             if (atXPath != "")
                 uiTest.ClickXPath($"{atXPath}//{btnOpenDropdownXPath(dropdownBtnText)}");
             else
-                uiTest.ClickXPath(btnOpenDropdownXPath(dropdownBtnText));
+                uiTest.ClickXPath($"//{btnOpenDropdownXPath(dropdownBtnText)}");
         }
 
         #region Website
@@ -1471,7 +1471,8 @@
             Thread.Sleep(2000);
 
             uiTest.Set("Name").To(propertyName);
-            uiTest.ClickButton("---Select---");
+            //uiTest.ClickButton("---Select---");
+            U.OpenDropdown(uiTest, "---Select---");
             uiTest.NearButton("---Select---").ClickLink(propertyType);
 
             uiTest.ClickHeader("Property Details");

@@ -27,8 +27,8 @@
             WaitToSee(What.Contains, "Acceptance Criteria");
 
             ClickLink(That.Contains, "Edit");
-            string title = "User Journey Details";
-            WaitToSee("User Journey Details");
+            string editPopupTitle = "User Journey Details";
+            WaitToSee(editPopupTitle);
 
             Set(That.Contains, "Description").To(C.editedUserstory);
 
@@ -37,7 +37,7 @@
             ClickLink(U.feature01);
             ClickLink(U.feature02);
             //ClickButton(U.feature02);
-            ClickHeader(title);
+            ClickHeader(editPopupTitle);
 
 
             //ClickLabel("Designed"); doesn't exists anymore
@@ -46,14 +46,19 @@
             Thread.Sleep(5000);
             //WaitToSee(What.Contains, "Acceptance Criteria");
             ExpectHeader(That.Contains, C.editedUserstory);
-            Expect(What.Contains, U.feature02);
+            //Expect(What.Contains, U.feature02);
+            ClickLink(That.Contains, "Edit");
+            WaitToSee(editPopupTitle);
+            ExpectButton(U.feature02);
+            Click("Cancel");
+            Thread.Sleep(3000);
 
             //ClickXPath("//a[@name='UserStoriesList']");
             //WaitToSee("User Stories");
             U.OpenUserstories(this);
             Thread.Sleep(2000);
 
-            U.ScrollToBottom(this, Shared.Admin.Userstories.C.scrollable_mainContent);
+            U.ScrollToBottom(this, C.scrollable_mainContent);
             ExpectXPath($"//tr[last()]//*[text()='{C.editedUserstory}']");
             #region Commented checking Status
             //ExpectXPath($"//tr[last()]//span[@class='user-story-list-status--designed']");

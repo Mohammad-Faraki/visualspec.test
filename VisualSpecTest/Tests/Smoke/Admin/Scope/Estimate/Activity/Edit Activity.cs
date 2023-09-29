@@ -18,7 +18,7 @@
 
             //*********** Edit activity
             C.ScrollToLastActivity(this);
-            ClickXPath("//form[@data-module='OtherActivitiesList']//tr[last()]/td[5]/a[@name='Edit']/i");
+            ClickXPath("//form[@data-module='OtherActivitiesList']//tr[last()]/td[4]/a[@name='Edit']/i");
             WaitToSee(What.Contains, "Edit other activity");
             Set(That.Contains, "Activity").To(C.editedActiviy);
             if (U.environment == U.Environment.Prelive)
@@ -101,7 +101,7 @@
                 NearXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]").ClickLink("0.25");
             }
             // Save
-            ClickXPath("//form[@data-module='OtherActivitiesList']//tr[last()]/td[4]//a");
+            ////ClickXPath("//form[@data-module='OtherActivitiesList']//tr[last()]/td[4]//a");
             Thread.Sleep(3000);
             //ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]/div/div[1][@class='selected']");
             //ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]/div/div[2][@class='selected']");

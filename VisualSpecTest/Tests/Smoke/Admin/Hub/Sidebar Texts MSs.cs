@@ -48,7 +48,7 @@
             ExpectXPath($"//li[4]//ul//li[2]//a[{U.XPathTextContains(Casing.Exact, "Personas")}]");
             ExpectXPath($"//li[4]//ul//li[3]//a[{U.XPathTextContains(Casing.Exact, "Workflow Models")}]");
             ExpectXPath($"//li[4]//ul//li[4]//a[{U.XPathTextContains(Casing.Exact, "Wireframes")}]");
-            ExpectXPath($"//li[4]//ul//li[5]//a[{U.XPathTextContains(Casing.Exact, "User Journeys")}]");
+            ExpectXPath($"//li[4]//ul//li[6]//a[{U.XPathTextContains(Casing.Exact, "User Journeys")}]");
 
 
             // Test

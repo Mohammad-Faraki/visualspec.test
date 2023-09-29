@@ -17,7 +17,7 @@
 
             //*********** Delete activity
             C.ScrollToLastActivity(this);
-            ClickXPath("//form[@data-module='OtherActivitiesList']//tr[last()]/td[5]/a[@name='Edit']/i");
+            ClickXPath("//form[@data-module='OtherActivitiesList']//tr[last()]/td[4]/a[@name='Edit']/i");
             WaitToSee(What.Contains, "Edit other activity");
             Near(What.Contains, "Edit other activity").Click(What.Contains,"Delete");
             WaitToSee("Are you sure you want to delete this activity?");
