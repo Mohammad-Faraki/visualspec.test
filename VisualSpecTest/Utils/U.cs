@@ -1533,6 +1533,7 @@
                 uiTest.NearXPath(addExistingObjFormXPath).ClickLink($"P{i + 1 + Shared.Admin.ObjectMap.C.propTypes.Length}{Shared.Admin.ObjectMap.C.O1F1}");
             }
 
+            uiTest.ClickHeader("Add Existing Object");
             uiTest.ClickXPath($"{addExistingObjFormXPath}//*[{U.XPathText(Casing.Exact, "Save")}]");
             Thread.Sleep(3000);
             uiTest.ExpectXPath($"//span[{U.XPathText(Casing.Exact, $"{Shared.Admin.ObjectMap.C.O1F1}_Clone")}]");

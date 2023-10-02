@@ -26,7 +26,7 @@
 
             ClickXPath("//a[@name='Activity']");
             //Click("---Select---");
-            U.OpenDropdown(this, "Select type");
+            U.OpenDropdown(this, "---Select---");
             Click("Co-design workshop");
             Click("Save");
             WaitToSee("All Use Cases / Integrations");
