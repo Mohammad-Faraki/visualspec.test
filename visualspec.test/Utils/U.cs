@@ -15,17 +15,24 @@
     using OpenQA.Selenium.Support.Extensions;
     using Tests.Smoke.Admin.Estimator;
 
-    using System.Configuration;
     using AngleSharp.Dom;
     using OpenQA.Selenium;
     using OpenQA.Selenium.Support.UI;
     using SeleniumExtras.WaitHelpers;
+    //using System.Configuration;
+    using System.Xml.Serialization;
+    using visualspec.test;
+    using Newtonsoft.Json;
 
     public static class U
     {
         #region Test variables
 
-        private static string env = ConfigurationManager.AppSettings.Get("TestEnv");
+        //private static string env = ConfigurationManager.AppSettings.Get("TestEnv");
+        //private static string env = GetValueFromMainConfigXMLDocument("appSettings", "TestEnv");
+        private static string env = AppSettings.TestEnv;
+
+
         public static Environment environment
         {
             get
@@ -57,8 +64,11 @@
 
 
 
+        public static MyAppSettings AppSettings => GetAppSettings("myAppSettings.json");
 
-        public static string moreFiles_FolderPath = ConfigurationManager.AppSettings.Get("MoreFiles"); 
+
+        //public static string moreFiles_FolderPath = ConfigurationManager.AppSettings.Get("MoreFiles"); 
+        public static string moreFiles_FolderPath = AppSettings.MoreFiles;
         public const string credintialsFile_FileName = "credintials.txt";
         public static string credintialsFile_FullPath = moreFiles_FolderPath + "/" + credintialsFile_FileName;
         public static string AdminEmail => ReadFile_FirstLine(moreFiles_FolderPath, credintialsFile_FileName, createFileIsNotExist: false);
@@ -427,6 +437,20 @@
         #endregion
 
 
+        private static MyAppSettings GetAppSettings(string appSettingsJson)
+        {
+            MyAppSettings appSettings;
+
+
+            using (StreamReader r = new StreamReader(appSettingsJson))
+            {
+                string json = r.ReadToEnd();
+                appSettings = JsonConvert.DeserializeObject<MyAppSettings>(json);
+            }
+
+            return appSettings;
+        }
+
         public static void AddFeature(UITest uiTest, string name)
         {
             uiTest.ClickXPath(btnAddFeatureXPath);
@@ -446,6 +470,32 @@
             uiTest.WaitToSee("Deleting this feature will delete all its associated data in other microservices. Are you sure you want to delete this feature?");
             uiTest.Click("OK");
         }
+
+        #region Commented getting xml value (provided by Hossein Esmaili)
+        //public static string GetValueFromMainConfigXMLDocument(string section, string key)
+        //{
+        //    var fileMap = new ExeConfigurationFileMap
+        //    {
+        //        ExeConfigFilename = "app.config",
+        //        LocalUserConfigFilename = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Debug\\net7.0\\" + "app.config",
+        //        MachineConfigFilename = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName + "\\Debug\\net7.0\\" + "app.config"
+        //    };
+        //    var MainConfig = System.Configuration.ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);
+
+
+        //    var appSetting = MainConfig.GetSection(section);
+        //    var rawXMLAppSetting = appSetting.SectionInformation.GetRawXml();
+
+        //    XmlSerializer serializer = new XmlSerializer(typeof(MyAppSettings));
+        //    MemoryStream memStream = new MemoryStream(Encoding.UTF8.GetBytes(rawXMLAppSetting));
+        //    MyAppSettings resultingMessage = (MyAppSettings)serializer.Deserialize(memStream);
+
+        //    //return ((AppSettingsSection)MainConfig.GetSection(section)).Settings[key]?.Value;
+        //    return (appSetting as AppSettingsSection).Settings[key]?.Value;
+        //} 
+        #endregion
+
+
         /// <summary>
         /// 
         /// </summary>

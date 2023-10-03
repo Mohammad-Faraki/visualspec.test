@@ -8,11 +8,18 @@
     using System.Security.Cryptography.X509Certificates;
     using System.Text;
     using System.Threading.Tasks;
+    
 
     public static class C
     {
         public const string addedActiviy = "activity01";
         public const string editedActiviy = "activity02";
+
+        public const string addedIntegration = "integration01";
+        public const string editedIntegration = "integration01 edited";
+
+        public const string btnEditIntegraionXPath = "//form[@data-module='IntegrationsWithFeatureList']//tr[last()]//a[@name='Edit']";
+        public const string formIntegrationXPath = "//form[@data-module='IntegrationForm']";
 
         public static int IntegrationTable_Y(UITest uiTest) => uiTest.WebDriver.FindElement(By.XPath("//form[@data-module='IntegrationsWithFeatureList']")).Location.Y;
         public static void ScrollToLastActivity(UITest uiTest)
