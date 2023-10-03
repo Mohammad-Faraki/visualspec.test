@@ -373,4 +373,8 @@ VisualSpecTest/Screenshots/
 
 VisualSpecTest/app.config
 
+
+visualspec.test/Screenshots/
+visualspec.test/app.config
+
 # ******************* My gitignore *******************
