@@ -1,0 +1,22 @@
+﻿<ImpactFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  Name="AddNewAdminstrator.sXlegfDGHGQePkZawk68DDv80XQ"
+  DataBaseCommand="&lt;Changes&gt;&#xD;&#xA;  &lt;Change Command=&quot;INSERT INTO Users ([Email], [FirstName], [IsDeactivated], [LastName], [Password], [Salt], [ID])&amp;#xD;&amp;#xA;                &amp;#xD;&amp;#xA;                VALUES (@Email, @FirstName, @IsDeactivated, @LastName, @Password, @Salt, @ID)&quot;&gt;&#xD;&#xA;    &lt;Param Name=&quot;Email&quot; Value=&quot;chandler@uat.co&quot; Type=&quot;String&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;FirstName&quot; Value=&quot;Chandler&quot; Type=&quot;String&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;IsDeactivated&quot; Value=&quot;false&quot; Type=&quot;Boolean&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;LastName&quot; Value=&quot;Bing&quot; Type=&quot;String&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;Password&quot; Value=&quot;¦¦nil¦¦&quot; Type=&quot;String&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;Salt&quot; Value=&quot;¦¦nil¦¦&quot; Type=&quot;String&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;ID&quot; Value=&quot;dd53f667-c7a7-af5b-6eee-82fca9af1ec8&quot; Type=&quot;Guid&quot; /&gt;&#xD;&#xA;  &lt;/Change&gt;&#xD;&#xA;  &lt;Change Command=&quot;INSERT INTO Administrators ([ImpersonationToken], [ID])&amp;#xD;&amp;#xA;                &amp;#xD;&amp;#xA;                VALUES (@ImpersonationToken, @ID)&quot;&gt;&#xD;&#xA;    &lt;Param Name=&quot;ImpersonationToken&quot; Value=&quot;¦¦nil¦¦&quot; Type=&quot;String&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;ID&quot; Value=&quot;dd53f667-c7a7-af5b-6eee-82fca9af1ec8&quot; Type=&quot;Guid&quot; /&gt;&#xD;&#xA;  &lt;/Change&gt;&#xD;&#xA;  &lt;Change Command=&quot;INSERT INTO PasswordResetTickets ([User], [DateCreated], [IsUsed], [ID])&amp;#xD;&amp;#xA;                &amp;#xD;&amp;#xA;                VALUES (@User, @DateCreated, @IsUsed, @ID)&quot;&gt;&#xD;&#xA;    &lt;Param Name=&quot;User&quot; Value=&quot;dd53f667-c7a7-af5b-6eee-82fca9af1ec8&quot; Type=&quot;Guid&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;DateCreated&quot; Value=&quot;2021-07-07T17:27:59.9245577+01:00&quot; Type=&quot;DateTime2&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;IsUsed&quot; Value=&quot;false&quot; Type=&quot;Boolean&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;ID&quot; Value=&quot;820e0a6e-9da7-9b39-41d8-869423c9b26d&quot; Type=&quot;Guid&quot; /&gt;&#xD;&#xA;  &lt;/Change&gt;&#xD;&#xA;&lt;/Changes&gt;"
+  Url="admin/settings/administrators">
+  <Files />
+  <SecureFiles />
+  <Cookies>
+    <ImpactFileCookie>
+      <Name>.myAuth</Name>
+      <Value>CfDJ8ORKPneZhHpJu32_GFNyIn6jpJAiLlBUwRW58aHEvoRYF8nl9B94KMgnOF_nGxecsp0RIKti5SombRpWbeNpYMIWDPrLqG6kayKHogcBLtAHNAKYYXQw23Jurph-IszygXrXB7pc01fd1skKMAU2jGzRSvfUm0S2kTK1R517rcx0ZDIFeJOJVh_RGiI9j2FpSIjFsLNgIe1DjNyRu2tuMD4OkUiUBx2sEAHJm59TavanEe5Dwg3N4wucZ-zQUQOJ66JhOY666DfgefkXTMoBR1nfTf9cJxKdzyQ1hesiXEO7tHpkA6iRY2ZtAmpetJVG73iDcVlK3cD6g6iQUy-JYCLiytAADKyX80irSIdiJEyITzW8T3lRpIAI4v5ihcuyYg5KiUC_kOEq8wB_IseAD9huAxeV13Ws8ogGIViN_D7cICqarGEQVd9sdIeYd9EwVZyjri1aKD7qXSe-Ax6O0y7yEE7wFAmFJ-gwZkrm0P9DfR3oB5vMeFY1cEtXLJSgAgrAyBVoYQ8cEcfCJGqaJd2MDcj_qLnTQPtdlY6rblK4Qg6G7peShL1aJg9W0zSt1lOxrn_41m5Z89ByI8zXMtITGFE11_56v_7dTNlzpyNJIHdf0ksKHxbc5nl6bSsFvYjNk-TS5lrXGiGWk_wRMHue-mI1xqVbmU29Slbbu8lwMfFXKZlOmTzSHhqbV-_D1r-tIZpj1OuxSpM_nJlCY8NeWSscYpgV6GVpzig75whZAwmEOQB8vs0SucJZkphEdhWau0vmHnx7A0rGIGPRsBXFxJWNotU7xp87IQbRHhzNZLOLibooIPdFe_t9b0s2wMnWKfTsf5haobGQsFWz4O6lG03NedwJ2xU1tqdxrKfFkA2xHnf51ZcqMYwDs0ZJ0Ucz4spUfWLS0jfVZyzovU7rWxOi9037IacLuksMMl1fWt92YvUCM5SYuaW2NcdSxw</Value>
+      <Path>/</Path>
+      <Expiry>2021-07-08T17:27:54+01:00</Expiry>
+    </ImpactFileCookie>
+    <ImpactFileCookie>
+      <Name>.AspNetCore.Antiforgery.iGcCR2IURiw</Name>
+      <Value>CfDJ8ORKPneZhHpJu32_GFNyIn6oalAXS4NPHImKwFtRRIgBTP9KJAMbzOcT2R97aV_hB3QfJfPlLWBhUSasP9HWWSvuhv6q7-5OTXfkahX_6ir3QULHsQs4IfZptt6-jfZIifXNuLKT1eo4Ha50GQb1u5k</Value>
+      <Path>/</Path>
+      <Expiry
+        xsi:nil="true" />
+    </ImpactFileCookie>
+  </Cookies>
+</ImpactFile>

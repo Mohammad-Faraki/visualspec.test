@@ -1,0 +1,22 @@
+﻿<ImpactFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  Name="CarolAdmin.fZwLGeQStKeDYpAhOCrf9jma4"
+  DataBaseCommand="&lt;Changes /&gt;"
+  Url="admin/settings/general">
+  <Files />
+  <SecureFiles />
+  <Cookies>
+    <ImpactFileCookie>
+      <Name>.myAuth</Name>
+      <Value>CfDJ8ORKPneZhHpJu32_GFNyIn6svMszoQZdNzHsMAEC2MfuIgKhrgb1l0xdv2pQKGGIunzV-yG_-OdbXAIpnrjb1-STQMPMyv3j0fkoyAndE8w5H4WZxAgGQIDHBGzqmN8ro6LZFUV7crdKElIwB_BL6CkW3WAXHGQQl8ODEAYvPZpSnJ70CorjQfrg3sKnadzAxz1hlsufxUhTABSjgJA33UfxQM6hWeI_6mvMRR9wbXuxhPQPhnc3pw2ulczk6ca6e0s0Z78itAUKZ-aL_C7NZB2L5UdYCJtJECkts_eWo_sI5eU0Yht5SwmsFBWE81gVuDgMdugQ2gVFkfnVRixW4gwzHbgimECBJQL5Wpr5H0DXh55XXO3aVVlthKOKT-2A292sZjhnE1ALBNQyYq2TnHau0AQlOcdoI7T-k01upN8FyenrXG9kPCkgHYAh0dW1Wci0c2wym9CUs03qg1plWwRqUWT03KY88ipFoCuTz6Zk_dYRjyAlSEjFeZhJX2UZRKZNqgQuSzB6zI5_aWYEYzWKfMWXmn7GJdVoCzIq1KCG1VjXN5xgxVyip7-Kyp4D-Mjes5e4R43jOPqd9lxKgMlPikVpawJvhKUnuI2yrAlZ732xtYynoQWk50VQOUeNZGFv4WpcO3RjQiUc5wl8vad1XaD2vA5IOCMWLLahvcGc5X_Dtjrbz3vwRwCUFNc2-SAv6HyBX1HR1HrX-D_idDtGfUWWk2Y-kb4g-U6QS6WgD88Kp3rPymHRibgi_to52pUmxOhVvxycY2Kfxiua2oGqL9FB6lPHEuMB06uTHiip6gaU57mO9jD0babdGgPcJcrSHpZBsI4UBDy78a6DlzsMUcg4eY330iK2YmppsSvLGk2Zz7sTBrJDCMwRP33RupVxh9_uX-V1k-klr-1SheP_mFQoNIG9Wmff7S9_aCqiclU9SgTWdLj8RGCBTBR_kQ</Value>
+      <Path>/</Path>
+      <Expiry>2021-07-08T17:37:15+01:00</Expiry>
+    </ImpactFileCookie>
+    <ImpactFileCookie>
+      <Name>.AspNetCore.Antiforgery.iGcCR2IURiw</Name>
+      <Value>CfDJ8ORKPneZhHpJu32_GFNyIn62_TId8nMeXs-Ng8hOdHEu3FX1RNi2l1WKS6a62Dl9uIEeimweA6AkhvKeMEi-26VPx-WLtGYOM1_bFSsr4b4lF5lcGsJHjPXt9KJzplBN9QC3XjnbOLig4hNh3aehKT0</Value>
+      <Path>/</Path>
+      <Expiry
+        xsi:nil="true" />
+    </ImpactFileCookie>
+  </Cookies>
+</ImpactFile>

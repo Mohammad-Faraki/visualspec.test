@@ -1,0 +1,23 @@
+﻿<ImpactFile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  Name="ManageAdministrator.K6I43xaPC6L0vbwhjQOu9k1QtIc"
+  DataBaseCommand="&lt;Changes&gt;&#xD;&#xA;  &lt;Change Command=&quot;UPDATE Users SET&amp;#xD;&amp;#xA;                [Email] = @Email, [FirstName] = @FirstName, [IsDeactivated] = @IsDeactivated, [LastName] = @LastName, [Password] = @Password, [Salt] = @Salt&amp;#xD;&amp;#xA;                WHERE ID = @OriginalId&quot;&gt;&#xD;&#xA;    &lt;Param Name=&quot;Email&quot; Value=&quot;ross@uat.co&quot; Type=&quot;String&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;FirstName&quot; Value=&quot;Ross&quot; Type=&quot;String&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;IsDeactivated&quot; Value=&quot;false&quot; Type=&quot;Boolean&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;LastName&quot; Value=&quot;Galler&quot; Type=&quot;String&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;Password&quot; Value=&quot;¦¦nil¦¦&quot; Type=&quot;String&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;Salt&quot; Value=&quot;¦¦nil¦¦&quot; Type=&quot;String&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;ID&quot; Value=&quot;b4bf72ac-fe40-7d14-860b-35c89dc83970&quot; Type=&quot;Guid&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;OriginalId&quot; Value=&quot;b4bf72ac-fe40-7d14-860b-35c89dc83970&quot; Type=&quot;Guid&quot; /&gt;&#xD;&#xA;  &lt;/Change&gt;&#xD;&#xA;  &lt;Change Command=&quot;UPDATE Administrators SET&amp;#xD;&amp;#xA;                [ImpersonationToken] = @ImpersonationToken&amp;#xD;&amp;#xA;                WHERE ID = @OriginalId&quot;&gt;&#xD;&#xA;    &lt;Param Name=&quot;ImpersonationToken&quot; Value=&quot;¦¦nil¦¦&quot; Type=&quot;String&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;ID&quot; Value=&quot;b4bf72ac-fe40-7d14-860b-35c89dc83970&quot; Type=&quot;Guid&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;OriginalId&quot; Value=&quot;b4bf72ac-fe40-7d14-860b-35c89dc83970&quot; Type=&quot;Guid&quot; /&gt;&#xD;&#xA;  &lt;/Change&gt;&#xD;&#xA;&lt;/Changes&gt;"
+  Url="admin/settings/administrators">
+  <Files />
+  <SecureFiles />
+  <Cookies>
+    <ImpactFileCookie>
+      <Name>.myAuth</Name>
+      <Value>CfDJ8OOVL3jKplBLkCrheMWisYO254Yz66wNh_RlG2K_8sJjwxeCvK3eEBA9nWR6kDi52NkuGTiFxa2uWtALKkMlTc8V5Uyqej1o6R_jbVvb627BrUkrcWrbhx_-OnIp_avyaHaEnbUS2rVU2Fij6gbc-meviZJJCTeMwtZawFSiVtUMzElyZO8liz8E66mNowTJZ7-qIb-sGGCB0PzTYmh-WsDKbk1j2TzsbeTR0LgH0MMdtrr_15-IvJBsbQcg-93ococCx7-ZLsmqnaQ9zYGCsawA1Qd7QwFqZV6FKm8Z6tkXJg2xPpuJU6SEw6Gq4sxSktteyopHIhD7FpmSh_SwC3cDy9I9dOLNoZkwyGoEbPW3dTaW8wl39WRwRAllJMTfdartTwwUcRXoNRLpUEXNw0oqCy6ZkNPtHbbao3qFZklHMu1vWyjdFckcl5RlkiKV4C_ZMOoZD4VZTXc9t7YQ9ZwKIv8pg7ow4JqtjXlBRSNFZmpZILLI-fKovea8895GlXXaILNuDTLwisdtYxMlctPTusoRCAle1Y4y3VjlZLjXGs9dqf5vbKNXYUimncV0bDqahgTfTba4eRc5qMkkS8HpJOs027OhL09LE7gDEggh-1TvS8ORnMj4BL69uj8jU1IJ9ZiIbQNXqD1mUSFxXQ3v_CpWT6lPD32PwHWMfwcjq_mUUvua122YB4RXLagT0tqZ4iC5jqoMJdrcBNfvuwNtxixJbXp3PPaym4V4lTbEjhJxBB0icqCXkAM0JL-oqaplTUMCDT_QpDbVmh41ufgfC6vRO-5Fdq-V5IouBJimgfSeqO0loo4gkwL_aWfO9vEotNsXpoe36I8c-XE1hNwtpBQcQ-g7t87f3h52TqaRiYbubbDarmU3HXQyyxeKhgMG381_5JMrmpVWi6TckRNSqI0pua8BdgcWdLdZyf0CZiMM6kIAoaia7VqYIrdqCw</Value>
+      <Path>/</Path>
+      <Expiry
+        xsi:nil="true" />
+    </ImpactFileCookie>
+    <ImpactFileCookie>
+      <Name>.AspNetCore.Antiforgery.lGFmtVkhg2A</Name>
+      <Value>CfDJ8OOVL3jKplBLkCrheMWisYOIEVYL9G0tIQ0V5dglyIICIJJ3f6QaZ9pEHU3GpvvAChRtJ6rv4fYKlYp_XjvKDdmwEGeqC5899kAzgQXiAbzDKq8S1kUIjgRcQbFevO_0RWnDYkEs-HskSDYkQQjNteo</Value>
+      <Path>/</Path>
+      <Expiry
+        xsi:nil="true" />
+    </ImpactFileCookie>
+  </Cookies>
+</ImpactFile>

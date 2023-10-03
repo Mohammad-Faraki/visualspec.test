@@ -1,0 +1,22 @@
+﻿<ImpactFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  Name="AddNewContact.pO3O7Thd1iEjZRJEdzmKopukiQ"
+  DataBaseCommand="&lt;Changes&gt;&#xD;&#xA;  &lt;Change Command=&quot;INSERT INTO Contacts ([FirstName], [LastName], [PhoneNumber], [ID])&amp;#xD;&amp;#xA;                &amp;#xD;&amp;#xA;                VALUES (@FirstName, @LastName, @PhoneNumber, @ID)&quot;&gt;&#xD;&#xA;    &lt;Param Name=&quot;FirstName&quot; Value=&quot;Monica&quot; Type=&quot;String&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;LastName&quot; Value=&quot;Galler&quot; Type=&quot;String&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;PhoneNumber&quot; Value=&quot;05061231212&quot; Type=&quot;String&quot; /&gt;&#xD;&#xA;    &lt;Param Name=&quot;ID&quot; Value=&quot;77135bb2-6331-8194-7eb3-b01fd23c4b9b&quot; Type=&quot;Guid&quot; /&gt;&#xD;&#xA;  &lt;/Change&gt;&#xD;&#xA;&lt;/Changes&gt;"
+  Url="contact/contacts">
+  <Files />
+  <SecureFiles />
+  <Cookies>
+    <ImpactFileCookie>
+      <Name>.myAuth</Name>
+      <Value>CfDJ8ORKPneZhHpJu32_GFNyIn6-K-aT7_dnmIApCvfP_MYSXjqp9KHrSKf2Ufz-bw5-vcGSjC3J4Nvucbg0Ad_EEoxIwvJvdUUJ5wzsrDMjgF4S97xgAXpYxGxK3SFE-aQFLm_JiCvSwnj_YXjJUVcyL6VpflBLhN2n6HHYUC1PgOQXgfiS9pgw3o0v_fl1_5iWHTlsxFnPXeTVqo5k-duIt6JUE_mo4I0i8UHZyYk7CUcsz0z8-yZ2Ei88ZB8HqWNBt9jSIc4Et6D6DLxT0pIkkaiE12aEMd3NELSEJXrnOttM_JtsTp8D-xO0lmUVWaWdCxV2JCSDyHQOHyrpJXXyoPoLpuV_DI3xgCyt4S5oPLsiMQOdB8znp2_0ijo2guAPzNbix5hDhT9R--ttV9N7CKbAU308ZUoP7lZythXpDmYOk6qABuEmi-R3kkWySP7_mn62nFYmWuRwtATwsN6jxp4hzwb1r_Kd8OyDlkcFHucumY-GpSBCs2xQV9V6CdV2O7SsydsCGCRFalezrjOV6ylUxJbrSME4WQBF5qDs2Bm8hz_YwTxIk2A6ibCnRYkJwB5Y-aGvDfdw7tcWKoI44Ih09U21zfJhyvpLxw7fvg_AwCdTuLMxZcktyH0dkrHvkKRao6TLiuXCV0C4ngRwgLCaRiBxxdo4_RKJOlKr6DfpjfijQ5nSK2F1NDQPHIqOBkZJoPxjS4NWW5M46fwAPXPQuWg0yQHCcR3LTbdNbyG_Olq_cSpJCygcN4vWHUvHn5_i7tZe2iwKbDNcX8QlmsfcseCKnLanq3RHV3nSJIBbRxS8xBb1LwTbtzvf436hEytOWnqbObvlnpaUH5xKA37IzpuBMDJdKJbWz-KB3ncgBrUbDdPn-9G4NrH4anfxasPrLrLsmGjtml83VAJqfC8brbnA7i1Wp05LCmm_YjEpMr8DKLV6-86d1x_AoWNQog</Value>
+      <Path>/</Path>
+      <Expiry>2021-07-08T17:32:54+01:00</Expiry>
+    </ImpactFileCookie>
+    <ImpactFileCookie>
+      <Name>.AspNetCore.Antiforgery.iGcCR2IURiw</Name>
+      <Value>CfDJ8ORKPneZhHpJu32_GFNyIn5mjjTH0tE7NU__moVk8dEssrWiIpS3shQo5k9r7S9SlhFM4sVSX6K7PjW5IM-CBLnRcozD24Kh36G427LBabl3f0yfzdBt2uK6hLrhIW2N98nowDX9n465OB5g9eHx6vA</Value>
+      <Path>/</Path>
+      <Expiry
+        xsi:nil="true" />
+    </ImpactFileCookie>
+  </Cookies>
+</ImpactFile>
