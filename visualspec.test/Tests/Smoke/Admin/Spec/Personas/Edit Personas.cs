@@ -61,7 +61,7 @@
             ////Expect(C.editedPersona);
             ExpectXPath($"{C.firstPersonaOfFirstActorSidebar}//a[{U.XPathText(Casing.Exact, C.editedPersona)}]");
 
-            ExpectXPath($"{C.firstPersonaOfFirstActor}//input[@id='Name'][@value='persona01']");
+            ExpectXPath($"{C.firstPersonaOfFirstActor}//input[@id='Name'][@value='{C.editedPersona}']");
             ExpectXPath($"{C.firstPersonaOfFirstActor}//input[@id='Age'][@value='25']");
             ExpectXPath($"{C.firstPersonaOfFirstActor}//input[@id= 'Occupation'][@value='test Occupation']");
             ExpectXPath($"{C.firstPersonaOfFirstActor}//input[@id='PrimaryInterface'][@value='test Primary Interface']");
