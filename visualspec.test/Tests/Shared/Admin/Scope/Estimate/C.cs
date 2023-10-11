@@ -21,6 +21,10 @@
         public const string btnEditIntegraionXPath = "//form[@data-module='IntegrationsWithFeatureList']//tr[last()]//a[@name='Edit']";
         public const string formIntegrationXPath = "//form[@data-module='IntegrationForm']";
 
+        public const string scrollable_mainContent = "scope-content";
+
+        public const string listIntegrationsXPath = "//*[@data-module='IntegrationsWithFeatureList']";
+
         public static int IntegrationTable_Y(UITest uiTest) => uiTest.WebDriver.FindElement(By.XPath("//form[@data-module='IntegrationsWithFeatureList']")).Location.Y;
         public static void ScrollToLastActivity(UITest uiTest)
         {

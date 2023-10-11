@@ -428,6 +428,13 @@
             else
                 uiTest.ClickXPath($"//{btnOpenDropdownXPath(dropdownBtnText)}");
         }
+        public static void ExpectDropdown(UITest uiTest, string dropdownBtnText, string atXPath = "")
+        {
+            if (atXPath != "")
+                uiTest.ExpectXPath($"{atXPath}//{btnOpenDropdownXPath(dropdownBtnText)}");
+            else
+                uiTest.ExpectXPath($"//{btnOpenDropdownXPath(dropdownBtnText)}");
+        }
 
         #region Website
         public static string frmProjectDetailsXPath = $"//form[{XPathAttributeContains("action", "Edit-project")}]";
