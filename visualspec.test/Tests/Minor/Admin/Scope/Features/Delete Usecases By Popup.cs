@@ -21,16 +21,16 @@
 
             //*********** Edit usecase
             //Click(MyUtils.f1Usecase1);
-            ClickXPath(U.btnThreeDotsUsecaseXPath(featureIndex: 1, usecaseIdx: 1));
-            ClickXPath($"{U.usecaseXPath(featureIndex: 1, usecaseIdx: 1)}//a[@name='EditUseCase']");
+            ClickXPath(Utils.btnThreeDotsUsecaseXPath(featureIndex: 1, usecaseIdx: 1));
+            ClickXPath($"{Utils.usecaseXPath(featureIndex: 1, usecaseIdx: 1)}//a[@name='EditUseCase']");
             WaitToSee(What.Contains, "Edit usecase");
 
             AtXPath(C.formUsecase).Click("Delete");
             Expect("Deleting this use case will delete all its associated data in other microservices. Are you sure you want to delete this use case?");
             Click("OK");
             Thread.Sleep(4000);
-            U.ScrollToBottom(this, C.scrollable_scopeFeatures_treeView);
-            ExpectNo(U.f1Usecase1);
+            Utils.ScrollToBottom(this, C.scrollable_scopeFeatures_treeView);
+            ExpectNo(Utils.f1Usecase1);
         }
         
     }

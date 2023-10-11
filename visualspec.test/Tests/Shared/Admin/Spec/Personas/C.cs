@@ -21,6 +21,6 @@
         public const string addedPersona = "Name";
         public const string editedPersona = "edited persona";
 
-        public static string firstPersonaThreeDotsContainer_XPath = $"{C.firstPersonaOfFirstActorSidebar}/div/a/{U.following_sibling_XPath}::div";
+        public static string firstPersonaThreeDotsContainer_XPath = $"{C.firstPersonaOfFirstActorSidebar}/div/a/{Utils.following_sibling_XPath}::div";
     }
 }

@@ -24,7 +24,7 @@
     using visualspec.test;
     using Newtonsoft.Json;
 
-    public static class U
+    public static class Utils
     {
         #region Test variables
 
@@ -132,7 +132,7 @@
         /// <param name="headerText"></param>
         /// <returns></returns>
         public static string header_XPath(string headerText, Casing casing)
-            => $"//h1[{U.XPathText(casing, headerText)}] | //h2[{U.XPathText(casing, headerText)}] | //h3[{U.XPathText(casing, headerText)}] | //h4[{U.XPathText(casing, headerText)}] | //h5[{U.XPathText(casing, headerText)}] | //h6[{U.XPathText(casing, headerText)}]";
+            => $"//h1[{Utils.XPathText(casing, headerText)}] | //h2[{Utils.XPathText(casing, headerText)}] | //h3[{Utils.XPathText(casing, headerText)}] | //h4[{Utils.XPathText(casing, headerText)}] | //h5[{Utils.XPathText(casing, headerText)}] | //h6[{Utils.XPathText(casing, headerText)}]";
 
         /// <summary>
         /// Return value will be a xpath, so you can add it to another xpath or before another xpath. return value: $"//h1[{U.XPathTextContains(Casing.Exact, headerText)}] | //h2[{U.XPathTextContains(Casing.Exact, headerText)}] | //h3[{U.XPathTextContains(Casing.Exact, headerText)}] | //h4[{U.XPathTextContains(Casing.Exact, headerText)}] | //h5[{U.XPathTextContains(Casing.Exact, headerText)}] | //h6[{U.XPathTextContains(Casing.Exact, headerText)}]";
@@ -140,7 +140,7 @@
         /// <param name="headerText"></param>
         /// <returns></returns>
         public static string headerContains_XPath(string headerText, Casing casing)
-            => $"//h1[{U.XPathTextContains(casing, headerText)}] | //h2[{U.XPathTextContains(casing, headerText)} ] | //h3[ {U.XPathTextContains(casing, headerText)}] | //h4[{U.XPathTextContains(casing, headerText)} ] | //h5[ {U.XPathTextContains(casing, headerText)}] | //h6[{U.XPathTextContains(casing, headerText)}]";
+            => $"//h1[{Utils.XPathTextContains(casing, headerText)}] | //h2[{Utils.XPathTextContains(casing, headerText)} ] | //h3[ {Utils.XPathTextContains(casing, headerText)}] | //h4[{Utils.XPathTextContains(casing, headerText)} ] | //h5[ {Utils.XPathTextContains(casing, headerText)}] | //h6[{Utils.XPathTextContains(casing, headerText)}]";
 
 
 
@@ -403,8 +403,8 @@
         public static string btnEditAppXPath(string appName) => $"//*[@data-module='TreeApplications']//li[{XPathHasElement($"a[{XPathText(Casing.Exact, appName)}]")}]//a[{XPathTextContains(Casing.Exact, "Edit")}]";
 
 
-        public static string btnAddObjXPath = $"//form[@data-module='ObjectMapDiagram']//div[{U.XPathAttributeContains("class", "dropstart")}]/button";
-        public static string btnAddWorklowXPath(string featureName) => $"//button[{U.XPathHasElement($"*[{U.XPathTextContains(Casing.Exact, featureName)}]")}]/following-sibling::a";
+        public static string btnAddObjXPath = $"//form[@data-module='ObjectMapDiagram']//div[{Utils.XPathAttributeContains("class", "dropstart")}]/button";
+        public static string btnAddWorklowXPath(string featureName) => $"//button[{Utils.XPathHasElement($"*[{Utils.XPathTextContains(Casing.Exact, featureName)}]")}]/following-sibling::a";
 
         /// <summary>
         /// Plus icon to open nodes toolbox
@@ -420,7 +420,7 @@
         /// <returns></returns>
         //public static string btnOpenDropdownXPath(string btnText) => $"button[{U.XPathHasElement($"*[{U.XPathText(Casing.Exact, btnText)}]")}]";
         ////public static string btnOpenDropdownXPath(string btnText) => $"*[{U.XPathText(Casing.Exact, btnText)}]";
-        public static string btnOpenDropdownXPath(string btnText) => $"div[{U.XPathText(Casing.Exact, btnText)}]";
+        public static string btnOpenDropdownXPath(string btnText) => $"div[{Utils.XPathText(Casing.Exact, btnText)}]";
         public static void OpenDropdown(UITest uiTest, string dropdownBtnText, string atXPath = "")
         {
             if (atXPath != "")
@@ -542,11 +542,11 @@
             //uiTest.ClickXPath($"{usecaseFormXPath}//div[5]//span[text()='{actorName}']");
             //uiTest.NearXPath($"{usecaseFormXPath}").ClickLink(actorName);
             var actorDropdownXPath = $"{usecaseFormXPath}//div[5]//div[@role='listbox']";
-            var actorCheckBoxXPath = $"{actorDropdownXPath}//a[{XPathHasDirectElement($"*[{U.XPathText(Casing.Exact, actorName)}]")}]";
+            var actorCheckBoxXPath = $"{actorDropdownXPath}//a[{XPathHasDirectElement($"*[{Utils.XPathText(Casing.Exact, actorName)}]")}]";
             var attributeName = "aria-selected";
             //var checkBoxElement_Js = JsCodeToGetHTMLElementJS_ByXPath(actorCheckBoxXPath);
             //var selectedAttributeVal = U.ExecuteJS_ReturnValue(uiTest, $"{checkBoxElement_Js}.getAttribute('{attributeName}')");
-            var selectedAttributeVal = U.GetHtmlElementAttribute(uiTest, actorCheckBoxXPath, attributeName);
+            var selectedAttributeVal = Utils.GetHtmlElementAttribute(uiTest, actorCheckBoxXPath, attributeName);
             bool wasSelected = selectedAttributeVal == "true" ? true : false;
 
             if (!wasSelected || (wasSelected && unselectIfSelected == true))
@@ -651,7 +651,7 @@
                     //CD[lower-case(@title)='empire burlesque']
                     var lowercasedText = elementText.ToLower();
                     //ret = $"lower-case(text())='{lowercasedText}'";
-                    ret = $"{U.XPathFunction_ToLowerCase("text()")}='{lowercasedText}'";
+                    ret = $"{Utils.XPathFunction_ToLowerCase("text()")}='{lowercasedText}'";
                     break;
             }
 
@@ -668,7 +668,7 @@
                 case Casing.Ignore:
                     //CD[lower-case(@title)='empire burlesque']
                     var lowercasedText = elementText.ToLower();
-                    ret = $"contains({U.XPathFunction_ToLowerCase("text()")}, '{lowercasedText}')";
+                    ret = $"contains({Utils.XPathFunction_ToLowerCase("text()")}, '{lowercasedText}')";
                     break;
             }
 
@@ -892,7 +892,7 @@
             uiTest.ClickXPath(estimator_Sign_XPath);
             //Thread.Sleep(2000);
         }
-        public static string scope_Estimate_Sign_XPath = U.headerContains_XPath("Solution Design Activities",Casing.Exact);
+        public static string scope_Estimate_Sign_XPath = Utils.headerContains_XPath("Solution Design Activities",Casing.Exact);
         public static void OpenEstimate(UITest uiTest)
         {
             uiTest.ClickXPath(scopeSidebarIcon_XPath);
@@ -906,7 +906,7 @@
             uiTest.ClickXPath(scope_Estimate_Sign_XPath);
             //Thread.Sleep(2000);
         }
-        public static string northstar_Sign_XPath = U.headerContains_XPath("Supporting Info", Casing.Exact);
+        public static string northstar_Sign_XPath = Utils.headerContains_XPath("Supporting Info", Casing.Exact);
         public static void OpenNorthstar(UITest uiTest)
         {
             uiTest.ClickXPath(scopeSidebarIcon_XPath);
@@ -938,7 +938,7 @@
             //Thread.Sleep(2000);
         }
 
-        public static string plan_Sign_XPath = U.header_XPath("Stakeholders", Casing.Exact);
+        public static string plan_Sign_XPath = Utils.header_XPath("Stakeholders", Casing.Exact);
         public static void OpenPlan(UITest uiTest)
         {
             uiTest.ClickXPath(scopeSidebarIcon_XPath);
@@ -958,7 +958,7 @@
             //Thread.Sleep(2000);
         }
 
-        public static string userJourneys_Sign_XPath = $"//a[{U.XPathText(Casing.Exact, "User Story")}]";
+        public static string userJourneys_Sign_XPath = $"//a[{Utils.XPathText(Casing.Exact, "User Story")}]";
         public static void OpenUserstories(UITest uiTest)
         {
             uiTest.ClickXPath(scopeSidebarIcon_XPath);
@@ -975,7 +975,7 @@
             //Thread.Sleep(2000);
         }
 
-        public static string workflow_Sign_XPath = U.header_XPath("Workflow Models", Casing.Ignore);
+        public static string workflow_Sign_XPath = Utils.header_XPath("Workflow Models", Casing.Ignore);
         public static void OpenWorkflow(UITest uiTest)
         {
             uiTest.ClickXPath(scopeSidebarIcon_XPath);
@@ -992,7 +992,7 @@
             //Thread.Sleep(2000);
         }
 
-        public static string Objectmap_Sign_XPath = U.btnAddObjXPath;
+        public static string Objectmap_Sign_XPath = Utils.btnAddObjXPath;
         public static void OpenObjectmap(UITest uiTest)
         {
             uiTest.ClickXPath(scopeSidebarIcon_XPath);
@@ -1037,7 +1037,7 @@
             //Thread.Sleep(2000);
         }
 
-        public static string cognitive_Sign_XPath = U.headerContains_XPath("Cognitive Walkthroughs", Casing.Exact);
+        public static string cognitive_Sign_XPath = Utils.headerContains_XPath("Cognitive Walkthroughs", Casing.Exact);
         public static void OpenCognitive(UITest uiTest)
         {
             uiTest.ClickXPath(scopeSidebarIcon_XPath);
@@ -1085,7 +1085,7 @@
 
             //ScrollToTop_Website(uiTest);
             uiTest.ClickButton("New Project");
-            U.WaitToSeePopup_ProjectDetails(uiTest);
+            Utils.WaitToSeePopup_ProjectDetails(uiTest);
             uiTest.Set(That.Contains, "Name").To(TestProjectName);
             uiTest.Set(That.Contains, "Description").To("Description01");
 
@@ -1132,7 +1132,7 @@
         {
             uiTest.ClickXPath(btnEditProjectXPath(rowIdx));
             //uiTest.WaitToSee("Project Details");
-            U.WaitToSeePopup_ProjectDetails(uiTest);
+            Utils.WaitToSeePopup_ProjectDetails(uiTest);
         }
 
         public static void GoToLandingPage(UITest uiTest)
@@ -1378,7 +1378,7 @@
 
         public static int GetViewPortHeight(UITest uiTest)
         {
-            var h = U.ExecuteJS_ReturnValue(uiTest, "window.innerHeight");
+            var h = Utils.ExecuteJS_ReturnValue(uiTest, "window.innerHeight");
             return Convert.ToInt32(h);
         }
 
@@ -1419,7 +1419,7 @@
 
         public static void CheckContactUsUI(UITest uiTest)
         {
-            uiTest.ExpectXPath($"//h1[{U.XPathTextContains(Casing.Exact, "Contact")}]");
+            uiTest.ExpectXPath($"//h1[{Utils.XPathTextContains(Casing.Exact, "Contact")}]");
             uiTest.Expect("Us", Casing.Exact);
             uiTest.Expect(What.Contains, "VisualSpec is created by Geeks. For more information please visit", Casing.Exact);
             uiTest.ExpectLink("www.geeks.ltd", Casing.Exact);
@@ -1521,7 +1521,7 @@
 
             uiTest.Set("Name").To(propertyName);
             //uiTest.ClickButton("---Select---");
-            U.OpenDropdown(uiTest, "---Select---");
+            Utils.OpenDropdown(uiTest, "---Select---");
             uiTest.NearButton("---Select---").ClickLink(propertyType);
 
             uiTest.ClickHeader("Property Details");
@@ -1547,14 +1547,14 @@
             uiTest.WaitToSeeHeader($"A Web App: Everything");
 
             // Add button
-            uiTest.ClickXPath(U.btnAddObjXPath);
+            uiTest.ClickXPath(Utils.btnAddObjXPath);
             uiTest.ClickButton(That.Contains, "Existing Object");
             uiTest.Expect("First, one of the features must be selected.");
 
-            uiTest.ClickLink(U.feature01);
-            uiTest.WaitToSeeHeader(U.feature01);
+            uiTest.ClickLink(Utils.feature01);
+            uiTest.WaitToSeeHeader(Utils.feature01);
 
-            uiTest.ClickXPath(U.btnAddObjXPath);
+            uiTest.ClickXPath(Utils.btnAddObjXPath);
             uiTest.ClickLink(That.Contains, "Existing Object");
 
 
@@ -1567,7 +1567,7 @@
             ////    , to: Constants.O1F1);
             //uiTest.AtXPath(addExistingObjFormXPath).ClickButton("---Select---");
             string btnExistingObjDropdown = "---Select---";
-            U.OpenDropdown(uiTest, btnExistingObjDropdown, addExistingObjFormXPath);
+            Utils.OpenDropdown(uiTest, btnExistingObjDropdown, addExistingObjFormXPath);
             uiTest.NearButton(btnExistingObjDropdown).ClickLink(Shared.Admin.ObjectMap.C.O1F1);
             uiTest.ClickHeader("Add Existing Object");
 
@@ -1583,17 +1583,17 @@
             }
 
             uiTest.ClickHeader("Add Existing Object");
-            uiTest.ClickXPath($"{addExistingObjFormXPath}//*[{U.XPathText(Casing.Exact, "Save")}]");
+            uiTest.ClickXPath($"{addExistingObjFormXPath}//*[{Utils.XPathText(Casing.Exact, "Save")}]");
             Thread.Sleep(3000);
-            uiTest.ExpectXPath($"//span[{U.XPathText(Casing.Exact, $"{Shared.Admin.ObjectMap.C.O1F1}_Clone")}]");
+            uiTest.ExpectXPath($"//span[{Utils.XPathText(Casing.Exact, $"{Shared.Admin.ObjectMap.C.O1F1}_Clone")}]");
             for (int i = 0; i < (allPropertyTypes ? Shared.Admin.ObjectMap.C.propTypes.Length : 1); i++)
             {
-                uiTest.NearXPath($"//span[{U.XPathText(Casing.Exact, $"{Shared.Admin.ObjectMap.C.O1F1}_Clone")}]")
+                uiTest.NearXPath($"//span[{Utils.XPathText(Casing.Exact, $"{Shared.Admin.ObjectMap.C.O1F1}_Clone")}]")
                     .Expect($"+{Shared.Admin.ObjectMap.C.propTypes[i]} P{i + 1}{Shared.Admin.ObjectMap.C.O1F1}");
             }
             for (int i = 0; i < (allPropertyTypes ? Shared.Admin.ObjectMap.C.propTypesList.Length : 0); i++)
             {
-                uiTest.NearXPath($"//span[{U.XPathText(Casing.Exact, $"{Shared.Admin.ObjectMap.C.O1F1}_Clone")}]")
+                uiTest.NearXPath($"//span[{Utils.XPathText(Casing.Exact, $"{Shared.Admin.ObjectMap.C.O1F1}_Clone")}]")
                     .Expect($"+{Shared.Admin.ObjectMap.C.propTypesList[i]} P{i + 1 + Shared.Admin.ObjectMap.C.propTypes.Length}{Shared.Admin.ObjectMap.C.O1F1}");
             }
         }
@@ -1606,7 +1606,7 @@
             for (int i = 1; i <= 10; i++)
             {
                 bool elementExists = uiTest.WebDriver
-                    .FindElements(By.XPath($"//th[{i}][text()='{U.DefaultActorsDic[U.DefaultActors.Admin]}']")).Any();
+                    .FindElements(By.XPath($"//th[{i}][text()='{Utils.DefaultActorsDic[Utils.DefaultActors.Admin]}']")).Any();
 
                 if (elementExists)
                 {
@@ -1659,7 +1659,7 @@
 
 
             string parentNodeXPath =
-                $"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", nodeCssClass)}]//*[{U.XPathTextContains(Casing.Exact, nodeName)}]/{U.parent_XPath}::div";
+                $"//td[{actorColumnIdx}]//div[{Utils.XPathAttributeContains("class", nodeCssClass)}]//*[{Utils.XPathTextContains(Casing.Exact, nodeName)}]/{Utils.parent_XPath}::div";
 
             id = uiTest.WebDriver.FindElements(By.XPath(parentNodeXPath)).FirstOrDefault().GetAttribute("id");
             // remove "node_" 
@@ -1673,7 +1673,7 @@
             // add features
             foreach (var feature in features)
             {
-                U.AddFeature(uiTest, feature);
+                Utils.AddFeature(uiTest, feature);
                 Thread.Sleep(500);
             }
 
@@ -1693,9 +1693,9 @@
                     {
                         usecaseIdx_assignedToThisFeature++;
 
-                        U.AddUsecase(uiTest, features[i], usecase
-                            , U.DefaultActors.Admin
-                            , new Tuple<U.Estimate, U.Estimate>(U.Estimate.XS, U.Estimate.M)
+                        Utils.AddUsecase(uiTest, features[i], usecase
+                            , Utils.DefaultActors.Admin
+                            , new Tuple<Utils.Estimate, Utils.Estimate>(Utils.Estimate.XS, Utils.Estimate.M)
                             , unselectIfSelected: usecaseIdx_assignedToThisFeature > 1 ? false : true);
                         Thread.Sleep(500);
                         ScrollToFeature(uiTest, i, features);
@@ -1709,10 +1709,10 @@
         {
             // Scroll to bottom
             if (featureIdx == 0)
-                uiTest.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(Shared.Admin.Scope.Features.C.scrollable_scopeFeatures_treeView));
+                uiTest.WebDriver.ExecuteJavaScript(Utils.GetJS_ScrollToBottom(Shared.Admin.Scope.Features.C.scrollable_scopeFeatures_treeView));
             else
                 // Scroll to the feature above the current feature
-                U.ScrollToElementXPath(uiTest, Shared.Admin.Scope.Features.C.scrollable_scopeFeatures_treeView, $"//a[{U.XPathText(Casing.Exact, features[featureIdx - 1])}]");
+                Utils.ScrollToElementXPath(uiTest, Shared.Admin.Scope.Features.C.scrollable_scopeFeatures_treeView, $"//a[{Utils.XPathText(Casing.Exact, features[featureIdx - 1])}]");
         }
     }
 }

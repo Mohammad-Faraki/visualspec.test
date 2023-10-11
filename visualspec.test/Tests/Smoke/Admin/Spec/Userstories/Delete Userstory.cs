@@ -33,7 +33,7 @@
             ClickButton("OK");
             //WaitToSeeXPath($"//form[@data-module='UserStoryList']//*[{U.XPathText(Casing.Exact, "User Journeys")}]");
             WaitToSeeLink("New User Journey");
-            U.ScrollToBottom(this, C.scrollable_mainContent);
+            Utils.ScrollToBottom(this, C.scrollable_mainContent);
             ExpectNoXPath($"//tr[last()]//*[text()='{C.addedUserstory}']");
         }
     }

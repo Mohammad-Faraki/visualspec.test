@@ -21,16 +21,16 @@
 
             // Scroll to bottom of Traits textarea 
             // This line doesn't work till devs set "personas-content" for personas content
-            U.ScrollToElementXPath(this, C.scorllableElement
+            Utils.ScrollToElementXPath(this, C.scorllableElement
                 , XPath: $"{C.firstPersonaOfFirstActor}//textarea[@id='Traits']"
-                , elementSide: U.HtmlElementProp.Bottom);
+                , elementSide: Utils.HtmlElementProp.Bottom);
             //*********** Delete persona
             //ClickXPath("//div[@id='personasMainCanvas']//div[1]//a[text()='Delete ']");
             ClickXPath($"{C.firstPersonaThreeDotsContainer_XPath}/a");
-            ClickXPath($"{C.firstPersonaThreeDotsContainer_XPath}//a[{U.XPathText(Casing.Exact, "Delete")}]");
+            ClickXPath($"{C.firstPersonaThreeDotsContainer_XPath}//a[{Utils.XPathText(Casing.Exact, "Delete")}]");
             WaitToSee("Are your sure to delete this item?");
             ClickButton("OK");
-            ExpectNoXPath($"{C.lastPersonaOfFirstActorSidebar}//a[{U.XPathText(Casing.Exact, "Name")}]");
+            ExpectNoXPath($"{C.lastPersonaOfFirstActorSidebar}//a[{Utils.XPathText(Casing.Exact, "Name")}]");
         }
 
 

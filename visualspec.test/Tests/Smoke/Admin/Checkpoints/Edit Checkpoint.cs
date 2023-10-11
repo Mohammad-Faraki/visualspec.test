@@ -21,9 +21,9 @@
             ClickXPath("//tr[1]//a[@name='Edit']");
             WaitToSee("Edit checkpoint");
 
-            Set(That.Contains,"Name").To(U.checkpoint2);
+            Set(That.Contains,"Name").To(Utils.checkpoint2);
             Click(What.Contains,"Save");
-            Expect(U.checkpoint2);
+            Expect(Utils.checkpoint2);
 
         }
 

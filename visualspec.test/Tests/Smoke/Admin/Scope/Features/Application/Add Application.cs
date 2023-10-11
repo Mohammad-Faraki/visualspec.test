@@ -25,7 +25,7 @@
             // Device
             //ClickCSS("button[role='combobox']");
             //AtXPath("//form[@data-module='ApplicationForm']").ClickButton("Nothing selected");
-            U.OpenDropdown(this, "Nothing selected", C.formApplicationXPath);
+            Utils.OpenDropdown(this, "Nothing selected", C.formApplicationXPath);
             // Normal screen
             //AtXPath("//form[@data-module='ApplicationForm']").ClickLink("Normal screen");
             NearXPath("//form[@data-module='ApplicationForm']").ClickLink("Normal screen");

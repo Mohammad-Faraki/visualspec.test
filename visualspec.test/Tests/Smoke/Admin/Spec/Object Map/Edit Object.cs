@@ -20,11 +20,11 @@
             Run<AddObject>();
 
 
-            ClickXPath($"//span[{U.XPathText(Casing.Exact, C.O1F1)}]");
+            ClickXPath($"//span[{Utils.XPathText(Casing.Exact, C.O1F1)}]");
             Thread.Sleep(3000);
             //MyUtils.ScrollToBottom(this, "objectmap-content", this.WebDriver);
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom("objectmap-content"));
+            this.WebDriver.ExecuteJavaScript(Utils.GetJS_ScrollToBottom("objectmap-content"));
 
             AtXPath(C.formBottomSectionXPath).ClickButton("Edit");
             Thread.Sleep(3000);
@@ -50,7 +50,7 @@
 
             //MyUtils.ScrollToBottom(this, "objectmap-content", this.WebDriver);
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom("objectmap-content"));
+            this.WebDriver.ExecuteJavaScript(Utils.GetJS_ScrollToBottom("objectmap-content"));
 
             ExpectXPath(inputNameEditedXPath);
             ClickButton("Save");

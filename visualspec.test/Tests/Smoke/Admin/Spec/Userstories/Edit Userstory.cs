@@ -33,9 +33,9 @@
             Set(That.Contains, "Description").To(C.editedUserstory);
 
             //ClickButton(U.feature01);
-            U.OpenDropdown(this, U.feature01);
-            ClickLink(U.feature01);
-            ClickLink(U.feature02);
+            Utils.OpenDropdown(this, Utils.feature01);
+            ClickLink(Utils.feature01);
+            ClickLink(Utils.feature02);
             //ClickButton(U.feature02);
             ClickHeader(editPopupTitle);
 
@@ -49,16 +49,16 @@
             //Expect(What.Contains, U.feature02);
             ClickLink(That.Contains, "Edit");
             WaitToSee(editPopupTitle);
-            ExpectButton(U.feature02);
+            ExpectButton(Utils.feature02);
             Click("Cancel");
             Thread.Sleep(3000);
 
             //ClickXPath("//a[@name='UserStoriesList']");
             //WaitToSee("User Stories");
-            U.OpenUserstories(this);
+            Utils.OpenUserstories(this);
             Thread.Sleep(2000);
 
-            U.ScrollToBottom(this, C.scrollable_mainContent);
+            Utils.ScrollToBottom(this, C.scrollable_mainContent);
             ExpectXPath($"//tr[last()]//*[text()='{C.editedUserstory}']");
             #region Commented checking Status
             //ExpectXPath($"//tr[last()]//span[@class='user-story-list-status--designed']");

@@ -20,19 +20,19 @@
             Thread.Sleep(2000);
 
 
-            U.AddFeature(this, U.feature01);
-            U.AddFeature(this, U.feature02);
+            Utils.AddFeature(this, Utils.feature01);
+            Utils.AddFeature(this, Utils.feature02);
 
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(Shared.Admin.Scope.Features.C.scrollable_scopeFeatures_treeView));
-            U.AddUsecase(this, U.feature01, U.f1Usecase1, U.DefaultActors.Admin/*, MyUtils.DefaultApplications.WebApp*/
-                , new Tuple<U.Estimate, U.Estimate>(U.Estimate.XS, U.Estimate.M));
+            this.WebDriver.ExecuteJavaScript(Utils.GetJS_ScrollToBottom(Shared.Admin.Scope.Features.C.scrollable_scopeFeatures_treeView));
+            Utils.AddUsecase(this, Utils.feature01, Utils.f1Usecase1, Utils.DefaultActors.Admin/*, MyUtils.DefaultApplications.WebApp*/
+                , new Tuple<Utils.Estimate, Utils.Estimate>(Utils.Estimate.XS, Utils.Estimate.M));
             Thread.Sleep(500);
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(Shared.Admin.Scope.Features.C.scrollable_scopeFeatures_treeView));
-            Expect(U.f1Usecase1);
+            this.WebDriver.ExecuteJavaScript(Utils.GetJS_ScrollToBottom(Shared.Admin.Scope.Features.C.scrollable_scopeFeatures_treeView));
+            Expect(Utils.f1Usecase1);
 
-            U.OpenUserstories(this);
+            Utils.OpenUserstories(this);
             Thread.Sleep(2000);
 
 
@@ -45,21 +45,21 @@
             Set(That.Contains, "Description").To(C.addedUserstory);
 
             //NearLabel("Features").ClickButton("Nothing selected");
-            U.OpenDropdown(this, "Nothing selected", $"//label[{U.XPathTextContains(Casing.Exact, "Features")}]/{U.following_sibling_XPath}::div");
-            ClickLink(U.feature01);
+            Utils.OpenDropdown(this, "Nothing selected", $"//label[{Utils.XPathTextContains(Casing.Exact, "Features")}]/{Utils.following_sibling_XPath}::div");
+            ClickLink(Utils.feature01);
             ClickHeader(pageTitle);
 
             Thread.Sleep(3000);
 
             //NearLabel("Use case").ClickButton("Nothing selected");
-            U.OpenDropdown(this, "Nothing selected", $"//label[{U.XPathTextContains(Casing.Exact, "Use case")}]/{U.following_sibling_XPath}::div");
-            ClickLink(U.f1Usecase1);
+            Utils.OpenDropdown(this, "Nothing selected", $"//label[{Utils.XPathTextContains(Casing.Exact, "Use case")}]/{Utils.following_sibling_XPath}::div");
+            ClickLink(Utils.f1Usecase1);
             ClickHeader(pageTitle);
 
             ClickButton(That.Contains, "Save and next");
             Thread.Sleep(5000);
 
-            U.OpenUserstories(this);
+            Utils.OpenUserstories(this);
             Thread.Sleep(2000);
 
             //*** unsuccessfull scrolling (since scrollbar is custom in visual spec)
@@ -74,7 +74,7 @@
             //////this.WebDriver.ExecuteJavaScript($"window[`scrolls.{scorllableElement}`].scrollTo(0,100,0);");
 
             //Expect(newUserstory);
-            U.ScrollToBottom(this, Shared.Admin.Userstories.C.scrollable_mainContent);
+            Utils.ScrollToBottom(this, Shared.Admin.Userstories.C.scrollable_mainContent);
             ExpectXPath($"//tr[last()]//*[text()='{C.addedUserstory}']");
         }
     }

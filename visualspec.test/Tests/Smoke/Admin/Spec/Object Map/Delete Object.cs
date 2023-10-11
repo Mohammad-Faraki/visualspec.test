@@ -22,7 +22,7 @@
 
             //MyUtils.ScrollToBottom(this, "objectmap-content", this.WebDriver);
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom("objectmap-content"));
+            this.WebDriver.ExecuteJavaScript(Utils.GetJS_ScrollToBottom("objectmap-content"));
 
             AtXPath(C.formBottomSectionXPath).ClickButton("Edit");
             Thread.Sleep(3000);

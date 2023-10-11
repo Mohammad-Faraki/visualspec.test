@@ -19,7 +19,7 @@
 
             //*********** Edit integration
             // Three dots
-            ClickXPath(U.btnThreeDotsIntegrationXPath(C.addedIntegration));
+            ClickXPath(Utils.btnThreeDotsIntegrationXPath(C.addedIntegration));
             // Edit
             ClickXPath(C.btnEditIntegrationXPath);
 

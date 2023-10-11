@@ -12,10 +12,10 @@
         [PangolinTestMethod]
         public override void RunTest()
         {
-            U.GoToLandingPage(this);
+            Utils.GoToLandingPage(this);
             ClickLink("Accept");
-            U.ScrollToBottom_Website(this);
-            U.CheckWebsiteUI_Footer(this);
+            Utils.ScrollToBottom_Website(this);
+            Utils.CheckWebsiteUI_Footer(this);
         }
 
 

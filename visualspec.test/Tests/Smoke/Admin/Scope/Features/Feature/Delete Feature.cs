@@ -19,12 +19,12 @@
 
 
             ////*********** Delete features
-            U.DeleteFeature(this, U.feature01);
+            Utils.DeleteFeature(this, Utils.feature01);
             Thread.Sleep(2000);
-            U.DeleteFeature(this, U.feature02);
+            Utils.DeleteFeature(this, Utils.feature02);
 
-            ExpectNo(U.feature01);
-            ExpectNo(U.feature02);
+            ExpectNo(Utils.feature01);
+            ExpectNo(Utils.feature02);
         }
     }
 }

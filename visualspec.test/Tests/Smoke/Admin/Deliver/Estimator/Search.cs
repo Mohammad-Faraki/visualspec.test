@@ -18,14 +18,14 @@
             Run<CreateOpenProject>();
             // Open a new tab
             this.WebDriver.SwitchTo().NewWindow(WindowType.Tab);
-            U.ScanPages(this, true);
+            Utils.ScanPages(this, true);
 
 
 
             // Actor filter
             //NearLabel(That.Contains, "Actor").ClickButton("Nothing selected");
-            U.OpenDropdown(this, "Nothing selected",
-                $"//label[{U.XPathTextContains(Casing.Exact, "Actor")}]/{U.following_sibling_XPath}::div");
+            Utils.OpenDropdown(this, "Nothing selected",
+                $"//label[{Utils.XPathTextContains(Casing.Exact, "Actor")}]/{Utils.following_sibling_XPath}::div");
             // Select Admin_A Web App_Wide screen
             NearLabel(That.Contains, "Actor").ClickLink("Customer");
 

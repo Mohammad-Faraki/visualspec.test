@@ -28,7 +28,7 @@
             Thread.Sleep(2000);
             int rowIdx = 1;
             // table header is first row
-            ExpectXPath($"//tr[{rowIdx+1}]//td[4][{U.XPathTextContains(Casing.Exact, "26")}]");
+            ExpectXPath($"//tr[{rowIdx+1}]//td[4][{Utils.XPathTextContains(Casing.Exact, "26")}]");
         }
 
 

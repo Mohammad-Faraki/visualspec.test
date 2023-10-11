@@ -24,16 +24,16 @@
 
 
             //*********** Add feature
-            U.AddFeature(this, U.feature01);
+            Utils.AddFeature(this, Utils.feature01);
 
 
             //*********** Add usecase
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(C.scrollable_scopeFeatures_treeView));
-            U.AddUsecase(this, U.feature01, U.f1Usecase1, U.DefaultActors.Admin);
+            this.WebDriver.ExecuteJavaScript(Utils.GetJS_ScrollToBottom(C.scrollable_scopeFeatures_treeView));
+            Utils.AddUsecase(this, Utils.feature01, Utils.f1Usecase1, Utils.DefaultActors.Admin);
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(C.scrollable_scopeFeatures_treeView));
-            Expect(U.f1Usecase1);
+            this.WebDriver.ExecuteJavaScript(Utils.GetJS_ScrollToBottom(C.scrollable_scopeFeatures_treeView));
+            Expect(Utils.f1Usecase1);
 
 
         }

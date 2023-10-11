@@ -17,7 +17,7 @@
         {
             Run<AddProperty_AllTypes>();
 
-            U.AddExistingObject_ObjectMap(this, allPropertyTypes: true);
+            Utils.AddExistingObject_ObjectMap(this, allPropertyTypes: true);
         }
 
 

@@ -18,7 +18,7 @@
 
             // Open a new tab
             this.WebDriver.SwitchTo().NewWindow(WindowType.Tab);
-            U.ScanPages(this, true);
+            Utils.ScanPages(this, true);
         }
 
 

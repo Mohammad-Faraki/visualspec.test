@@ -26,12 +26,12 @@
             Thread.Sleep(3000);
 
             C.ScrollToTop(this);
-            if (U.environment == U.Environment.Prelive)
+            if (Utils.environment == Utils.Environment.Prelive)
             {
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "0.5");
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.25");
             }
-            else if (U.environment == U.Environment.Live)
+            else if (Utils.environment == Utils.Environment.Live)
             {
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.25");
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "2.25");

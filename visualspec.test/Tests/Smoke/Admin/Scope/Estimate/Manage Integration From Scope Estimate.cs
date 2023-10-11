@@ -29,11 +29,11 @@
 
 
 
-            U.OpenEstimate(this);
+            Utils.OpenEstimate(this);
             Thread.Sleep(2000);
 
             //*********** Edit integration
-            U.ScrollToElementXPath(this, scorllableElement: "scope-content"
+            Utils.ScrollToElementXPath(this, scorllableElement: "scope-content"
                 , XPath: "//form[@data-module='IntegrationsWithFeatureList']");
             ClickXPath(C.btnEditIntegraionXPath);
             WaitToSee(What.Contains , "Edit integration");
@@ -57,7 +57,7 @@
 
             
             
-            U.ScrollToElementXPath(this, scorllableElement: "scope-content"
+            Utils.ScrollToElementXPath(this, scorllableElement: "scope-content"
                 , XPath: "//form[@data-module='IntegrationsWithFeatureList']");
 
             Expect(What.Contains, C.editedIntegration);
@@ -82,7 +82,7 @@
             ExpectNo(What.Contains, C.editedIntegration);
 
 
-            U.OpenFeatures(this);
+            Utils.OpenFeatures(this);
             ExpectNo(What.Contains, C.editedIntegration);
         }
 

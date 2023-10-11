@@ -12,8 +12,8 @@
         [PangolinTestMethod]
         public override void RunTest()
         {
-            U.GoToLandingPage(this);
-            U.CheckWebsiteUI_Header_BeforeLogin(this);
+            Utils.GoToLandingPage(this);
+            Utils.CheckWebsiteUI_Header_BeforeLogin(this);
         }
 
 

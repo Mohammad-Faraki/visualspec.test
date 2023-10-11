@@ -24,8 +24,8 @@
             //*********** Create persona
             //ClickXPath("//li[1]/*[@class='treeview-node__title']/a[2]");
             //ClickXPath($"//a[{MyUtils.XPathText(Casing.Exact, "Admin")}]/following-sibling::a"); // using sibling element
-            ClickXPath($"{C.firstActorSidebar}//a[{U.XPathAttributeContains("href", "AddNewItem")}]");
-            WaitToSeeXPath($"{C.lastPersonaOfFirstActorSidebar}//a[{U.XPathText(Casing.Exact, "Name")}]");
+            ClickXPath($"{C.firstActorSidebar}//a[{Utils.XPathAttributeContains("href", "AddNewItem")}]");
+            WaitToSeeXPath($"{C.lastPersonaOfFirstActorSidebar}//a[{Utils.XPathText(Casing.Exact, "Name")}]");
         }
 
 
