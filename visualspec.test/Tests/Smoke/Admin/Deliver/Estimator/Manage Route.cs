@@ -20,7 +20,7 @@
             Run<CreateOpenProject>();
             // Open a new tab
             this.WebDriver.SwitchTo().NewWindow(WindowType.Tab);
-            Utils.ScanPages(this, true);
+            U.ScanPages(this, true);
 
             // first row edit has bug that shod be fixed
             int rowIndex = 1;
@@ -70,7 +70,7 @@
             //ClickButton("Submit estimate");
             //Thread.Sleep(1000);
             #endregion
-            Utils.ScanPages(this, true);
+            U.ScanPages(this, true);
             Thread.Sleep(3000);
 
             RefreshPage();

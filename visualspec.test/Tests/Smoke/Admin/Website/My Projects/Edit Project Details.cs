@@ -14,16 +14,16 @@
         {
             LoginAs<AdminUser>();
 
-            Utils.CreateProject(this);
+            U.CreateProject(this);
 
 
 
-            Utils.SearchProject(this);
-            Utils.OpenProjectDetails(this, 1);
-            ExpectXPath($"{Utils.frmProjectDetailsXPath}//input[{Utils.XPathAttribute("value",Utils.TestProjectName)}]");
-            ExpectXPath($"{Utils.frmProjectDetailsXPath}//*[{Utils.XPathText(Casing.Exact, "Description01")}]");
+            U.SearchProject(this);
+            U.OpenProjectDetails(this, 1);
+            ExpectXPath($"{U.frmProjectDetailsXPath}//input[{U.XPathAttribute("value",U.TestProjectName)}]");
+            ExpectXPath($"{U.frmProjectDetailsXPath}//*[{U.XPathText(Casing.Exact, "Description01")}]");
 
-            string editedProjectName = $"{Utils.TestProjectName} edited";
+            string editedProjectName = $"{U.TestProjectName} edited";
             string editedDescription = "Description01 edited";
             Set(That.Contains,"Name").To(editedProjectName);
             Set(That.Contains, "Description").To(editedDescription);
@@ -37,9 +37,9 @@
             WaitToSee("New Project");
 
 
-            Utils.OpenProjectDetails(this, 1);
-            ExpectXPath($"{Utils.frmProjectDetailsXPath}//input[{Utils.XPathAttribute("value", editedProjectName)}]");
-            ExpectXPath($"{Utils.frmProjectDetailsXPath}//*[{Utils.XPathText(Casing.Exact, editedDescription)}]");
+            U.OpenProjectDetails(this, 1);
+            ExpectXPath($"{U.frmProjectDetailsXPath}//input[{U.XPathAttribute("value", editedProjectName)}]");
+            ExpectXPath($"{U.frmProjectDetailsXPath}//*[{U.XPathText(Casing.Exact, editedDescription)}]");
         }
 
 

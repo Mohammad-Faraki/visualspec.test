@@ -19,12 +19,12 @@
 
 
 
-            if (Utils.environment == Utils.Environment.Prelive)
+            if (U.environment == U.Environment.Prelive)
             {
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "0.5");
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.25");
             }
-            else if (Utils.environment == Utils.Environment.Live)
+            else if (U.environment == U.Environment.Live)
             {
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.25");
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "2.25");
@@ -35,12 +35,12 @@
             ClickLink(That.Contains, "Activity");
             WaitToSee("Add other activity");
             Set(That.Contains, "Activity").To(C.addedActiviy);
-            if (Utils.environment == Utils.Environment.Prelive)
+            if (U.environment == U.Environment.Prelive)
             {
                 ClickXPath("//div[@class='select-estimate-size-form']/label[4]");
                 ClickXPath("//div[@class='select-estimate-size-form']/label[5]");
             }
-            else if (Utils.environment == Utils.Environment.Live)
+            else if (U.environment == U.Environment.Live)
             {
                 ClickXPath("//div[@class='select-estimate-size-form']/label[5]");
             }
@@ -59,30 +59,30 @@
             ////ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]/div/div[1][@class='selected']");
             ////ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]/div/div[2][@class='highlighted']");
             ////ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]/div/div[3][@class='selected']");
-            if (Utils.environment == Utils.Environment.Prelive)
+            if (U.environment == U.Environment.Prelive)
             {
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]//button[@title='2']");
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[3]//button[@title='4']");
             }
-            else if (Utils.environment == Utils.Environment.Live)
+            else if (U.environment == U.Environment.Live)
             {
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]//button[@title='4']");
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[3]//button[@title='4']");
             }
 
-            Utils.ScrollToTop(this, "scope-content");
+            U.ScrollToTop(this, "scope-content");
             
             //Expect(What.Contains, "1.75-2.25 days");
             //ExpectXPath($"//form[@data-module='OtherActivitiesList']//h2/span[{MyUtils.XPathText(Casing.Exact, "1.75-2.25 days")}]");
             //ExpectHeader(That.Contains, "1.75-2.25 days");
             //ExpectXPath($"//*[@id='SolutionDesignActivitiesEstimateDays'][{MyUtils.XPathText(Casing.Exact, "1.75-2.25 days")}]");
             //ExpectXPath("//form[1]/h2[@innertext='Solution Design Activities          ']/span[@id='SolutionDesignActivitiesEstimateDays']");
-            if (Utils.environment == Utils.Environment.Prelive)
+            if (U.environment == U.Environment.Prelive)
             {
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "0.75");
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.75");
             }
-            else if (Utils.environment == Utils.Environment.Live)
+            else if (U.environment == U.Environment.Live)
             {
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.75");
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "2.75");
@@ -99,26 +99,26 @@
             ////ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]/div/div[1][@class='selected']");
             ////ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]/div/div[2][@class='highlighted']");
             ////ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]/div/div[3][@class='selected']");
-            if (Utils.environment == Utils.Environment.Prelive)
+            if (U.environment == U.Environment.Prelive)
             {
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]//button[@title='2']");
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[3]//button[@title='4']");
             }
-            else if (Utils.environment == Utils.Environment.Live)
+            else if (U.environment == U.Environment.Live)
             {
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[2]//button[@title='4']");
                 ExpectXPath($"//form[@data-module='OtherActivitiesList']//tr[last()]/td[3]//button[@title='4']");
             }
 
-            Utils.ScrollToTop(this, "scope-content");
+            U.ScrollToTop(this, "scope-content");
 
             //Expect(What.Contains, "1.75-2.25 days");
-            if (Utils.environment == Utils.Environment.Prelive)
+            if (U.environment == U.Environment.Prelive)
             {
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "0.75");
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.75");
             }
-            else if (Utils.environment == Utils.Environment.Live)
+            else if (U.environment == U.Environment.Live)
             {
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "1.75");
                 AtHeader(That.Contains, "Solution Design Activities").Expect(What.Contains, "2.75");

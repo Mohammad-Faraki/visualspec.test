@@ -32,11 +32,11 @@
             ClickLabel(That.Contains, "Senior Responsible Owner");
             Click("Save");
             Thread.Sleep(2000);
-            ExpectXPath($"//tr[last()]//*[{Utils.XPathText(Casing.Exact, "stakeholder01 edited")}]");
-            ExpectXPath($"//tr[last()]//*[{Utils.XPathText(Casing.Exact, "department01 edited")}]");
-            ExpectXPath($"//tr[last()]//*[{Utils.XPathText(Casing.Exact, "role01 edited")}]");
-            ExpectXPath($"//tr[last()]//*[{Utils.XPathText(Casing.Exact, "editedemail01@yahoo.com")}]");
-            ExpectXPath($"//tr[last()]//*[{Utils.XPathText(Casing.Exact, "tel01 edited")}]");
+            ExpectXPath($"//tr[last()]//*[{U.XPathText(Casing.Exact, "stakeholder01 edited")}]");
+            ExpectXPath($"//tr[last()]//*[{U.XPathText(Casing.Exact, "department01 edited")}]");
+            ExpectXPath($"//tr[last()]//*[{U.XPathText(Casing.Exact, "role01 edited")}]");
+            ExpectXPath($"//tr[last()]//*[{U.XPathText(Casing.Exact, "editedemail01@yahoo.com")}]");
+            ExpectXPath($"//tr[last()]//*[{U.XPathText(Casing.Exact, "tel01 edited")}]");
 
         }
 

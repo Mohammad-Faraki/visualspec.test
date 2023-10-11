@@ -12,7 +12,7 @@
         [PangolinTestMethod]
         public override void RunTest()
         {
-            Utils.GoToLandingPage(this);
+            U.GoToLandingPage(this);
             ClickLink("Accept");
 
             //MyUtils.GotoRegisterPage(this);
@@ -34,7 +34,7 @@
             ExpectLabel("Email", Casing.Exact);
             ExpectLabel("Password", Casing.Exact);
 
-            Utils.ScrollToBottom_Website(this);
+            U.ScrollToBottom_Website(this);
             ExpectLabel("Repeat password", Casing.Exact);
             ExpectLink("Register", Casing.Exact);
 

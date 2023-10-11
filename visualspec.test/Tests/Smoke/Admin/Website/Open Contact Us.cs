@@ -12,7 +12,7 @@
         [PangolinTestMethod]
         public override void RunTest()
         {
-            Utils.OpenContactUs(this);
+            U.OpenContactUs(this);
         }
 
 

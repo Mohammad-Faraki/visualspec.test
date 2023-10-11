@@ -24,9 +24,9 @@
             HoverOver(C.nodeStart);
 
             //ClickXPath(U.workflow_iconNodesToolbox(nodeName: C.nodeStart));
-            int actorColumnIdx = Utils.GetActorColumnIdx_Workflow(this, Utils.DefaultActorsDic[Utils.DefaultActors.Admin]);
+            int actorColumnIdx = U.GetActorColumnIdx_Workflow(this, U.DefaultActorsDic[U.DefaultActors.Admin]);
             // click on plus icon(to open add node toolbox)
-            ClickXPath(Utils.workflow_iconNodesToolbox(this, nodeName: C.nodeStart, nodeType: Utils.NodeType.Start, actorColumnIdx: actorColumnIdx));
+            ClickXPath(U.workflow_iconNodesToolbox(this, nodeName: C.nodeStart, nodeType: U.NodeType.Start, actorColumnIdx: actorColumnIdx));
 
             ClickLink("Loop");
             ExpectHeader("Add New Loop");
@@ -38,9 +38,9 @@
 
             //ExpectLink(C.nodeStart);
             // Check loop node text and design
-            ExpectXPath($"//td[{actorColumnIdx}]//div[{Utils.XPathAttributeContains("class", C.cssClass_LoopNode)}]//*[{Utils.XPathTextContains(Casing.Exact, C.nodeLoop1)}]");
+            ExpectXPath($"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", C.cssClass_LoopNode)}]//*[{U.XPathTextContains(Casing.Exact, C.nodeLoop1)}]");
             // Check start node text and design
-            ExpectXPath($"//td[{actorColumnIdx}]//div[{Utils.XPathAttributeContains("class", C.cssClass_StartNode_LoopTarget)}]//*[{Utils.XPathTextContains(Casing.Exact, C.nodeStart)}]");
+            ExpectXPath($"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", C.cssClass_StartNode_LoopTarget)}]//*[{U.XPathTextContains(Casing.Exact, C.nodeStart)}]");
         }
 
 

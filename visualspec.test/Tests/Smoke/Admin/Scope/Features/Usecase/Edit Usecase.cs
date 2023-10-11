@@ -20,10 +20,10 @@
 
             //*********** Edit usecase
             //Click(MyUtils.f1Usecase1);
-            ClickXPath(Utils.btnThreeDotsUsecaseXPath(featureIndex: 1, usecaseIdx: 1));
-            ClickXPath($"{Utils.usecaseXPath(featureIndex: 1, usecaseIdx: 1)}//a[@name='EditUseCase']");
+            ClickXPath(U.btnThreeDotsUsecaseXPath(featureIndex: 1, usecaseIdx: 1));
+            ClickXPath($"{U.usecaseXPath(featureIndex: 1, usecaseIdx: 1)}//a[@name='EditUseCase']");
             WaitToSee(What.Contains, "Edit usecase");
-            Set("Name").To(Utils.f1Usecase2);
+            Set("Name").To(U.f1Usecase2);
 
 
 
@@ -31,7 +31,7 @@
             //ClickXPath("//form[@data-module='UseCaseForm']//div[5]//button");
             //AtXPath("//form[@data-module='UseCaseForm']").ClickButton("Admin");
             ////NearXPath("//form[@data-module='UseCaseForm']").ClickButton("Admin");
-            Utils.OpenDropdown(this, "Admin", C.formUsecase);
+            U.OpenDropdown(this, "Admin", C.formUsecase);
 
             // select "Customer" actor
             //ClickXPath($"//form[@data-module='UseCaseForm']//div[5]//span[{MyUtils.XPathText(Casing.Exact, "Customer")}]");
@@ -52,10 +52,10 @@
             #endregion
 
             Click("Save");
-            Expect(Utils.f1Usecase2);
+            Expect(U.f1Usecase2);
 
-            ClickXPath(Utils.btnThreeDotsUsecaseXPath(featureIndex: 1, usecaseIdx: 1));
-            ClickXPath($"{Utils.usecaseXPath(featureIndex: 1, usecaseIdx: 1)}//a[@name='EditUseCase']");
+            ClickXPath(U.btnThreeDotsUsecaseXPath(featureIndex: 1, usecaseIdx: 1));
+            ClickXPath($"{U.usecaseXPath(featureIndex: 1, usecaseIdx: 1)}//a[@name='EditUseCase']");
             WaitToSee(What.Contains, "Edit usecase");
             Expect(What.Contains, "2 items selected");
             //Expect(What.Contains, "A Mobile App");

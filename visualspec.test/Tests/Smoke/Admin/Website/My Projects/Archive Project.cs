@@ -14,24 +14,24 @@
         {
             LoginAs<AdminUser>();
 
-            Utils.CreateProject(this);
+            U.CreateProject(this);
 
 
 
 
-            Utils.SearchProject(this);
-            Utils.OpenProjectDetails(this, 1);
-            ClickXPath($"{Utils.frmProjectDetailsXPath}//*[{Utils.XPathText(Casing.Exact, "Archive")}]");
-            ExpectNoXPath($"//tr[1]//*[{Utils.XPathTextContains(Casing.Exact, Utils.TestProjectName)}]" );
+            U.SearchProject(this);
+            U.OpenProjectDetails(this, 1);
+            ClickXPath($"{U.frmProjectDetailsXPath}//*[{U.XPathText(Casing.Exact, "Archive")}]");
+            ExpectNoXPath($"//tr[1]//*[{U.XPathTextContains(Casing.Exact, U.TestProjectName)}]" );
 
 
-            ClickXPath($"//*[{Utils.XPathAttributeContains("id", "lstUserArchived")}]//*[{Utils.XPathTextContains(Casing.Exact, "All")}]");
-            Utils.SearchProject(this);
-            ExpectXPath($"//tr[1]//*[{Utils.XPathText(Casing.Exact, "Archived")}]");
+            ClickXPath($"//*[{U.XPathAttributeContains("id", "lstUserArchived")}]//*[{U.XPathTextContains(Casing.Exact, "All")}]");
+            U.SearchProject(this);
+            ExpectXPath($"//tr[1]//*[{U.XPathText(Casing.Exact, "Archived")}]");
 
-            ClickXPath($"//*[{Utils.XPathAttributeContains("id", "lstUserArchived")}]//*[{Utils.XPathTextContains(Casing.Exact, "Archived")}]");
-            Utils.SearchProject(this);
-            ExpectXPath($"//tr[1]//*[{Utils.XPathText(Casing.Exact, "Archived")}]");
+            ClickXPath($"//*[{U.XPathAttributeContains("id", "lstUserArchived")}]//*[{U.XPathTextContains(Casing.Exact, "Archived")}]");
+            U.SearchProject(this);
+            ExpectXPath($"//tr[1]//*[{U.XPathText(Casing.Exact, "Archived")}]");
         }
 
 

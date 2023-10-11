@@ -23,7 +23,7 @@
         {
             //*********** Delete usecase
             //MyUtils.DeleteUsecase(this, MyUtils.f1Usecase2);
-            Utils.DeleteUsecase(this, Utils.f1Usecase1, featureIdx: 1, usecaseIdx: 1);
+            U.DeleteUsecase(this, U.f1Usecase1, featureIdx: 1, usecaseIdx: 1);
         }
     }
 }

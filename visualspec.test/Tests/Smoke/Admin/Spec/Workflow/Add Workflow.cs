@@ -19,7 +19,7 @@
         {
             Run<PreconWorkflow>();
 
-            ClickXPath(Utils.btnAddWorklowXPath(Utils.feature01));
+            ClickXPath(U.btnAddWorklowXPath(U.feature01));
             WaitToSeeHeader("New Workflow Model");
 
             Set("Name").To(C.workflow1);

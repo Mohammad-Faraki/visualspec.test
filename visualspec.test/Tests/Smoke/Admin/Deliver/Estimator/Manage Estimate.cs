@@ -17,7 +17,7 @@
             Run<CreateOpenProject>();
             // Open a new tab
             this.WebDriver.SwitchTo().NewWindow(WindowType.Tab);
-            Utils.ScanPages(this, true);
+            U.ScanPages(this, true);
             Thread.Sleep(3000);
 
             int rowIndex = 1;
@@ -74,7 +74,7 @@
             //ClickButton("Submit estimate");
             //Thread.Sleep(2000); 
             #endregion
-            Utils.ScanPages(this, false);
+            U.ScanPages(this, false);
             Thread.Sleep(3000);
 
 
@@ -128,7 +128,7 @@
             //ClickButton("Submit estimate");
             //Thread.Sleep(2000); 
             #endregion
-            Utils.ScanPages(this, false);
+            U.ScanPages(this, false);
             Thread.Sleep(3000);
 
             AtRow(rowIndex).Expect(What.Contains, "0.25");
@@ -180,7 +180,7 @@
             //ClickButton("Submit estimate");
             //Thread.Sleep(2000); 
             #endregion
-            Utils.ScanPages(this, false);
+            U.ScanPages(this, false);
             Thread.Sleep(3000);
 
             AtRow(rowIndex).Expect(What.Contains, "0");

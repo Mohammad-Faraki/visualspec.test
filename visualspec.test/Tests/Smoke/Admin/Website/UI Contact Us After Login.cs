@@ -12,29 +12,29 @@
         [PangolinTestMethod]
         public override void RunTest()
         {
-            Utils.LoginAdmin(this, isFirstTime: true);
+            U.LoginAdmin(this, isFirstTime: true);
 
             //MyUtils.GotoConatctUs(this);
-            Utils.ScrollToBottom_Website(this);
+            U.ScrollToBottom_Website(this);
             ClickLink("Contact us");
             WaitToSee(What.Contains, "VisualSpec is created by Geeks. For more information please visit");
 
 
 
-            Utils.CheckContactUsUI(this);
+            U.CheckContactUsUI(this);
 
             // Check mandatory signs
-            ExpectXPath($"//label[{Utils.XPathTextContains(Casing.Exact, "Your name")}][{Utils.XPathHasElement($"*[{Utils.XPathTextContains(Casing.Exact, "*")}]")}]");
-            ExpectXPath($"//label[{Utils.XPathTextContains(Casing.Exact, "Email")}][{Utils.XPathHasElement($"*[{Utils.XPathTextContains(Casing.Exact, "*")}]")}]");
+            ExpectXPath($"//label[{U.XPathTextContains(Casing.Exact, "Your name")}][{U.XPathHasElement($"*[{U.XPathTextContains(Casing.Exact, "*")}]")}]");
+            ExpectXPath($"//label[{U.XPathTextContains(Casing.Exact, "Email")}][{U.XPathHasElement($"*[{U.XPathTextContains(Casing.Exact, "*")}]")}]");
 
             // inputs should be filled with user's information
-            Utils.ExpectField(this
-                , $"//div[{Utils.XPathHasElement($"label[{Utils.XPathTextContains(Casing.Exact, "Your name")}]")}]"
-                , Utils.AdminFullname);
+            U.ExpectField(this
+                , $"//div[{U.XPathHasElement($"label[{U.XPathTextContains(Casing.Exact, "Your name")}]")}]"
+                , U.AdminFullname);
 
-            Utils.ExpectField(this
-                , $"//div[{Utils.XPathHasElement($"label[{Utils.XPathTextContains(Casing.Exact, "Email")}]")}]"
-                , Utils.AdminEmail);
+            U.ExpectField(this
+                , $"//div[{U.XPathHasElement($"label[{U.XPathTextContains(Casing.Exact, "Email")}]")}]"
+                , U.AdminEmail);
 
 
         }

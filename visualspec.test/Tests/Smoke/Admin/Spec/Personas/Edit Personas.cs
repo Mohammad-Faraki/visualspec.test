@@ -33,21 +33,21 @@
 
             // Scroll to bottom of Traits textarea 
             // This line doesn't work till devs set "personas-content" for personas content
-            Utils.ScrollToElementXPath(this, C.scorllableElement
+            U.ScrollToElementXPath(this, C.scorllableElement
                 , XPath: $"{C.firstPersonaOfFirstActor}//textarea[@id='Traits']"
-                , elementSide: Utils.HtmlElementProp.Bottom);
+                , elementSide: U.HtmlElementProp.Bottom);
 
             SetXPath($"{C.firstPersonaOfFirstActor}//textarea[@id='Feelings']").To("test Feelings");
             SetXPath($"{C.firstPersonaOfFirstActor}//textarea[@id='PainPoints']").To("test Pain Points");
             SetXPath($"{C.firstPersonaOfFirstActor}//textarea[@id='Message']").To("test Message");
 
 
-            Utils.ScrollToTop(this, C.scorllableElement);
+            U.ScrollToTop(this, C.scorllableElement);
             // Click somewhere
             ClickXPath($"{C.firstPersonaOfFirstActor}//input[@id='Name']");
             Thread.Sleep(3000);
             // in sidebar
-            ExpectXPath($"{C.firstPersonaOfFirstActorSidebar}//a[{Utils.XPathText(Casing.Exact, C.editedPersona)}]");
+            ExpectXPath($"{C.firstPersonaOfFirstActorSidebar}//a[{U.XPathText(Casing.Exact, C.editedPersona)}]");
 
 
             RefreshPage();
@@ -59,7 +59,7 @@
             // in sidebar
             //ExpectXPath("/html/body//div[@class='left-panel']//li[1]//a[1]//div[text()='persona01']");
             ////Expect(C.editedPersona);
-            ExpectXPath($"{C.firstPersonaOfFirstActorSidebar}//a[{Utils.XPathText(Casing.Exact, C.editedPersona)}]");
+            ExpectXPath($"{C.firstPersonaOfFirstActorSidebar}//a[{U.XPathText(Casing.Exact, C.editedPersona)}]");
 
             ExpectXPath($"{C.firstPersonaOfFirstActor}//input[@id='Name'][@value='{C.editedPersona}']");
             ExpectXPath($"{C.firstPersonaOfFirstActor}//input[@id='Age'][@value='25']");
@@ -70,9 +70,9 @@
 
             // Scroll to bottom of Traits textarea 
             // This line doesn't work till devs set "personas-content" for personas content
-            Utils.ScrollToElementXPath(this, C.scorllableElement
+            U.ScrollToElementXPath(this, C.scorllableElement
                 , XPath: $"{C.firstPersonaOfFirstActor}//textarea[@id='Traits']"
-                , elementSide: Utils.HtmlElementProp.Bottom);
+                , elementSide: U.HtmlElementProp.Bottom);
 
             ExpectXPath($"{C.firstPersonaOfFirstActor}//textarea[@id='Feelings'][text()='test Feelings']");
             ExpectXPath($"{C.firstPersonaOfFirstActor}//textarea[@id='PainPoints'][text()='test Pain Points']");

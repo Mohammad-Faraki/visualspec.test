@@ -23,9 +23,9 @@
             HoverOver(C.nodeStart);
 
             //ClickXPath(U.workflow_iconNodesToolbox(nodeName: C.nodeStart));
-            int actorColumnIdx = Utils.GetActorColumnIdx_Workflow(this, Utils.DefaultActorsDic[Utils.DefaultActors.Admin]);
+            int actorColumnIdx = U.GetActorColumnIdx_Workflow(this, U.DefaultActorsDic[U.DefaultActors.Admin]);
             // click on plus icon(to open add node toolbox)
-            ClickXPath(Utils.workflow_iconNodesToolbox(this, nodeName: C.nodeStart, nodeType: Utils.NodeType.Start, actorColumnIdx: actorColumnIdx));
+            ClickXPath(U.workflow_iconNodesToolbox(this, nodeName: C.nodeStart, nodeType: U.NodeType.Start, actorColumnIdx: actorColumnIdx));
 
             ClickLink("Add end point");
             ExpectHeader("Add New End Point");
@@ -36,7 +36,7 @@
             Expect(C.nodeEnd);
 
             // check design of the node
-            ExpectXPath($"//td[{actorColumnIdx}]//div[{Utils.XPathAttributeContains("class", C.cssClass_EndNode)}]//*[{Utils.XPathTextContains(Casing.Exact, C.nodeEnd)}]");
+            ExpectXPath($"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", C.cssClass_EndNode)}]//*[{U.XPathTextContains(Casing.Exact, C.nodeEnd)}]");
         }
 
 

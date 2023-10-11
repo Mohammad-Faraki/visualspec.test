@@ -19,8 +19,8 @@
             Run<AddStakeholder>();
             
             //*********** Delete stakeloder
-            Utils.DeleteStakeholder(this, -1);
-            WaitToSeeNo(Utils.stakeholder1);
+            U.DeleteStakeholder(this, -1);
+            WaitToSeeNo(U.stakeholder1);
 
 
         }

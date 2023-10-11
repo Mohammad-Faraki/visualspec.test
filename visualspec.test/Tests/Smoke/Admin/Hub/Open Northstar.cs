@@ -14,7 +14,7 @@
         {
             Run<CreateOpenProject>();
 
-            Utils.OpenNorthstar(this);
+            U.OpenNorthstar(this);
         }
 
 

@@ -12,10 +12,10 @@
         [PangolinTestMethod]
         public override void RunTest()
         {
-            Utils.GoToLandingPage(this);
+            U.GoToLandingPage(this);
             ClickLink("Accept");
 
-            Utils.ScrollToBottom_Website(this);
+            U.ScrollToBottom_Website(this);
             ClickLink("Terms & conditions");
 
             WaitToSee(What.Contains, "Since these terms and conditions were written the words");

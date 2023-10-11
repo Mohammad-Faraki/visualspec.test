@@ -17,7 +17,7 @@
             Run<CreateOpenProject>();
             // Open a new tab
             this.WebDriver.SwitchTo().NewWindow(WindowType.Tab);
-            Utils.ScanPages(this, true);
+            U.ScanPages(this, true);
 
             int rowIndex = 1;
 

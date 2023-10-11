@@ -14,22 +14,22 @@
         {
             LoginAs<AdminUser>();
 
-            Utils.CreateProject(this);
+            U.CreateProject(this);
 
 
 
-            Utils.SearchProject(this);
-            Utils.OpenProjectDetails(this, 1);
+            U.SearchProject(this);
+            U.OpenProjectDetails(this, 1);
             ClickLabel(That.Contains,"Can be cloned");
             ClickLink("Save");
 
-            Utils.OpenProjectDetails(this, 1);
+            U.OpenProjectDetails(this, 1);
             ClickLink("Clone");
-            string clonedProjName = $"{Utils.TestProjectName}-clone";
+            string clonedProjName = $"{U.TestProjectName}-clone";
             Expect(clonedProjName);
             ClickLink("Clone");
 
-            ExpectXPath($"//tr[1]//*[{Utils.XPathTextContains(Casing.Exact, Utils.TestProjectName)}]");
+            ExpectXPath($"//tr[1]//*[{U.XPathTextContains(Casing.Exact, U.TestProjectName)}]");
         }
 
 

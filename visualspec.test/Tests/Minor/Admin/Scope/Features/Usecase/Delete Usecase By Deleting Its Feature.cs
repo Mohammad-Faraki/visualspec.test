@@ -23,9 +23,9 @@
         private void Clean()
         {
             //*********** Delete usecase by deleteing its feature
-            Utils.DeleteFeature(this, Utils.feature01);
-            ExpectNo(Utils.feature01);
-            ExpectNo(Utils.f1Usecase1);
+            U.DeleteFeature(this, U.feature01);
+            ExpectNo(U.feature01);
+            ExpectNo(U.f1Usecase1);
 
         }
     }

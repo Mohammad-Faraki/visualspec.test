@@ -23,15 +23,15 @@
             ClickXPath("//a[@name='UploadCheckpoint']");
             WaitToSee("Add checkpoint");
 
-            Set(That.Contains,"Name").To(Utils.checkpoint1);
+            Set(That.Contains,"Name").To(U.checkpoint1);
 
-            var filePath = $"{Utils.moreFiles_FolderPath}/18HomePage-Compeleted-checkpoint.zip";
+            var filePath = $"{U.moreFiles_FolderPath}/18HomePage-Compeleted-checkpoint.zip";
             this.WebDriver.FindElement(By.Id("File_fileInput")).SendKeys(filePath);
             Thread.Sleep(5000);
 
             Click(What.Contains,"Save");
             Thread.Sleep(4000);
-            AtXPath("//form[@data-module='CheckpointList']//tr//td[1]").Expect(Utils.checkpoint1);
+            AtXPath("//form[@data-module='CheckpointList']//tr//td[1]").Expect(U.checkpoint1);
 
         }
 

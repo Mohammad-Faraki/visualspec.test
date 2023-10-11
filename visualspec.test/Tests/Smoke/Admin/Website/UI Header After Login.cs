@@ -12,8 +12,8 @@
         [PangolinTestMethod]
         public override void RunTest()
         {
-            Utils.LoginAdmin(this, isFirstTime: true);
-            Utils.CheckWebsiteUI_Header_AfterLogin(this);
+            U.LoginAdmin(this, isFirstTime: true);
+            U.CheckWebsiteUI_Header_AfterLogin(this);
         }
 
 

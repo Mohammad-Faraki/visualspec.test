@@ -25,7 +25,7 @@
             WaitToSee($"Change device of {C.addedApp}");
             //AtXPath(C.formChangeDeviceXPath).ClickButton("---Select---");
             string btnChangeDeviceDropdown = "---Select---";
-            Utils.OpenDropdown(this, btnChangeDeviceDropdown, C.formChangeDeviceXPath);
+            U.OpenDropdown(this, btnChangeDeviceDropdown, C.formChangeDeviceXPath);
             NearXPath(C.formChangeDeviceXPath).ClickLink(C.editedDevice);
             AtXPath(C.formChangeDeviceXPath).ClickButton("Save");
 
@@ -38,13 +38,13 @@
 
             AtXPath(C.formDeviceManagmentXPath).ClickXPath("//a[@name='ChangeTo'][1]");
             WaitToSee($"Change device of {C.addedApp}");
-            Utils.OpenDropdown(this, btnChangeDeviceDropdown, C.formChangeDeviceXPath);
+            U.OpenDropdown(this, btnChangeDeviceDropdown, C.formChangeDeviceXPath);
             //NearXPath(C.formChangeDeviceXPath).ExpectNoLink(C.editedDevice);
             //NearXPath(C.formChangeDeviceXPath).ExpectLink(C.addedDevice);
             ////AtXPath(C.formChangeDeviceXPath).BelowButton("---Select---").ExpectNoLink(C.editedDevice);
             ////AtXPath(C.formChangeDeviceXPath).BelowButton("---Select---").ExpectLink(C.addedDevice);
-            ExpectNoXPath($"//label[{Utils.XPathTextContains(Casing.Exact, "To device")}]/{Utils.following_sibling_XPath}::div[{Utils.XPathHasElement($"*[{Utils.XPathText(Casing.Exact, C.editedDevice)}]")}]");
-            ExpectXPath($"//label[{Utils.XPathTextContains(Casing.Exact, "To device")}]/{Utils.following_sibling_XPath}::div[{Utils.XPathHasElement($"*[{Utils.XPathText(Casing.Exact, C.addedDevice)}]")}]");
+            ExpectNoXPath($"//label[{U.XPathTextContains(Casing.Exact, "To device")}]/{U.following_sibling_XPath}::div[{U.XPathHasElement($"*[{U.XPathText(Casing.Exact, C.editedDevice)}]")}]");
+            ExpectXPath($"//label[{U.XPathTextContains(Casing.Exact, "To device")}]/{U.following_sibling_XPath}::div[{U.XPathHasElement($"*[{U.XPathText(Casing.Exact, C.addedDevice)}]")}]");
         }
 
 

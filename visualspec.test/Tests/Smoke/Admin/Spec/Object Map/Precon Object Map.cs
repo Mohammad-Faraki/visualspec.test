@@ -29,18 +29,18 @@ namespace Tests.Smoke.Admin.ObjectMap
             //  U.f2Usecase1, U.f2Usecase2,
             //  U.f3Usecase1
             //};
-            var features = new string[] { Utils.feature01, Utils.feature02, Utils.feature03};
+            var features = new string[] { U.feature01, U.feature02, U.feature03};
             var usecases = new string[]
             { 
-              Utils.f1Usecase1, 
-              Utils.f2Usecase1
+              U.f1Usecase1, 
+              U.f2Usecase1
             };
-            Utils.AddUsecases(this, features, usecases);
+            U.AddUsecases(this, features, usecases);
 
 
 
 
-            Utils.OpenObjectmap(this);
+            U.OpenObjectmap(this);
         }
     }
 }

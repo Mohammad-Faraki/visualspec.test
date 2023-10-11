@@ -12,10 +12,10 @@
         [PangolinTestMethod]
         public override void RunTest()
         {
-            Utils.GoToLandingPage(this);
+            U.GoToLandingPage(this);
             ClickLink("Accept");
 
-            Utils.ScrollToBottom_Website(this);
+            U.ScrollToBottom_Website(this);
             ClickLink("Privacy policy");
 
             WaitToSee(What.Contains, "Geeks Ltd is committed to ensuring that your privacy is protected");

@@ -12,7 +12,7 @@
         [PangolinTestMethod]
         public override void RunTest()
         {
-            Utils.GoToLandingPage(this);
+            U.GoToLandingPage(this);
 
             ClickLink("Login");
 

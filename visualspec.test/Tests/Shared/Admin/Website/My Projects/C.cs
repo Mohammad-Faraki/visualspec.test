@@ -9,6 +9,6 @@
 
     public static class C
     {
-        public static string formProjectDetail = $"//form[{Utils.XPathAttributeContains("action", "./Edit-project.aspx")}]";
+        public static string formProjectDetail = $"//form[{U.XPathAttributeContains("action", "./Edit-project.aspx")}]";
     }
 }

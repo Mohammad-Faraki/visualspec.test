@@ -24,7 +24,7 @@
             ClickXPath(C.btnThreeDotsActorXPath);
             // Edit
             //var btnEdit= "li:nth-of-type(3) > .treeview-node__actions > a[target='$modal']";
-            var btnEdit = $"{C.thirdActorXPath}//a[{Utils.XPathText(Casing.Exact, "Edit")}]";
+            var btnEdit = $"{C.thirdActorXPath}//a[{U.XPathText(Casing.Exact, "Edit")}]";
             WaitToSeeXPath(btnEdit);
             ClickXPath(btnEdit);
 

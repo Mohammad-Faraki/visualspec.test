@@ -10,11 +10,11 @@
     {
         public override void RunTest()
         {
-            int nextTestProjNewIdx = Convert.ToInt32(Utils.TestProjIdx) + 1;
-            Utils.UpdateFile(Utils.TestProjIdxFile_FullPath, new string[] { $"{nextTestProjNewIdx}" });
+            int nextTestProjNewIdx = Convert.ToInt32(U.TestProjIdx) + 1;
+            U.UpdateFile(U.TestProjIdxFile_FullPath, new string[] { $"{nextTestProjNewIdx}" });
 
 
-            Utils.LoginAdmin(this, isFirstTime: true);
+            U.LoginAdmin(this, isFirstTime: true);
         }
     }
 }
