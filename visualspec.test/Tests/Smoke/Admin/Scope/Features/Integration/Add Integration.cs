@@ -15,15 +15,7 @@
 
             Run<CreateOpenProject>();
 
-
-
-            //*********** Add integration
-            ClickXPath($"//a[@name='CreateIntegration']");
-            WaitToSee("Add integration");
-            Set("Name").To(C.addedIntegration);
-            ExpectNoButton(That.Contains, "Delete");
-            Click("Save");
-            Expect(C.addedIntegration);
+            U.AddIntegration(this, integrationName: C.addedIntegration);
         }
 
 

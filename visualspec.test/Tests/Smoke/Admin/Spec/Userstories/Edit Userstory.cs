@@ -22,9 +22,7 @@
 
 
             //*********** Edit userstory
-            //AtRow(newUserstory).AtColumn("Ref").ClickLink();
-            ClickXPath("//tr[last()]/td[2]/a");
-            WaitToSee(What.Contains, "Acceptance Criteria");
+            U.OpenUserstory(this, storyRowIdx: "last()");
 
             ClickLink(That.Contains, "Edit");
             string editPopupTitle = "User Journey Details";

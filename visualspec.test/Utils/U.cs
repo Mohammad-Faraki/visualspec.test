@@ -23,6 +23,7 @@
     using System.Xml.Serialization;
     using visualspec.test;
     using Newtonsoft.Json;
+    using Roslyn.Compilers;
 
     public static class U
     {
@@ -107,7 +108,7 @@
         public const string TitleScopeFeatures = "Features > Application";
 
         #region XPath variables
-        public const string lastElement_XPath = "last()";
+        public const string lastIdx_XPath = "last()";
 
         /// <summary>
         /// example:   //a[@name='OpenUseCaseDiagram']/following-sibling::i
@@ -477,6 +478,16 @@
             uiTest.WaitToSee("Deleting this feature will delete all its associated data in other microservices. Are you sure you want to delete this feature?");
             uiTest.Click("OK");
         }
+        public static void AddIntegration(UITest uiTest, string integrationName)
+        {
+            //*********** Add integration
+            uiTest.ClickXPath($"//a[@name='CreateIntegration']");
+            uiTest.WaitToSee("Add integration");
+            uiTest.Set("Name").To(integrationName);
+            uiTest.ExpectNoButton(That.Contains, "Delete");
+            uiTest.Click("Save");
+            uiTest.Expect(integrationName);
+        }
 
         #region Commented getting xml value (provided by Hossein Esmaili)
         //public static string GetValueFromMainConfigXMLDocument(string section, string key)
@@ -696,8 +707,8 @@
         {
             return $"translate({xpathTextToTranslate}, 'ABCDEFGHIJKLMNOPURSTUWXYZ', 'abcdefghijklmnopurstuwxyz')";
         }
-        
-        
+
+
 
 
 
@@ -899,7 +910,7 @@
             uiTest.ClickXPath(estimator_Sign_XPath);
             //Thread.Sleep(2000);
         }
-        public static string scope_Estimate_Sign_XPath = U.headerContains_XPath("Solution Design Activities",Casing.Exact);
+        public static string scope_Estimate_Sign_XPath = U.headerContains_XPath("Solution Design Activities", Casing.Exact);
         public static void OpenEstimate(UITest uiTest)
         {
             uiTest.ClickXPath(scopeSidebarIcon_XPath);
@@ -1720,6 +1731,20 @@
             else
                 // Scroll to the feature above the current feature
                 U.ScrollToElementXPath(uiTest, Shared.Admin.Scope.Features.C.scrollable_scopeFeatures_treeView, $"//a[{U.XPathText(Casing.Exact, features[featureIdx - 1])}]");
+        }
+
+
+        public static void OpenUserstory(UITest uiTest, string storyRowIdx)
+        {
+            //AtRow(newUserstory).AtColumn("Ref").ClickLink();
+            uiTest.ClickXPath($"//tr[{storyRowIdx}]/td[2]/a");
+            //uiTest.WaitToSee(What.Contains, "Acceptance Criteria");
+            WaitToLoad_Userstory_EditPage(uiTest);
+        }
+
+        public static void WaitToLoad_Userstory_EditPage(UITest uiTest)
+        {
+            uiTest.WaitToSee(What.Contains, "Acceptance Criteria");
         }
     }
 }
