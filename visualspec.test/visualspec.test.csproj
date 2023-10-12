@@ -49,7 +49,7 @@
     <PackageReference Include="System.Text.Json" Version="7.0.3" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Tests\Shared\Admin\Scope\Estimate\Activity\" />
+    <Folder Include="Tests\Shared data\Admin\Scope\Estimate\Activity\" />
   </ItemGroup>
   <ItemGroup>
     <None Update="app.config">
