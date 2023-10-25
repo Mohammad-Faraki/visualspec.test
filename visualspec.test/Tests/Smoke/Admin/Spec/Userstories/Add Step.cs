@@ -45,7 +45,7 @@
             Thread.Sleep(5000);
 
 
-
+            // Checking if step is added to a right place and right order
             ExpectXPath($"//div[1]//a[{U.XPathText(Casing.Ignore, C.addedStep)}]");
             ExpectXPath($"//div[2]{C.btnAddStep_XPath}");
 
@@ -54,6 +54,7 @@
             Thread.Sleep(3000);
             U.ScrollToBottom(this, C.scrollable_mainContent);
 
+            // Checking if step is added to a right place and right order
             ExpectXPath($"//div[1]//a[{U.XPathText(Casing.Ignore, C.addedStep)}]");
             ExpectXPath($"//div[2]{C.btnAddStep_XPath}");
         }

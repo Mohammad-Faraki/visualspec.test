@@ -855,242 +855,6 @@
             return lines.ElementAt(lineNumber);
         }
 
-        #region Opens
-        #region Open Plan Sections
-        public static void OpenPlanStakeholders(UITest uiTest)
-        {
-            uiTest.ClickXPath($"//li[1]//*[{XPathText(Casing.Exact, "Stakeholders")}]");
-            uiTest.WaitToSee("Email");
-            uiTest.Expect("Stakeholders");
-        }
-        public static void OpenPlanDomainExpertise(UITest uiTest)
-        {
-            uiTest.ClickXPath($"//li[2]//*[{XPathText(Casing.Exact, "Domain Expertise")}]");
-            uiTest.WaitToSee("Usecase allocations");
-        }
-        public static void OpenPlanActivities(UITest uiTest)
-        {
-            uiTest.ClickXPath($"//li[3]//*[{XPathText(Casing.Exact, "Activities")}]");
-            uiTest.WaitToSee("Attendee(s)");
-        }
-        public static void OpenPlanSchedule(UITest uiTest)
-        {
-            uiTest.ClickXPath($"//li[4]//*[{XPathText(Casing.Exact, "Schedule")}]");
-            uiTest.WaitToSeeHeader("Schedule");
-        }
-        #endregion
-
-        public const string scopeSidebarIcon_XPath = "//li[@id='menuItem_Scope']/a[@href='#menuItem_Scope']";
-        public static string scope_features_Sign_XPath = $"//th[{XPathText(Casing.Exact, "Devices")}]";
-        public static void OpenFeatures(UITest uiTest)
-        {
-            uiTest.ClickXPath(scopeSidebarIcon_XPath);
-
-            uiTest.ClickXPath($"//li[2]//span[{XPathTextContains(Casing.Exact, "Scope")}]");
-            uiTest.WaitToSeeXPath($"//li[2]//ul//li[1]//a[{XPathTextContains(Casing.Exact, "Features")}]");
-            uiTest.ClickXPath($"//li[2]//ul//li[1]//a[{XPathTextContains(Casing.Exact, "Features")}]");
-
-
-            //uiTest.WaitToSee(What.Contains, "Applications"); 
-            uiTest.WaitToSeeXPath(scope_features_Sign_XPath);
-            uiTest.ClickXPath(scope_features_Sign_XPath);
-        }
-
-        public static string estimator_Sign_XPath = $"//th[{XPathText(Casing.Exact, "UI Design Implementation")}]";
-        public static void OpenEstimator(UITest uiTest)
-        {
-            uiTest.ClickXPath(scopeSidebarIcon_XPath);
-
-            // Deliver
-            uiTest.ClickXPath($"//li[6]//span[{XPathTextContains(Casing.Exact, "Deliver")}]");
-            uiTest.WaitToSeeXPath($"//li[6]//ul//li[1]//a[{XPathTextContains(Casing.Exact, "Estimate")}]");
-            uiTest.ClickXPath($"//li[6]//ul//li[1]//a[{XPathTextContains(Casing.Exact, "Estimate")}]");
-
-            uiTest.WaitToSeeXPath(estimator_Sign_XPath);
-            uiTest.ClickXPath(estimator_Sign_XPath);
-            //Thread.Sleep(2000);
-        }
-        public static string scope_Estimate_Sign_XPath = U.headerContains_XPath("Solution Design Activities", Casing.Exact);
-        public static void OpenEstimate(UITest uiTest)
-        {
-            uiTest.ClickXPath(scopeSidebarIcon_XPath);
-
-            // Scope
-            uiTest.ClickXPath($"//li[2]//span[{XPathTextContains(Casing.Exact, "Scope")}]");
-            uiTest.WaitToSeeXPath($"//li[2]//ul//li[2]//a[{XPathTextContains(Casing.Exact, "Estimate")}]");
-            uiTest.ClickXPath($"//li[2]//ul//li[2]//a[{XPathTextContains(Casing.Exact, "Estimate")}]");
-
-            uiTest.WaitToSeeXPath(scope_Estimate_Sign_XPath);
-            uiTest.ClickXPath(scope_Estimate_Sign_XPath);
-            //Thread.Sleep(2000);
-        }
-        public static string northstar_Sign_XPath = U.headerContains_XPath("Supporting Info", Casing.Exact);
-        public static void OpenNorthstar(UITest uiTest)
-        {
-            uiTest.ClickXPath(scopeSidebarIcon_XPath);
-
-            // Plan
-            uiTest.ClickXPath($"//li[3]//span[{XPathTextContains(Casing.Exact, "Plan")}]");
-            uiTest.WaitToSeeXPath($"//li[3]//ul//li[2]//a[{XPathTextContains(Casing.Exact, "Northstar")}]");
-            uiTest.ClickXPath($"//li[3]//ul//li[2]//a[{XPathTextContains(Casing.Exact, "Northstar")}]");
-
-
-            uiTest.WaitToSeeXPath(northstar_Sign_XPath);
-            uiTest.ClickXPath(northstar_Sign_XPath);
-            //Thread.Sleep(2000);
-        }
-        public static string personas_Sign_XPath = "//form[@data-module='Personas_MainCanvas_List']";
-        public static void OpenPersonas(UITest uiTest)
-        {
-            uiTest.ClickXPath(scopeSidebarIcon_XPath);
-
-            // Spec
-            uiTest.ClickXPath($"//li[4]//span[{XPathTextContains(Casing.Exact, "Spec")}]");
-            uiTest.WaitToSeeXPath($"//li[4]//ul//li[2]//a[{XPathTextContains(Casing.Exact, "Personas")}]");
-            uiTest.ClickXPath($"//li[4]//ul//li[2]//a[{XPathTextContains(Casing.Exact, "Personas")}]");
-
-
-            //uiTest.WaitToSeeXPath("//div[@class='personas-title'][text()='Personas']");
-            uiTest.WaitToSeeXPath(personas_Sign_XPath);
-            uiTest.ClickXPath(personas_Sign_XPath);
-            //Thread.Sleep(2000);
-        }
-
-        public static string plan_Sign_XPath = U.header_XPath("Stakeholders", Casing.Exact);
-        public static void OpenPlan(UITest uiTest)
-        {
-            uiTest.ClickXPath(scopeSidebarIcon_XPath);
-
-            // Plan
-            uiTest.ClickXPath($"//li[3]//span[{XPathTextContains(Casing.Exact, "Plan")}]");
-            uiTest.WaitToSeeXPath($"//li[3]//ul//li[1]//a[{XPathTextContains(Casing.Exact, "Project Plan")}]");
-            uiTest.ClickXPath($"//li[3]//ul//li[1]//a[{XPathTextContains(Casing.Exact, "Project Plan")}]");
-
-
-            //uiTest.WaitToSeeHeader("Stakeholders");
-            //uiTest.ClickHeader("Stakeholders");
-            uiTest.WaitToSeeXPath(plan_Sign_XPath);
-            uiTest.ClickXPath(plan_Sign_XPath);
-
-            ////uiTest.Expect("Email");
-            //Thread.Sleep(2000);
-        }
-
-        public static string userJourneys_Sign_XPath = $"//a[{U.XPathText(Casing.Exact, "User Story")}]";
-        public static void OpenUserstories(UITest uiTest)
-        {
-            uiTest.ClickXPath(scopeSidebarIcon_XPath);
-
-            uiTest.ClickXPath($"//li[4]//span[{XPathTextContains(Casing.Exact, "Spec")}]");
-            uiTest.WaitToSeeXPath($"//li[4]//ul//li//a[{XPathTextContains(Casing.Exact, "User Journeys")}]");
-            uiTest.ClickXPath($"//li[4]//ul//li//a[{XPathTextContains(Casing.Exact, "User Journeys")}]");
-
-
-            //uiTest.WaitToSeeXPath($"//form[@data-module='UserStoryList']//*[{XPathText(Casing.Exact, "User Journeys")}]");
-
-            uiTest.WaitToSeeXPath(userJourneys_Sign_XPath);
-            uiTest.ClickXPath(userJourneys_Sign_XPath);
-            //Thread.Sleep(2000);
-        }
-
-        public static string workflow_Sign_XPath = U.header_XPath("Workflow Models", Casing.Ignore);
-        public static void OpenWorkflow(UITest uiTest)
-        {
-            uiTest.ClickXPath(scopeSidebarIcon_XPath);
-
-            uiTest.ClickXPath($"//li[4]//span[{XPathTextContains(Casing.Exact, "Spec")}]");
-            uiTest.WaitToSeeXPath($"//li[4]//ul//li[3]//a[{XPathTextContains(Casing.Exact, "Workflow Models")}]");
-            uiTest.ClickXPath($"//li[4]//ul//li[3]//a[{XPathTextContains(Casing.Exact, "Workflow Models")}]");
-
-
-
-            uiTest.ClickXPath("//div[@class='right-panel']");
-            uiTest.WaitToSeeXPath(workflow_Sign_XPath);
-            uiTest.ClickXPath(workflow_Sign_XPath);
-            //Thread.Sleep(2000);
-        }
-
-        public static string Objectmap_Sign_XPath = U.btnAddObjXPath;
-        public static void OpenObjectmap(UITest uiTest)
-        {
-            uiTest.ClickXPath(scopeSidebarIcon_XPath);
-
-            uiTest.ClickXPath($"//li[4]//span[{XPathTextContains(Casing.Exact, "Spec")}]");
-            uiTest.WaitToSeeXPath($"//li[4]//ul//li[1]//a[{XPathTextContains(Casing.Exact, "Object Map")}]");
-            uiTest.ClickXPath($"//li[4]//ul//li[1]//a[{XPathTextContains(Casing.Exact, "Object Map")}]");
-
-
-            //uiTest.WaitToSeeLink("Object Details");
-            //uiTest.ClickLink("Object Details");
-            uiTest.WaitToSeeXPath(Objectmap_Sign_XPath);
-            uiTest.ClickXPath(Objectmap_Sign_XPath);
-            // To close it
-            uiTest.ClickXPath(Objectmap_Sign_XPath);
-            //Thread.Sleep(2000);
-
-            //WebDriverWait w = new WebDriverWait(uiTest.WebDriver, TimeSpan.FromSeconds(100));
-            //w.Until(ExpectedConditions
-            //        .PresenceOfAllElementsLocatedBy(By.XPath(U.btnAddObjXPath)));
-            //var x = uiTest.WebDriver.FindElements(By.XPath(U.btnAddObjXPath)).ElementAt(0);
-            //x.Click();
-            //// To close it
-            //x.Click();
-        }
-
-        public static string checkpoints_Sign_XPath = $"//th[{XPathText(Casing.Exact, "Last Modified Date")}]";
-        public static void OpenCheckpoints(UITest uiTest)
-        {
-            uiTest.ClickXPath(scopeSidebarIcon_XPath);
-
-            // Hi <username>
-            uiTest.ClickXPath($"//a[{XPathAttributeContains("id", "dropdownUser")}]/img");
-            uiTest.WaitToSeeXPath($"//li[2]//a[{XPathTextContains(Casing.Exact, "Checkpoints")}]");
-            uiTest.ClickXPath($"//li[2]//a[{XPathTextContains(Casing.Exact, "Checkpoints")}]");
-
-
-            //uiTest.WaitToSeeHeader("Checkpoints");
-            //uiTest.ClickHeader("Checkpoints");
-            uiTest.WaitToSeeXPath(checkpoints_Sign_XPath);
-            uiTest.ClickXPath(checkpoints_Sign_XPath);
-            //Thread.Sleep(2000);
-        }
-
-        public static string cognitive_Sign_XPath = U.headerContains_XPath("Cognitive Walkthroughs", Casing.Exact);
-        public static void OpenCognitive(UITest uiTest)
-        {
-            uiTest.ClickXPath(scopeSidebarIcon_XPath);
-
-            uiTest.ClickXPath($"//li[5]//span[{XPathTextContains(Casing.Exact, "Test")}]");
-            uiTest.ExpectXPath($"//li[5]//ul/li//a[{XPathTextContains(Casing.Exact, "Cognitive Walkthroughs")}]");
-            uiTest.ClickXPath($"//li[5]//ul/li//a[{XPathTextContains(Casing.Exact, "Cognitive Walkthroughs")}]");
-
-
-            uiTest.ClickXPath("//div[@class='right-panel']");
-            uiTest.WaitToSeeXPath(cognitive_Sign_XPath);
-            uiTest.ClickXPath(cognitive_Sign_XPath);
-            //Thread.Sleep(2000);
-        }
-
-        public static void OpenWireframes(UITest uiTest)
-        {
-            ////uiTest.ClickXPath(scopeSidebarIconXPath);
-
-            ////// Spec
-            ////uiTest.ClickXPath($"//li[3]//span[text()='Spec ']");
-            ////uiTest.ExpectXPath($"//li[3]//a[4]//span[text()='Wireframes']");
-            ////uiTest.ClickXPath($"//li[3]//a[4]//span[text()='Wireframes']");
-
-
-            ////Thread.Sleep(5000);
-            ////uiTest.SwitchToTab($"\r\n\t{TestProjectName} » Admin_A Web App_Wide screen");
-
-
-            GoToWireframes(uiTest);
-            uiTest.WaitToSeeLink("ScreenPath");
-            uiTest.ExpectLink("Outline");
-        }
-        #endregion
-
 
         public static void CreateProject(UITest uiTest)
         {
@@ -1739,12 +1503,333 @@
             //AtRow(newUserstory).AtColumn("Ref").ClickLink();
             uiTest.ClickXPath($"//tr[{storyRowIdx}]/td[2]/a");
             //uiTest.WaitToSee(What.Contains, "Acceptance Criteria");
-            WaitToLoad_Userstory_EditPage(uiTest);
+            WaitToSee_Userstory_EditPage(uiTest);
         }
-
-        public static void WaitToLoad_Userstory_EditPage(UITest uiTest)
+        public static void WaitToSee_Userstory_EditPage(UITest uiTest)
         {
             uiTest.WaitToSee(What.Contains, "Acceptance Criteria");
         }
+
+
+        #region Opens
+        #region Open Plan Sections
+        public static void OpenPlanStakeholders(UITest uiTest)
+        {
+            uiTest.ClickXPath($"//li[1]//*[{XPathText(Casing.Exact, "Stakeholders")}]");
+            WaitToSee_Plan_Stakeholders(uiTest);
+        }
+        public static void WaitToSee_Plan_Stakeholders(UITest uiTest)
+        {
+            uiTest.WaitToSee("Email");
+            uiTest.Expect("Stakeholders");
+        }
+
+
+        public static void OpenPlanDomainExpertise(UITest uiTest)
+        {
+            uiTest.ClickXPath($"//li[2]//*[{XPathText(Casing.Exact, "Domain Expertise")}]");
+            WaitToSee_Plan_DomainExpertise(uiTest);
+        }
+        public static void WaitToSee_Plan_DomainExpertise(UITest uiTest)
+        {
+            uiTest.WaitToSee("Usecase allocations");
+        }
+
+        public static void OpenPlanActivities(UITest uiTest)
+        {
+            uiTest.ClickXPath($"//li[3]//*[{XPathText(Casing.Exact, "Activities")}]");
+            WaitToSee_Plan_Activities(uiTest);
+        }
+        public static void WaitToSee_Plan_Activities(UITest uiTest)
+        {
+            uiTest.WaitToSee("Attendee(s)");
+        }
+
+        public static void OpenPlanSchedule(UITest uiTest)
+        {
+            uiTest.ClickXPath($"//li[4]//*[{XPathText(Casing.Exact, "Schedule")}]");
+            WaitToSee_Plan_Schedule(uiTest);
+        }
+        public static void WaitToSee_Plan_Schedule(UITest uiTest)
+        {
+            uiTest.WaitToSeeHeader("Schedule");
+        }
+
+        #endregion
+
+        public const string scopeSidebarIcon_XPath = "//li[@id='menuItem_Scope']/a[@href='#menuItem_Scope']";
+        public static string scope_features_Sign_XPath = $"//th[{XPathText(Casing.Exact, "Devices")}]";
+        public static void OpenFeatures(UITest uiTest)
+        {
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
+
+            uiTest.ClickXPath($"//li[2]//span[{XPathTextContains(Casing.Exact, "Scope")}]");
+            uiTest.WaitToSeeXPath($"//li[2]//ul//li[1]//a[{XPathTextContains(Casing.Exact, "Features")}]");
+            uiTest.ClickXPath($"//li[2]//ul//li[1]//a[{XPathTextContains(Casing.Exact, "Features")}]");
+
+
+            //uiTest.WaitToSee(What.Contains, "Applications"); 
+            WaitToSee_Features(uiTest);
+        }
+        public static void WaitToSee_Features(UITest uiTest)
+        {
+            uiTest.WaitToSeeXPath(scope_features_Sign_XPath);
+            uiTest.ClickXPath(scope_features_Sign_XPath);
+        }
+
+
+        public static string estimator_Sign_XPath = $"//th[{XPathText(Casing.Exact, "UI Design Implementation")}]";
+        public static void OpenEstimator(UITest uiTest)
+        {
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
+
+            // Deliver
+            uiTest.ClickXPath($"//li[6]//span[{XPathTextContains(Casing.Exact, "Deliver")}]");
+            uiTest.WaitToSeeXPath($"//li[6]//ul//li[1]//a[{XPathTextContains(Casing.Exact, "Estimate")}]");
+            uiTest.ClickXPath($"//li[6]//ul//li[1]//a[{XPathTextContains(Casing.Exact, "Estimate")}]");
+
+            WaitToSee_Estimator(uiTest);
+            //Thread.Sleep(2000);
+        }
+        public static void WaitToSee_Estimator(UITest uiTest)
+        {
+            uiTest.WaitToSeeXPath(estimator_Sign_XPath);
+            uiTest.ClickXPath(estimator_Sign_XPath);
+        }
+
+
+        public static string scope_Estimate_Sign_XPath = U.headerContains_XPath("Solution Design Activities", Casing.Exact);
+        public static void OpenEstimate(UITest uiTest)
+        {
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
+
+            // Scope
+            uiTest.ClickXPath($"//li[2]//span[{XPathTextContains(Casing.Exact, "Scope")}]");
+            uiTest.WaitToSeeXPath($"//li[2]//ul//li[2]//a[{XPathTextContains(Casing.Exact, "Estimate")}]");
+            uiTest.ClickXPath($"//li[2]//ul//li[2]//a[{XPathTextContains(Casing.Exact, "Estimate")}]");
+
+            WaitToSee_Estimate(uiTest);
+            //Thread.Sleep(2000);
+        }
+        public static void WaitToSee_Estimate(UITest uiTest)
+        {
+            uiTest.WaitToSeeXPath(scope_Estimate_Sign_XPath);
+            uiTest.ClickXPath(scope_Estimate_Sign_XPath);
+        }
+
+
+        public static string northstar_Sign_XPath = U.headerContains_XPath("Supporting Info", Casing.Exact);
+        public static void OpenNorthstar(UITest uiTest)
+        {
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
+
+            // Plan
+            uiTest.ClickXPath($"//li[3]//span[{XPathTextContains(Casing.Exact, "Plan")}]");
+            uiTest.WaitToSeeXPath($"//li[3]//ul//li[2]//a[{XPathTextContains(Casing.Exact, "Northstar")}]");
+            uiTest.ClickXPath($"//li[3]//ul//li[2]//a[{XPathTextContains(Casing.Exact, "Northstar")}]");
+
+
+            WaitToSee_Northstar(uiTest);
+            //Thread.Sleep(2000);
+        }
+        public static void WaitToSee_Northstar(UITest uiTest)
+        {
+            uiTest.WaitToSeeXPath(northstar_Sign_XPath);
+            uiTest.ClickXPath(northstar_Sign_XPath);
+        }
+
+
+        public static string personas_Sign_XPath = "//form[@data-module='Personas_MainCanvas_List']";
+        public static void OpenPersonas(UITest uiTest)
+        {
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
+
+            // Spec
+            uiTest.ClickXPath($"//li[4]//span[{XPathTextContains(Casing.Exact, "Spec")}]");
+            uiTest.WaitToSeeXPath($"//li[4]//ul//li[2]//a[{XPathTextContains(Casing.Exact, "Personas")}]");
+            uiTest.ClickXPath($"//li[4]//ul//li[2]//a[{XPathTextContains(Casing.Exact, "Personas")}]");
+
+
+            //uiTest.WaitToSeeXPath("//div[@class='personas-title'][text()='Personas']");
+            WaitToSee_Personas(uiTest);
+            //Thread.Sleep(2000);
+        }
+        public static void WaitToSee_Personas(UITest uiTest)
+        {
+            uiTest.WaitToSeeXPath(personas_Sign_XPath);
+            uiTest.ClickXPath(personas_Sign_XPath);
+        }
+
+
+        public static string plan_Sign_XPath = U.header_XPath("Stakeholders", Casing.Exact);
+        public static void OpenPlan(UITest uiTest)
+        {
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
+
+            // Plan
+            uiTest.ClickXPath($"//li[3]//span[{XPathTextContains(Casing.Exact, "Plan")}]");
+            uiTest.WaitToSeeXPath($"//li[3]//ul//li[1]//a[{XPathTextContains(Casing.Exact, "Project Plan")}]");
+            uiTest.ClickXPath($"//li[3]//ul//li[1]//a[{XPathTextContains(Casing.Exact, "Project Plan")}]");
+
+
+            //uiTest.WaitToSeeHeader("Stakeholders");
+            //uiTest.ClickHeader("Stakeholders");
+            WaitToSee_Plan(uiTest);
+
+            ////uiTest.Expect("Email");
+            //Thread.Sleep(2000);
+        }
+        public static void WaitToSee_Plan(UITest uiTest)
+        {
+            uiTest.WaitToSeeXPath(plan_Sign_XPath);
+            uiTest.ClickXPath(plan_Sign_XPath);
+        }
+
+
+        public static string userJourneys_Sign_XPath = $"//a[{U.XPathText(Casing.Exact, "User Story")}]";
+        public static void OpenUserstories(UITest uiTest)
+        {
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
+
+            uiTest.ClickXPath($"//li[4]//span[{XPathTextContains(Casing.Exact, "Spec")}]");
+            uiTest.WaitToSeeXPath($"//li[4]//ul//li//a[{XPathTextContains(Casing.Exact, "User Journeys")}]");
+            uiTest.ClickXPath($"//li[4]//ul//li//a[{XPathTextContains(Casing.Exact, "User Journeys")}]");
+
+
+            //uiTest.WaitToSeeXPath($"//form[@data-module='UserStoryList']//*[{XPathText(Casing.Exact, "User Journeys")}]");
+
+            WaitToSee_Userstories(uiTest);
+            //Thread.Sleep(2000);
+        }
+        public static void WaitToSee_Userstories(UITest uiTest)
+        {
+            uiTest.WaitToSeeXPath(userJourneys_Sign_XPath);
+            uiTest.ClickXPath(userJourneys_Sign_XPath);
+        }
+
+
+        public static string workflow_Sign_XPath = U.header_XPath("Workflow Models", Casing.Ignore);
+        public static void OpenWorkflow(UITest uiTest)
+        {
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
+
+            uiTest.ClickXPath($"//li[4]//span[{XPathTextContains(Casing.Exact, "Spec")}]");
+            uiTest.WaitToSeeXPath($"//li[4]//ul//li[3]//a[{XPathTextContains(Casing.Exact, "Workflow Models")}]");
+            uiTest.ClickXPath($"//li[4]//ul//li[3]//a[{XPathTextContains(Casing.Exact, "Workflow Models")}]");
+
+
+            WaitToSee_Workflow(uiTest);
+            //Thread.Sleep(2000);
+        }
+        public static void WaitToSee_Workflow(UITest uiTest)
+        {
+            uiTest.ClickXPath("//div[@class='right-panel']");
+            uiTest.WaitToSeeXPath(workflow_Sign_XPath);
+            uiTest.ClickXPath(workflow_Sign_XPath);
+        }
+
+
+        public static string Objectmap_Sign_XPath = U.btnAddObjXPath;
+        public static void OpenObjectmap(UITest uiTest)
+        {
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
+
+            uiTest.ClickXPath($"//li[4]//span[{XPathTextContains(Casing.Exact, "Spec")}]");
+            uiTest.WaitToSeeXPath($"//li[4]//ul//li[1]//a[{XPathTextContains(Casing.Exact, "Object Map")}]");
+            uiTest.ClickXPath($"//li[4]//ul//li[1]//a[{XPathTextContains(Casing.Exact, "Object Map")}]");
+
+
+            //uiTest.WaitToSeeLink("Object Details");
+            //uiTest.ClickLink("Object Details");
+            WaitToSee_Objectmap(uiTest);
+            //Thread.Sleep(2000);
+
+            //WebDriverWait w = new WebDriverWait(uiTest.WebDriver, TimeSpan.FromSeconds(100));
+            //w.Until(ExpectedConditions
+            //        .PresenceOfAllElementsLocatedBy(By.XPath(U.btnAddObjXPath)));
+            //var x = uiTest.WebDriver.FindElements(By.XPath(U.btnAddObjXPath)).ElementAt(0);
+            //x.Click();
+            //// To close it
+            //x.Click();
+        }
+        public static void WaitToSee_Objectmap(UITest uiTest)
+        {
+            uiTest.WaitToSeeXPath(Objectmap_Sign_XPath);
+            uiTest.ClickXPath(Objectmap_Sign_XPath);
+            // To close it
+            uiTest.ClickXPath(Objectmap_Sign_XPath);
+        }
+
+
+        public static string checkpoints_Sign_XPath = $"//th[{XPathText(Casing.Exact, "Last Modified Date")}]";
+        public static void OpenCheckpoints(UITest uiTest)
+        {
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
+
+            // Hi <username>
+            uiTest.ClickXPath($"//a[{XPathAttributeContains("id", "dropdownUser")}]/img");
+            uiTest.WaitToSeeXPath($"//li[2]//a[{XPathTextContains(Casing.Exact, "Checkpoints")}]");
+            uiTest.ClickXPath($"//li[2]//a[{XPathTextContains(Casing.Exact, "Checkpoints")}]");
+
+
+            //uiTest.WaitToSeeHeader("Checkpoints");
+            //uiTest.ClickHeader("Checkpoints");
+            WaitToSee_Checkpoints(uiTest);
+            //Thread.Sleep(2000);
+        }
+        public static void WaitToSee_Checkpoints(UITest uiTest)
+        {
+            uiTest.WaitToSeeXPath(checkpoints_Sign_XPath);
+            uiTest.ClickXPath(checkpoints_Sign_XPath);
+        }
+
+
+        public static string cognitive_Sign_XPath = U.headerContains_XPath("Cognitive Walkthroughs", Casing.Exact);
+        public static void OpenCognitive(UITest uiTest)
+        {
+            uiTest.ClickXPath(scopeSidebarIcon_XPath);
+
+            uiTest.ClickXPath($"//li[5]//span[{XPathTextContains(Casing.Exact, "Test")}]");
+            uiTest.ExpectXPath($"//li[5]//ul/li//a[{XPathTextContains(Casing.Exact, "Cognitive Walkthroughs")}]");
+            uiTest.ClickXPath($"//li[5]//ul/li//a[{XPathTextContains(Casing.Exact, "Cognitive Walkthroughs")}]");
+
+
+            WaitToSee_Cognitive(uiTest);
+            //Thread.Sleep(2000);
+        }
+        public static void WaitToSee_Cognitive(UITest uiTest)
+        {
+            uiTest.ClickXPath("//div[@class='right-panel']");
+            uiTest.WaitToSeeXPath(cognitive_Sign_XPath);
+            uiTest.ClickXPath(cognitive_Sign_XPath);
+        }
+
+
+        public static void OpenWireframes(UITest uiTest)
+        {
+            ////uiTest.ClickXPath(scopeSidebarIconXPath);
+
+            ////// Spec
+            ////uiTest.ClickXPath($"//li[3]//span[text()='Spec ']");
+            ////uiTest.ExpectXPath($"//li[3]//a[4]//span[text()='Wireframes']");
+            ////uiTest.ClickXPath($"//li[3]//a[4]//span[text()='Wireframes']");
+
+
+            ////Thread.Sleep(5000);
+            ////uiTest.SwitchToTab($"\r\n\t{TestProjectName} » Admin_A Web App_Wide screen");
+
+
+            GoToWireframes(uiTest);
+            
+            WaitToSee_Wireframes(uiTest);
+        }
+        public static void WaitToSee_Wireframes(UITest uiTest)
+        {
+            uiTest.WaitToSeeLink("ScreenPath");
+            uiTest.ExpectLink("Outline");
+        }
+        #endregion
+        
+        
     }
 }
