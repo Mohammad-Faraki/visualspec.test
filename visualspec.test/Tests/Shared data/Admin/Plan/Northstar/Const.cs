@@ -6,7 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public static class C
+    public static class Const
     {
         public const string addedNorthstar = "Northstar 2";
         public const string editedNorthstar = "Northstar 2 edited";

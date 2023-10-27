@@ -21,17 +21,17 @@
             //ClickXPath($"//div[@id='UseCaseTreeMenu']/nav[1]//a[@href='/features/enter-application?{MyUtils.ProjectIdKey}']");
             ClickXPath($"//a[@name='CreateApplication']");
             WaitToSee("Add application");
-            Set("Name").To(C.addedApp);
+            Set("Name").To(Const.addedApp);
             // Device
             //ClickCSS("button[role='combobox']");
             //AtXPath("//form[@data-module='ApplicationForm']").ClickButton("Nothing selected");
-            U.OpenDropdown(this, "Nothing selected", C.formApplicationXPath);
+            Utils.OpenDropdown(this, "Nothing selected", Const.formApplicationXPath);
             // Normal screen
             //AtXPath("//form[@data-module='ApplicationForm']").ClickLink("Normal screen");
             NearXPath("//form[@data-module='ApplicationForm']").ClickLink("Normal screen");
             ExpectNoButton(That.Contains, "Delete");
             Click("Save");
-            Expect(C.addedApp);
+            Expect(Const.addedApp);
         }
 
 

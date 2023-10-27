@@ -20,19 +20,19 @@
 
 
             //*********** Edit features
-            ClickXPath(U.btnThreeDotsFeatureXPath(U.feature01));
+            ClickXPath(Utils.btnThreeDotsFeatureXPath(Utils.feature01));
             Expect(What.Contains, "Add Use case");
-            Near(What.Contains, U.feature01).Below(What.Contains, "Add Use case").Click(What.Contains, "Edit");
-            Set("Name").To(C.editedFeature01);
+            Near(What.Contains, Utils.feature01).Below(What.Contains, "Add Use case").Click(What.Contains, "Edit");
+            Set("Name").To(Const.editedFeature01);
             Click("Save");
-            Expect(C.editedFeature01);
+            Expect(Const.editedFeature01);
 
-            ClickXPath(U.btnThreeDotsFeatureXPath(U.feature02));
+            ClickXPath(Utils.btnThreeDotsFeatureXPath(Utils.feature02));
             Expect(What.Contains, "Add Use case");
-            Near(What.Contains, U.feature02).Below(What.Contains, "Add Use case").Click(What.Contains, "Edit");
-            Set("Name").To(C.editedFeature02);
+            Near(What.Contains, Utils.feature02).Below(What.Contains, "Add Use case").Click(What.Contains, "Edit");
+            Set("Name").To(Const.editedFeature02);
             Click("Save");
-            Expect(C.editedFeature02);
+            Expect(Const.editedFeature02);
         }
     }
 }

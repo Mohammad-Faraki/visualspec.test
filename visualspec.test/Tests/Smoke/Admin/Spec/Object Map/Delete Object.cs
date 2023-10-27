@@ -22,15 +22,15 @@
 
             //MyUtils.ScrollToBottom(this, "objectmap-content", this.WebDriver);
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom("objectmap-content"));
+            this.WebDriver.ExecuteJavaScript(Utils.GetJS_ScrollToBottom("objectmap-content"));
 
-            AtXPath(C.formBottomSectionXPath).ClickButton("Edit");
+            AtXPath(Const.formBottomSectionXPath).ClickButton("Edit");
             Thread.Sleep(3000);
 
             ClickButton("Delete");
             Expect("Are you sure you want to delete this object?");
             Click("OK");
-            ExpectNo(C.O1F1);
+            ExpectNo(Const.O1F1);
 
         }
 

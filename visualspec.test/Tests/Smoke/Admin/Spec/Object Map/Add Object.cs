@@ -23,15 +23,15 @@
 
             
             // Add button
-            ClickXPath(U.btnAddObjXPath);
+            ClickXPath(Utils.btnAddObjXPath);
             ClickButton(That.Contains, "New Object");
             Expect("First, one of the features must be selected.");
 
             //ClickLink("feature01");
             //WaitToSeeHeader("feature01");
-            C.OpenFeaturePage(this, "feature01");
+            Const.OpenFeaturePage(this, "feature01");
 
-            ClickXPath(U.btnAddObjXPath);
+            ClickXPath(Utils.btnAddObjXPath);
             ClickLink(That.Contains, "New Object");
 
 
@@ -40,12 +40,12 @@
             string addObjFormXPath = "//form[@data-module='ObjectCreateForm']";
 
             //SetXPath($"{addObjFormXPath}//*[{MyUtils.XPathTextContains(Casing.Exact, "Name")}]").To(Constants.O1F1);
-            U.SetField(this, labelXPath: $"{addObjFormXPath}//*[{U.XPathTextContains(Casing.Exact, "Name")}]"
-                , to: C.O1F1);
+            Utils.SetField(this, labelXPath: $"{addObjFormXPath}//*[{Utils.XPathTextContains(Casing.Exact, "Name")}]"
+                , to: Const.O1F1);
 
-            ClickXPath($"{addObjFormXPath}//*[{U.XPathText(Casing.Exact, "Save")}]");
+            ClickXPath($"{addObjFormXPath}//*[{Utils.XPathText(Casing.Exact, "Save")}]");
             Thread.Sleep(3000);
-            ExpectXPath($"//span[{U.XPathText(Casing.Exact, C.O1F1)}]");
+            ExpectXPath($"//span[{Utils.XPathText(Casing.Exact, Const.O1F1)}]");
         }
 
 

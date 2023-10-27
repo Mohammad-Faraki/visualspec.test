@@ -22,28 +22,28 @@
             Run<AddStartNode>();
 
             // plus icon to open nodes toolbox
-            HoverOver(C.nodeStart);
+            HoverOver(Const.nodeStart);
 
             //ClickXPath(U.workflow_iconNodesToolbox(nodeName: C.nodeStart));
-            int actorColumnIdx = U.GetActorColumnIdx_Workflow(this, U.DefaultActorsDic[U.DefaultActors.Admin]);
+            int actorColumnIdx = Utils.GetActorColumnIdx_Workflow(this, Utils.DefaultActorsDic[Utils.DefaultActors.Admin]);
             // click on plus icon(to open add node toolbox)
-            ClickXPath(U.workflow_iconNodesToolbox(this, nodeName: C.nodeStart, nodeType: U.NodeType.Start, actorColumnIdx: actorColumnIdx));
+            ClickXPath(Utils.workflow_iconNodesToolbox(this, nodeName: Const.nodeStart, nodeType: Utils.NodeType.Start, actorColumnIdx: actorColumnIdx));
 
             ClickLink("Add Artifact");
             ExpectHeader("Add New Artifact");
-            Set("Title").To(C.nodeArtifact1);
+            Set("Title").To(Const.nodeArtifact1);
             //ClickButton("Other");
             //NearXPath(C.formArtifactNodeXPath).ClickLink($"A: {U.DefaultActorsDic[U.DefaultActors.Admin]}");
             Click("Save");
-            Expect(C.nodeArtifact1);
+            Expect(Const.nodeArtifact1);
 
             // check design of the node
-            ExpectXPath($"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", C.cssClass_ArtifactNode)}]//*[{U.XPathTextContains(Casing.Exact, C.nodeArtifact1)}]");
+            ExpectXPath($"//td[{actorColumnIdx}]//div[{Utils.XPathAttributeContains("class", Const.cssClass_ArtifactNode)}]//*[{Utils.XPathTextContains(Casing.Exact, Const.nodeArtifact1)}]");
             // check if icon exists
             //var artifactIconXPath = $"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", C.cssClass_ArtifactNode)}]//*[{U.XPathTextContains(Casing.Exact, C.nodeArtifact1)}]/{U.preceding_sibling}::i[@class='fas fa-file']";
             //ExpectXPath(artifactIconXPath);
             //ClickXPath(artifactIconXPath);
-            var artifactNodeDirectParentXPath = $"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", C.cssClass_ArtifactNode)}]//*[{U.XPathTextContains(Casing.Exact, C.nodeArtifact1)}]/{U.parent_XPath}::div";
+            var artifactNodeDirectParentXPath = $"//td[{actorColumnIdx}]//div[{Utils.XPathAttributeContains("class", Const.cssClass_ArtifactNode)}]//*[{Utils.XPathTextContains(Casing.Exact, Const.nodeArtifact1)}]/{Utils.parent_XPath}::div";
             string bgImageURL = this.WebDriver.FindElements(By.XPath(artifactNodeDirectParentXPath)).FirstOrDefault().GetCssValue("background-image");
             if (!bgImageURL.Contains("artifact.svg"))
             {

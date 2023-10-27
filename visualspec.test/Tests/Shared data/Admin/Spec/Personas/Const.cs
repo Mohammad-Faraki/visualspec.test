@@ -7,7 +7,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public static class C
+    public static class Const
     {
         public static string firstActorSidebar = "//div[1][@class = 'left-menu-tree']";
         public static string lastPersonaOfFirstActorSidebar = $"{firstActorSidebar}//li[last()]";
@@ -21,6 +21,6 @@
         public const string addedPersona = "Name";
         public const string editedPersona = "edited persona";
 
-        public static string firstPersonaThreeDotsContainer_XPath = $"{C.firstPersonaOfFirstActorSidebar}/div/a/{U.following_sibling_XPath}::div";
+        public static string firstPersonaThreeDotsContainer_XPath = $"{Const.firstPersonaOfFirstActorSidebar}/div/a/{Utils.following_sibling_XPath}::div";
     }
 }

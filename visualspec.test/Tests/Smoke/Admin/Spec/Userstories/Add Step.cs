@@ -16,47 +16,47 @@
         [PangolinTestMethod]
         public override void RunTest()
         {
-            var addedIntegration = Shared.Admin.Scope.Features.C.addedIntegration;
+            var addedIntegration = Shared.Admin.Scope.Features.Const.addedIntegration;
 
             Run<AddUserstory>();
 
-            U.OpenFeatures(this);
+            Utils.OpenFeatures(this);
             Thread.Sleep(5000);
-            U.AddIntegration(this, addedIntegration);
-            U.OpenUserstories(this);
+            Utils.AddIntegration(this, addedIntegration);
+            Utils.OpenUserstories(this);
             Thread.Sleep(2000);
 
 
-            U.ScrollToBottom(this, C.scrollable_mainContent);
-            U.OpenUserstory(this, storyRowIdx: U.lastIdx_XPath);
+            Utils.ScrollToBottom(this, Const.scrollable_mainContent);
+            Utils.OpenUserstory(this, storyRowIdx: Utils.lastIdx_XPath);
 
 
-            U.ScrollToBottom(this, C.scrollable_mainContent);
+            Utils.ScrollToBottom(this, Const.scrollable_mainContent);
 
-            ClickXPath(C.btnAddStep_XPath);
+            ClickXPath(Const.btnAddStep_XPath);
 
-            WaitToSeeHeader(C.header_AddStepFirstPopup_Sign);
+            WaitToSeeHeader(Const.header_AddStepFirstPopup_Sign);
             
             AtRow(addedIntegration).ClickLink("Select");
             WaitToSeeHeader("Step details");
-            Set("Step").To(C.addedStep);
-            U.ExpectDropdown(this, addedIntegration);
+            Set("Step").To(Const.addedStep);
+            Utils.ExpectDropdown(this, addedIntegration);
             Click("Save");
             Thread.Sleep(5000);
 
 
             // Checking if step is added to a right place and right order
-            ExpectXPath($"//div[1]//a[{U.XPathText(Casing.Ignore, C.addedStep)}]");
-            ExpectXPath($"//div[2]{C.btnAddStep_XPath}");
+            ExpectXPath($"//div[1]//a[{Utils.XPathText(Casing.Ignore, Const.addedStep)}]");
+            ExpectXPath($"//div[2]{Const.btnAddStep_XPath}");
 
             RefreshPage();
-            U.WaitToSee_Userstory_EditPage(this);
+            Utils.WaitToSee_Userstory_EditPage(this);
             Thread.Sleep(3000);
-            U.ScrollToBottom(this, C.scrollable_mainContent);
+            Utils.ScrollToBottom(this, Const.scrollable_mainContent);
 
             // Checking if step is added to a right place and right order
-            ExpectXPath($"//div[1]//a[{U.XPathText(Casing.Ignore, C.addedStep)}]");
-            ExpectXPath($"//div[2]{C.btnAddStep_XPath}");
+            ExpectXPath($"//div[1]//a[{Utils.XPathText(Casing.Ignore, Const.addedStep)}]");
+            ExpectXPath($"//div[2]{Const.btnAddStep_XPath}");
         }
     }
 }

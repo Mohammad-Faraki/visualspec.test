@@ -16,11 +16,11 @@
 
 
 
-            C.OpenApplicationDetails(this, C.addedApp);
+            Const.OpenApplicationDetails(this, Const.addedApp);
 
-            Set("Name").To(C.editedApp);
+            Set("Name").To(Const.editedApp);
             Click("Save");
-            Expect(C.editedApp);
+            Expect(Const.editedApp);
         }
 
 

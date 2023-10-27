@@ -19,11 +19,11 @@
         {
             Run<AddWorkflow>();
 
-            ClickXPath($"{C.workflowTopSectionXPath}//button[@name='Delete']");
+            ClickXPath($"{Const.workflowTopSectionXPath}//button[@name='Delete']");
 
             Expect("Are you sure you want to delete this workflow model?");
             Click("OK");
-            ExpectNo(C.workflow1);
+            ExpectNo(Const.workflow1);
         }
 
 

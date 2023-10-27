@@ -21,14 +21,14 @@
 
 
             //*********** Edit features
-            ClickXPath(U.btnThreeDotsFeatureXPath(U.feature01));
+            ClickXPath(Utils.btnThreeDotsFeatureXPath(Utils.feature01));
             Expect(What.Contains, "Add Use case");
-            Near(What.Contains, U.feature01).Below(What.Contains, "Add Use case").Click(What.Contains, "Edit");
+            Near(What.Contains, Utils.feature01).Below(What.Contains, "Add Use case").Click(What.Contains, "Edit");
 
-            AtXPath(C.formFeature).Click("Delete");
+            AtXPath(Const.formFeature).Click("Delete");
             WaitToSee("Deleting this feature will delete all its associated data in other microservices. Are you sure you want to delete this feature?");
             Click("OK");
-            ExpectNo(U.feature01);
+            ExpectNo(Utils.feature01);
         }
     }
 }

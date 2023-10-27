@@ -30,7 +30,7 @@
             {
                 if (cards[i] == "OthersForm" || cards[i] == "MidLongTermImpactsForm")
                 {
-                    U.ScrollToElementXPath(this, "northstar-content", "//form[@data-module='DepthForm']", U.HtmlElementProp.Top);
+                    Utils.ScrollToElementXPath(this, "northstar-content", "//form[@data-module='DepthForm']", Utils.HtmlElementProp.Top);
                 }
                 
 
@@ -43,17 +43,17 @@
             }
             SetXPath($"//form[@data-module='MetricForm']//textarea").To($"test text MetricForm");
             //ClickXPath($"//form[@data-module='MetricForm']//a");
-            ClickXPath($"//h3[{U.XPathTextContains(Casing.Exact, "North Star Metric")}]");
+            ClickXPath($"//h3[{Utils.XPathTextContains(Casing.Exact, "North Star Metric")}]");
             Thread.Sleep(1000);
 
             RefreshPage();
-            WaitToSeeXPath($"//h3[{U.XPathTextContains(Casing.Exact, "North Star Metric")}]");
+            WaitToSeeXPath($"//h3[{Utils.XPathTextContains(Casing.Exact, "North Star Metric")}]");
             Thread.Sleep(1000);
             for (int i = 0; i < cards.Length; i++)
             {
                 if (cards[i] == "OthersForm" || cards[i] == "MidLongTermImpactsForm")
                 {
-                    U.ScrollToElementXPath(this, "northstar-content", "//form[@data-module='DepthForm']", U.HtmlElementProp.Top);
+                    Utils.ScrollToElementXPath(this, "northstar-content", "//form[@data-module='DepthForm']", Utils.HtmlElementProp.Top);
                 }
 
                 ExpectXPath($"//form[@data-module='{cards[i]}']//div[2]//textarea[text()='test text {i}']");
@@ -63,13 +63,13 @@
 
 
             //*********** Edit some texts
-            U.ScrollToTop(this, "northstar-content");
+            Utils.ScrollToTop(this, "northstar-content");
 
             for (int i = 0; i < cards.Length; i++)
             {
                 if (cards[i] == "OthersForm" || cards[i] == "MidLongTermImpactsForm")
                 {
-                    U.ScrollToElementXPath(this, "northstar-content", "//form[@data-module='DepthForm']", U.HtmlElementProp.Top);
+                    Utils.ScrollToElementXPath(this, "northstar-content", "//form[@data-module='DepthForm']", Utils.HtmlElementProp.Top);
                 }
                 
                 SetXPath($"//form[@data-module='{cards[i]}']//div[2]//textarea").To($"test text {i} edited");
@@ -79,17 +79,17 @@
             }
             SetXPath($"//form[@data-module='MetricForm']//textarea").To($"test text MetricForm edited");
             //ClickXPath($"//form[@data-module='MetricForm']//a");
-            ClickXPath($"//h3[{U.XPathTextContains(Casing.Exact, "North Star Metric")}]");
+            ClickXPath($"//h3[{Utils.XPathTextContains(Casing.Exact, "North Star Metric")}]");
             Thread.Sleep(1000);
 
             RefreshPage();
-            WaitToSeeXPath($"//h3[{U.XPathTextContains(Casing.Exact, "North Star Metric")}]");
+            WaitToSeeXPath($"//h3[{Utils.XPathTextContains(Casing.Exact, "North Star Metric")}]");
             Thread.Sleep(1000);
             for (int i = 0; i < cards.Length; i++)
             {
                 if (cards[i] == "OthersForm" || cards[i] == "MidLongTermImpactsForm")
                 {
-                    U.ScrollToElementXPath(this, "northstar-content", "//form[@data-module='DepthForm']", U.HtmlElementProp.Top);
+                    Utils.ScrollToElementXPath(this, "northstar-content", "//form[@data-module='DepthForm']", Utils.HtmlElementProp.Top);
                 }
 
                 ExpectXPath($"//form[@data-module='{cards[i]}']//div[2]//textarea[text()='test text {i} edited']");

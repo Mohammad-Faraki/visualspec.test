@@ -20,22 +20,22 @@
             Run<AddStartNode>();
 
             // plus icon to open nodes toolbox
-            HoverOver(C.nodeStart);
+            HoverOver(Const.nodeStart);
 
-            int actorColumnIdx = U.GetActorColumnIdx_Workflow(this, U.DefaultActorsDic[U.DefaultActors.Admin]);
+            int actorColumnIdx = Utils.GetActorColumnIdx_Workflow(this, Utils.DefaultActorsDic[Utils.DefaultActors.Admin]);
             // click on plus icon(to open add node toolbox)
-            ClickXPath(U.workflow_iconNodesToolbox(this, nodeName: C.nodeStart, nodeType: U.NodeType.Start, actorColumnIdx: actorColumnIdx));
+            ClickXPath(Utils.workflow_iconNodesToolbox(this, nodeName: Const.nodeStart, nodeType: Utils.NodeType.Start, actorColumnIdx: actorColumnIdx));
 
             ClickLink("Add new step");
             ExpectHeader("Add New Step");
-            Set("Title").To(C.nodeStep1);
+            Set("Title").To(Const.nodeStep1);
             //ClickButton("Other");
             //NearXPath(C.formStepNodeXPath).ClickLink($"A: {U.DefaultActorsDic[U.DefaultActors.Admin]}");
             Click("Save");
-            Expect(C.nodeStep1);
+            Expect(Const.nodeStep1);
 
             // check design of the node
-            ExpectXPath($"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", C.cssClass_StepNode)}]//*[{U.XPathTextContains(Casing.Exact, C.nodeStep1)}]");
+            ExpectXPath($"//td[{actorColumnIdx}]//div[{Utils.XPathAttributeContains("class", Const.cssClass_StepNode)}]//*[{Utils.XPathTextContains(Casing.Exact, Const.nodeStep1)}]");
         }
 
 

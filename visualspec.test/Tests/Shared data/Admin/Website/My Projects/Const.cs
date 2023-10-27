@@ -7,8 +7,8 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public static class C
+    public static class Const
     {
-        public static string formProjectDetail = $"//form[{U.XPathAttributeContains("action", "./Edit-project.aspx")}]";
+        public static string formProjectDetail = $"//form[{Utils.XPathAttributeContains("action", "./Edit-project.aspx")}]";
     }
 }

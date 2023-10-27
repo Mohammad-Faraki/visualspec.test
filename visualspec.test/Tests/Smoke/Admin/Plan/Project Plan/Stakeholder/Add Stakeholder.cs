@@ -21,7 +21,7 @@
 
 
             //*********** Create stakeloder
-            U.AddStakeholder(this, U.stakeholder1);
+            Utils.AddStakeholder(this, Utils.stakeholder1);
         }
 
 

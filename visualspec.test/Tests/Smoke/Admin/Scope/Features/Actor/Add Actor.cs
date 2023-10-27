@@ -23,7 +23,7 @@
             //*********** Add actor
             ClickXPath($"//a[@name='CreateActor']");
             WaitToSee("Add actor");
-            Set("Name").To(C.addedActor);
+            Set("Name").To(Const.addedActor);
             // Applications
             //ClickCSS(".bootstrap-select.dropdown.form-check.show-tick > button[role='combobox']");
             //AtXPath("//form[@data-module='ActorForm']").ClickButton("Nothing selected");
@@ -31,7 +31,7 @@
             ////var btnDropdownXPath = $"{C.formActor}//{U.btnOpenDropdownXPath("Nothing selected")}";
             //////this.WebDriver.FindElement(By.XPath(btnDropdownXPath)).Click();
             ////ClickXPath(btnDropdownXPath);
-            U.OpenDropdown(this, "Nothing selected", C.formActor);
+            Utils.OpenDropdown(this, "Nothing selected", Const.formActor);
 
 
 
@@ -41,7 +41,7 @@
             NearXPath("//form[@data-module='ActorForm']").ClickLink("A Web App");
             ExpectNoButton(That.Contains, "Delete");
             Click("Save");
-            Expect(C.addedActor);
+            Expect(Const.addedActor);
         }
 
 

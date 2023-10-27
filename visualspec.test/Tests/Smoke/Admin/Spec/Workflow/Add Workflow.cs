@@ -19,17 +19,17 @@
         {
             Run<PreconWorkflow>();
 
-            ClickXPath(U.btnAddWorklowXPath(U.feature01));
+            ClickXPath(Utils.btnAddWorklowXPath(Utils.feature01));
             WaitToSeeHeader("New Workflow Model");
 
-            Set("Name").To(C.workflow1);
+            Set("Name").To(Const.workflow1);
             Click("Save");
 
             // To-Be : workflow1
-            var WorkflowName_Sidebar = $"To-Be : {C.workflow1}";
+            var WorkflowName_Sidebar = $"To-Be : {Const.workflow1}";
             ExpectLink(WorkflowName_Sidebar);
             ClickLink(WorkflowName_Sidebar);
-            AtXPath(C.workflowTopSectionXPath).ExpectHeader(That.Contains, C.workflow1);
+            AtXPath(Const.workflowTopSectionXPath).ExpectHeader(That.Contains, Const.workflow1);
         }
 
 

@@ -22,11 +22,11 @@
 
             //MyUtils.AddStakeholder(this,MyUtils.stakeholder1);
 
-            U.OpenPlanActivities(this);
+            Utils.OpenPlanActivities(this);
 
             ClickXPath("//a[@name='Activity']");
             //Click("---Select---");
-            U.OpenDropdown(this, "---Select---");
+            Utils.OpenDropdown(this, "---Select---");
             Click("Co-design workshop");
             Click("Save");
             WaitToSee("All Use Cases / Integrations");

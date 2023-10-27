@@ -18,14 +18,14 @@
 
             ////*********** Delete application 
             // Three dots
-            ClickXPath(C.btnThreeDotsAppXPath);
+            ClickXPath(Const.btnThreeDotsAppXPath);
             // Delete
-            var btnDeleteXPath = $"{C.thirdAppXPath}//a[{U.XPathTextContains(Casing.Exact, "Delete")}]";
+            var btnDeleteXPath = $"{Const.thirdAppXPath}//a[{Utils.XPathTextContains(Casing.Exact, "Delete")}]";
             WaitToSeeXPath(btnDeleteXPath);
             ClickXPath(btnDeleteXPath);
             WaitToSee("Deleting this application will delete all its associated data in other microservices. Are you sure you want to delete this application?");
             Click("OK");
-            ExpectNo(C.addedApp);
+            ExpectNo(Const.addedApp);
         }
 
 

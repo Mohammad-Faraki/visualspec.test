@@ -19,14 +19,14 @@
 
             //*********** Edit integration
             // Three dots
-            ClickXPath(U.btnThreeDotsIntegrationXPath(C.addedIntegration));
+            ClickXPath(Utils.btnThreeDotsIntegrationXPath(Const.addedIntegration));
             // Edit
-            ClickXPath(C.btnEditIntegrationXPath);
+            ClickXPath(Const.btnEditIntegrationXPath);
 
-            AtXPath(C.formIntegration).Click("Delete");
+            AtXPath(Const.formIntegration).Click("Delete");
             WaitToSee("Deleting this integration will delete all its associated data in other microservices. Are you sure you want to delete this integration?");
             Click("OK");
-            ExpectNo(C.addedIntegration);
+            ExpectNo(Const.addedIntegration);
         }
 
 

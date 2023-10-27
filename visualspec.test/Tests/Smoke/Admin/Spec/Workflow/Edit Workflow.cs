@@ -18,37 +18,37 @@
         {
             Run<AddWorkflow>();
 
-            var btnEdit = $"{C.workflowTopSectionXPath}//a[@name='Edit']";
+            var btnEdit = $"{Const.workflowTopSectionXPath}//a[@name='Edit']";
             var editFormXPath = "//form[@data-module='WorkFlowModelForm']";
 
             ClickXPath(btnEdit);
 
             ExpectHeader(That.Contains, "Edit Workflow Model");
-            Set("Name").To(C.workflow1_Edited);
+            Set("Name").To(Const.workflow1_Edited);
             ClickLabel("As-Is");
             Click("Save");
 
 
             // To-Be : workflow1
-            var WorkflowName_Sidebar = $"As-Is : {C.workflow1_Edited}";
+            var WorkflowName_Sidebar = $"As-Is : {Const.workflow1_Edited}";
             ExpectLink(WorkflowName_Sidebar);
             ExpectHeader(That.Contains, "As-Is:");
-            ExpectHeader(That.Contains, C.workflow1_Edited);
+            ExpectHeader(That.Contains, Const.workflow1_Edited);
 
             RefreshPage();
             WaitToSeeHeader("Workflow Models");
 
             ExpectLink(WorkflowName_Sidebar);
             ExpectHeader(That.Contains, "As-Is:");
-            ExpectHeader(That.Contains, C.workflow1_Edited);
+            ExpectHeader(That.Contains, Const.workflow1_Edited);
 
 
 
             ClickLink(WorkflowName_Sidebar);
             ClickXPath(btnEdit);
             ExpectHeader(That.Contains, "Edit Workflow Model");
-            U.ExpectField(this, $"//label[{U.XPathTextContains(Casing.Exact, "Name")}]", C.workflow1_Edited);
-            ExpectXPath($"{editFormXPath}//label[{U.XPathText(Casing.Exact, "As-Is")}]/preceding-sibling::input[@name='Type'][@checked='checked']");
+            Utils.ExpectField(this, $"//label[{Utils.XPathTextContains(Casing.Exact, "Name")}]", Const.workflow1_Edited);
+            ExpectXPath($"{editFormXPath}//label[{Utils.XPathText(Casing.Exact, "As-Is")}]/preceding-sibling::input[@name='Type'][@checked='checked']");
         }
 
 

@@ -21,17 +21,17 @@
 
             //*********** Edit actor
             // Three dots
-            ClickXPath(C.btnThreeDotsActorXPath);
+            ClickXPath(Const.btnThreeDotsActorXPath);
             // Edit
             //var btnEdit= "li:nth-of-type(3) > .treeview-node__actions > a[target='$modal']";
-            var btnEdit = $"{C.thirdActorXPath}//a[{U.XPathText(Casing.Exact, "Edit")}]";
+            var btnEdit = $"{Const.thirdActorXPath}//a[{Utils.XPathText(Casing.Exact, "Edit")}]";
             WaitToSeeXPath(btnEdit);
             ClickXPath(btnEdit);
 
-            AtXPath(C.formActor).Click("Delete");
+            AtXPath(Const.formActor).Click("Delete");
             Expect("Deleting this actor will delete all its associated data in other microservices. Are you sure you want to delete this actor?");
             Click("OK");
-            ExpectNo(C.addedActor);
+            ExpectNo(Const.addedActor);
         }
 
 

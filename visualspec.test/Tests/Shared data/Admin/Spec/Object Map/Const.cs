@@ -7,7 +7,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public static class C
+    public static class Const
     {
         public const string formBottomSectionXPath = "//div[@data-module='FooterForm']";
         public const string bottomSectionViewModeXPath = "//*[@data-module='ObjectView']";

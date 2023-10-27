@@ -19,18 +19,18 @@
         {
             Run<AddWorkflow>();
 
-            ExpectXPath($"//div[{U.XPathAttributeContains("class", C.cssClass_StartNode)}]//*[text()='start']");
+            ExpectXPath($"//div[{Utils.XPathAttributeContains("class", Const.cssClass_StartNode)}]//*[text()='start']");
             ClickLink("start");
             Expect("Add Start Node");
-            Set("Title").To(C.nodeStart);
+            Set("Title").To(Const.nodeStart);
             ClickButton("Other");
-            NearXPath(C.formStartNodeXPath).ClickLink($"A: {U.DefaultActorsDic[U.DefaultActors.Admin]}");
+            NearXPath(Const.formStartNodeXPath).ClickLink($"A: {Utils.DefaultActorsDic[Utils.DefaultActors.Admin]}");
             Click("Save");
-            Expect(C.nodeStart);
+            Expect(Const.nodeStart);
 
-            int actorColumnIdx = U.GetActorColumnIdx_Workflow(this, U.DefaultActorsDic[U.DefaultActors.Admin] );
+            int actorColumnIdx = Utils.GetActorColumnIdx_Workflow(this, Utils.DefaultActorsDic[Utils.DefaultActors.Admin] );
             // check design of the node
-            ExpectXPath($"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", C.cssClass_StartNode)}]//*[{U.XPathTextContains(Casing.Exact, C.nodeStart)}]");
+            ExpectXPath($"//td[{actorColumnIdx}]//div[{Utils.XPathAttributeContains("class", Const.cssClass_StartNode)}]//*[{Utils.XPathTextContains(Casing.Exact, Const.nodeStart)}]");
         }
 
 

@@ -20,14 +20,14 @@
 
             ////*********** Delete actor 
             // Three dots
-            ClickXPath(C.btnThreeDotsActorXPath);
+            ClickXPath(Const.btnThreeDotsActorXPath);
             // Delete
-            var btnDeleteXPath = $"{C.thirdActorXPath}//a[{U.XPathTextContains(Casing.Exact, "Delete")}]";
+            var btnDeleteXPath = $"{Const.thirdActorXPath}//a[{Utils.XPathTextContains(Casing.Exact, "Delete")}]";
             WaitToSeeXPath(btnDeleteXPath);
             ClickXPath(btnDeleteXPath);
             WaitToSee("Deleting this actor will delete all its associated data in other microservices. Are you sure you want to delete this actor?");
             Click("OK");
-            ExpectNo(C.addedActor);
+            ExpectNo(Const.addedActor);
         }
 
 

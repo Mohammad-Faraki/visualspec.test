@@ -21,22 +21,22 @@
             Run<AddObject>();
 
 
-            ClickXPath($"//span[{U.XPathText(Casing.Exact, C.O1F1)}]");
+            ClickXPath($"//span[{Utils.XPathText(Casing.Exact, Const.O1F1)}]");
             Thread.Sleep(3000);
             //MyUtils.ScrollToBottom(this, "objectmap-content", this.WebDriver);
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom("objectmap-content"));
+            this.WebDriver.ExecuteJavaScript(Utils.GetJS_ScrollToBottom("objectmap-content"));
 
-            AtXPath(C.formBottomSectionXPath).ClickButton("Edit");
+            AtXPath(Const.formBottomSectionXPath).ClickButton("Edit");
             Thread.Sleep(3000);
 
             // Owner feature
             //AtXPath(C.formBottomSectionXPath).ClickButton( U.feature01);
-            U.OpenDropdown(this, U.feature01, C.formBottomSectionXPath);
-            NearXPath(C.formBottomSectionXPath).ExpectLink(U.feature01);
-            NearXPath(C.formBottomSectionXPath).ExpectLink(U.feature02);
+            Utils.OpenDropdown(this, Utils.feature01, Const.formBottomSectionXPath);
+            NearXPath(Const.formBottomSectionXPath).ExpectLink(Utils.feature01);
+            NearXPath(Const.formBottomSectionXPath).ExpectLink(Utils.feature02);
             // it has no usecase
-            NearXPath(C.formBottomSectionXPath).ExpectNo(U.feature03);
+            NearXPath(Const.formBottomSectionXPath).ExpectNo(Utils.feature03);
         }
 
 

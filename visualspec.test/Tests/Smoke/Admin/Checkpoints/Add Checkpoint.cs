@@ -23,10 +23,10 @@
             ClickXPath("//a[@name='NewCheckpoint']");
             WaitToSee("Add checkpoint");
 
-            Set(That.Contains,"Name").To(U.checkpoint1);
+            Set(That.Contains,"Name").To(Utils.checkpoint1);
             Click(What.Contains,"Save");
             Thread.Sleep(4000);
-            AtXPath("//form[@data-module='CheckpointList']//tr//td[1]").Expect(U.checkpoint1);
+            AtXPath("//form[@data-module='CheckpointList']//tr//td[1]").Expect(Utils.checkpoint1);
 
         }
 

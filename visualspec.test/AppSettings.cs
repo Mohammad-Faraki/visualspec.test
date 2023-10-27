@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace visualspec.test
 {
-    public class MyAppSettings
+    public class AppSettings
     {
         public string MoreFiles { get; set; }
         public string TestEnv { get; set; }

@@ -19,12 +19,12 @@
             Run<CreateOpenProject>();
 
 
-            U.AddFeature(this, U.feature01);
+            Utils.AddFeature(this, Utils.feature01);
             Thread.Sleep(500);
 
 
 
-            U.OpenWorkflow(this);
+            Utils.OpenWorkflow(this);
         }
 
 

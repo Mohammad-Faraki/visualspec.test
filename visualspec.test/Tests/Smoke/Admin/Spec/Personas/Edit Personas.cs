@@ -24,30 +24,30 @@
             //*********** Edit persona (first persona of first actor)
             //string firstPersonaOfFirstActor = $"//*[@id='personasMainCanvas']//div[1]";
 
-            SetXPath($"{C.firstPersonaOfFirstActor}//input[@id='Name']").To(C.editedPersona);
-            SetXPath($"{C.firstPersonaOfFirstActor}//input[@id='Age']").To("25");
-            SetXPath($"{C.firstPersonaOfFirstActor}//input[@id= 'Occupation']").To("test Occupation");
-            SetXPath($"{C.firstPersonaOfFirstActor}//input[@id='PrimaryInterface']").To("test Primary Interface");
-            SetXPath($"{C.firstPersonaOfFirstActor}//textarea[@id='Traits']").To("test Traits");
-            SetXPath($"{C.firstPersonaOfFirstActor}//textarea[@id='TasksGoals']").To("test Tasks/Goals");
+            SetXPath($"{Const.firstPersonaOfFirstActor}//input[@id='Name']").To(Const.editedPersona);
+            SetXPath($"{Const.firstPersonaOfFirstActor}//input[@id='Age']").To("25");
+            SetXPath($"{Const.firstPersonaOfFirstActor}//input[@id= 'Occupation']").To("test Occupation");
+            SetXPath($"{Const.firstPersonaOfFirstActor}//input[@id='PrimaryInterface']").To("test Primary Interface");
+            SetXPath($"{Const.firstPersonaOfFirstActor}//textarea[@id='Traits']").To("test Traits");
+            SetXPath($"{Const.firstPersonaOfFirstActor}//textarea[@id='TasksGoals']").To("test Tasks/Goals");
 
             // Scroll to bottom of Traits textarea 
             // This line doesn't work till devs set "personas-content" for personas content
-            U.ScrollToElementXPath(this, C.scorllableElement
-                , XPath: $"{C.firstPersonaOfFirstActor}//textarea[@id='Traits']"
-                , elementSide: U.HtmlElementProp.Bottom);
+            Utils.ScrollToElementXPath(this, Const.scorllableElement
+                , XPath: $"{Const.firstPersonaOfFirstActor}//textarea[@id='Traits']"
+                , elementSide: Utils.HtmlElementProp.Bottom);
 
-            SetXPath($"{C.firstPersonaOfFirstActor}//textarea[@id='Feelings']").To("test Feelings");
-            SetXPath($"{C.firstPersonaOfFirstActor}//textarea[@id='PainPoints']").To("test Pain Points");
-            SetXPath($"{C.firstPersonaOfFirstActor}//textarea[@id='Message']").To("test Message");
+            SetXPath($"{Const.firstPersonaOfFirstActor}//textarea[@id='Feelings']").To("test Feelings");
+            SetXPath($"{Const.firstPersonaOfFirstActor}//textarea[@id='PainPoints']").To("test Pain Points");
+            SetXPath($"{Const.firstPersonaOfFirstActor}//textarea[@id='Message']").To("test Message");
 
 
-            U.ScrollToTop(this, C.scorllableElement);
+            Utils.ScrollToTop(this, Const.scorllableElement);
             // Click somewhere
-            ClickXPath($"{C.firstPersonaOfFirstActor}//input[@id='Name']");
+            ClickXPath($"{Const.firstPersonaOfFirstActor}//input[@id='Name']");
             Thread.Sleep(3000);
             // in sidebar
-            ExpectXPath($"{C.firstPersonaOfFirstActorSidebar}//a[{U.XPathText(Casing.Exact, C.editedPersona)}]");
+            ExpectXPath($"{Const.firstPersonaOfFirstActorSidebar}//a[{Utils.XPathText(Casing.Exact, Const.editedPersona)}]");
 
 
             RefreshPage();
@@ -59,24 +59,24 @@
             // in sidebar
             //ExpectXPath("/html/body//div[@class='left-panel']//li[1]//a[1]//div[text()='persona01']");
             ////Expect(C.editedPersona);
-            ExpectXPath($"{C.firstPersonaOfFirstActorSidebar}//a[{U.XPathText(Casing.Exact, C.editedPersona)}]");
+            ExpectXPath($"{Const.firstPersonaOfFirstActorSidebar}//a[{Utils.XPathText(Casing.Exact, Const.editedPersona)}]");
 
-            ExpectXPath($"{C.firstPersonaOfFirstActor}//input[@id='Name'][@value='{C.editedPersona}']");
-            ExpectXPath($"{C.firstPersonaOfFirstActor}//input[@id='Age'][@value='25']");
-            ExpectXPath($"{C.firstPersonaOfFirstActor}//input[@id= 'Occupation'][@value='test Occupation']");
-            ExpectXPath($"{C.firstPersonaOfFirstActor}//input[@id='PrimaryInterface'][@value='test Primary Interface']");
-            ExpectXPath($"{C.firstPersonaOfFirstActor}//textarea[@id='Traits'][text()='test Traits']");
-            ExpectXPath($"{C.firstPersonaOfFirstActor}//textarea[@id='TasksGoals'][text()='test Tasks/Goals']");
+            ExpectXPath($"{Const.firstPersonaOfFirstActor}//input[@id='Name'][@value='{Const.editedPersona}']");
+            ExpectXPath($"{Const.firstPersonaOfFirstActor}//input[@id='Age'][@value='25']");
+            ExpectXPath($"{Const.firstPersonaOfFirstActor}//input[@id= 'Occupation'][@value='test Occupation']");
+            ExpectXPath($"{Const.firstPersonaOfFirstActor}//input[@id='PrimaryInterface'][@value='test Primary Interface']");
+            ExpectXPath($"{Const.firstPersonaOfFirstActor}//textarea[@id='Traits'][text()='test Traits']");
+            ExpectXPath($"{Const.firstPersonaOfFirstActor}//textarea[@id='TasksGoals'][text()='test Tasks/Goals']");
 
             // Scroll to bottom of Traits textarea 
             // This line doesn't work till devs set "personas-content" for personas content
-            U.ScrollToElementXPath(this, C.scorllableElement
-                , XPath: $"{C.firstPersonaOfFirstActor}//textarea[@id='Traits']"
-                , elementSide: U.HtmlElementProp.Bottom);
+            Utils.ScrollToElementXPath(this, Const.scorllableElement
+                , XPath: $"{Const.firstPersonaOfFirstActor}//textarea[@id='Traits']"
+                , elementSide: Utils.HtmlElementProp.Bottom);
 
-            ExpectXPath($"{C.firstPersonaOfFirstActor}//textarea[@id='Feelings'][text()='test Feelings']");
-            ExpectXPath($"{C.firstPersonaOfFirstActor}//textarea[@id='PainPoints'][text()='test Pain Points']");
-            ExpectXPath($"{C.firstPersonaOfFirstActor}//textarea[@id='Message'][text()='test Message']");
+            ExpectXPath($"{Const.firstPersonaOfFirstActor}//textarea[@id='Feelings'][text()='test Feelings']");
+            ExpectXPath($"{Const.firstPersonaOfFirstActor}//textarea[@id='PainPoints'][text()='test Pain Points']");
+            ExpectXPath($"{Const.firstPersonaOfFirstActor}//textarea[@id='Message'][text()='test Message']");
         }
 
 

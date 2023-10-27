@@ -7,7 +7,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public static class C
+    public static class Const
     {
         public const string thirdActorXPath = "//*[@data-module='TreeActors']//ul/li[3]";
         public static string btnThreeDotsActorXPath = $"{thirdActorXPath}//i";
@@ -16,7 +16,7 @@
         public static string btnThreeDotsAppXPath = $"{thirdAppXPath}//i";
 
         public const string firstIntegrationXPath = "//*[@data-module='TreeIntegrations']//li[1]";
-        public static string btnEditIntegrationXPath = $"{firstIntegrationXPath}//a[{U.XPathText(Casing.Exact, "Edit")}]";
+        public static string btnEditIntegrationXPath = $"{firstIntegrationXPath}//a[{Utils.XPathText(Casing.Exact, "Edit")}]";
 
 
         public const string formApplicationXPath = "//form[@data-module='ApplicationForm']";
@@ -42,8 +42,8 @@
         public const string addedIntegration = "integration01";
         public const string editedIntegration = "integration01 edited";
 
-        public const string addedDevice = U.Device_NormalScreen;
-        public const string editedDevice = U.Device_Mobile;
+        public const string addedDevice = Utils.Device_NormalScreen;
+        public const string editedDevice = Utils.Device_Mobile;
 
 
         public const string scrollable_scopeFeatures_treeView = "scope-tree";
@@ -53,10 +53,10 @@
             //*********** Edit application
             // Three dots
             //uITest.ClickXPath(C.btnThreeDotsAppXPath);
-            uITest.ClickXPath(U.btnThreeDotsAppXPath(appName));
+            uITest.ClickXPath(Utils.btnThreeDotsAppXPath(appName));
             // Edit
             //var btnEditXPath = $"{C.thirdAppXPath}//a[{U.XPathText(Casing.Exact, "Edit")}]";
-            var btnEditXPath = U.btnEditAppXPath(appName);
+            var btnEditXPath = Utils.btnEditAppXPath(appName);
             uITest.WaitToSeeXPath(btnEditXPath);
             uITest.ClickXPath(btnEditXPath);
         }

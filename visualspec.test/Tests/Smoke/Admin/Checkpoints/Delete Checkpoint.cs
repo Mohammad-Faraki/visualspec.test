@@ -23,7 +23,7 @@
             WaitToSee("Are you sure you want to delete this checkpoint?");
             Click("OK");
 
-            ExpectNo(U.checkpoint2);
+            ExpectNo(Utils.checkpoint2);
 
         }
 

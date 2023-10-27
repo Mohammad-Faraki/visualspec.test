@@ -19,15 +19,15 @@
         {
             Run<AddObject>();
 
-            for (int i = 0; i < C.propTypes.Length; i++)
+            for (int i = 0; i < Const.propTypes.Length; i++)
             {
-                U.AppProperty_ObjectMap(this, C.O1F1, $"P{i + 1}{C.O1F1}", C.propTypes[i], isList: false);
+                Utils.AppProperty_ObjectMap(this, Const.O1F1, $"P{i + 1}{Const.O1F1}", Const.propTypes[i], isList: false);
             }
 
             // Add list types 
-            for (int i = 0; i < C.propTypes.Length; i++)
+            for (int i = 0; i < Const.propTypes.Length; i++)
             {
-                U.AppProperty_ObjectMap(this, C.O1F1, $"P{i + 1 + C.propTypes.Length}{C.O1F1}", C.propTypes[i], isList: true);
+                Utils.AppProperty_ObjectMap(this, Const.O1F1, $"P{i + 1 + Const.propTypes.Length}{Const.O1F1}", Const.propTypes[i], isList: true);
             }
         }
 

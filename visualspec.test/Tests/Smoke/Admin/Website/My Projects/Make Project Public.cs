@@ -19,22 +19,22 @@
 
             Run<OpenWireframes>();
 
-            U.GoToLandingPage(this);
+            Utils.GoToLandingPage(this);
 
             ClickLink("Logout");
             WaitToSee("Continue with Google");
 
 
-            U.GoToWireframes(this);
+            Utils.GoToWireframes(this);
             // Not authorized
             Expect("Continue with Google");
 
 
             //Goto($"http://{MyUtils.WebsiteDomain}/My-Account/Projects.aspx");
-            U.LoginAdmin(this);
+            Utils.LoginAdmin(this);
 
-            U.SearchProject(this);
-            U.OpenProjectDetails(this, 1);
+            Utils.SearchProject(this);
+            Utils.OpenProjectDetails(this, 1);
             ClickLabel(That.Contains, "Is preview public");
             ClickLabel(That.Contains, "Is design public");
             ClickLink("Save");
@@ -47,7 +47,7 @@
 
 
             //Thread.Sleep(4000);
-            U.GoToWireframes(this);
+            Utils.GoToWireframes(this);
             // Authorized
             ExpectLink("Outline");
         }

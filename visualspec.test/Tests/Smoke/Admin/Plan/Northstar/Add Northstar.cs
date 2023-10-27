@@ -23,12 +23,12 @@
 
 
             //*********** Create northstar
-            ClickXPath($"//*[{U.XPathHasDirectElement($"*[{U.XPathTextContains(Casing.Exact, "North Stars")}]")}]/following-sibling::a");
+            ClickXPath($"//*[{Utils.XPathHasDirectElement($"*[{Utils.XPathTextContains(Casing.Exact, "North Stars")}]")}]/following-sibling::a");
 
-            var northstarXPath = $"//ul//li[last()]//a[text()='{C.addedNorthstar}']";
+            var northstarXPath = $"//ul//li[last()]//a[text()='{Const.addedNorthstar}']";
             ExpectXPath(northstarXPath);
             ClickXPath(northstarXPath);
-            WaitToSeeXPath($"//input[@value='{C.addedNorthstar}']");
+            WaitToSeeXPath($"//input[@value='{Const.addedNorthstar}']");
         }
 
 

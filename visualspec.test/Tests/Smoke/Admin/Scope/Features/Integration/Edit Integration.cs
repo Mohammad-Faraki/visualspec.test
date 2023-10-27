@@ -19,14 +19,14 @@
 
             //*********** Edit integration
             // Three dots
-            ClickXPath(U.btnThreeDotsIntegrationXPath(C.addedIntegration));
+            ClickXPath(Utils.btnThreeDotsIntegrationXPath(Const.addedIntegration));
             // Edit
-            var btnEditXPath = $"//*[@data-module='TreeIntegrations']//li[1]//a[{U.XPathText(Casing.Exact, "Edit")}]";
+            var btnEditXPath = $"//*[@data-module='TreeIntegrations']//li[1]//a[{Utils.XPathText(Casing.Exact, "Edit")}]";
             WaitToSeeXPath(btnEditXPath);
             ClickXPath(btnEditXPath);
-            Set("Name").To(C.editedIntegration);
+            Set("Name").To(Const.editedIntegration);
             Click("Save");
-            Expect(C.editedIntegration);
+            Expect(Const.editedIntegration);
         }
 
 

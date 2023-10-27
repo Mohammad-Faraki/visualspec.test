@@ -20,30 +20,30 @@
             //*********** Add integration
             ClickXPath($"//a[@name='CreateIntegration']");
             WaitToSee("Add integration");
-            Set("Name").To(C.addedIntegration);
+            Set("Name").To(Const.addedIntegration);
             Click("Save");
-            Expect(C.addedIntegration);
+            Expect(Const.addedIntegration);
 
             Run<OpenEstimate>();
             Thread.Sleep(2000);
 
 
 
-            U.ScrollToElementXPath(this, C.scrollable_mainContent,
-                C.listIntegrationsXPath);
+            Utils.ScrollToElementXPath(this, Const.scrollable_mainContent,
+                Const.listIntegrationsXPath);
 
-            U.OpenDropdown(this, "Nothing selected", C.listIntegrationsXPath);
-            ClickLink(U.feature01);
+            Utils.OpenDropdown(this, "Nothing selected", Const.listIntegrationsXPath);
+            ClickLink(Utils.feature01);
             
-            U.ExpectDropdown(this, "Nothing selected", C.listIntegrationsXPath);
+            Utils.ExpectDropdown(this, "Nothing selected", Const.listIntegrationsXPath);
 
             RefreshPage();
-            WaitToSeeXPath(U.scope_Estimate_Sign_XPath);
-            ClickXPath(U.scope_Estimate_Sign_XPath);
+            WaitToSeeXPath(Utils.scope_Estimate_Sign_XPath);
+            ClickXPath(Utils.scope_Estimate_Sign_XPath);
 
-            U.ScrollToElementXPath(this, C.scrollable_mainContent,
-                C.listIntegrationsXPath);
-            U.ExpectDropdown(this, "Nothing selected", C.listIntegrationsXPath);
+            Utils.ScrollToElementXPath(this, Const.scrollable_mainContent,
+                Const.listIntegrationsXPath);
+            Utils.ExpectDropdown(this, "Nothing selected", Const.listIntegrationsXPath);
         }
     }
 }

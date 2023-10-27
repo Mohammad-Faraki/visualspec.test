@@ -21,26 +21,26 @@
             Run<AddStartNode>();
 
             // plus icon to open nodes toolbox
-            HoverOver(C.nodeStart);
+            HoverOver(Const.nodeStart);
 
             //ClickXPath(U.workflow_iconNodesToolbox(nodeName: C.nodeStart));
-            int actorColumnIdx = U.GetActorColumnIdx_Workflow(this, U.DefaultActorsDic[U.DefaultActors.Admin]);
+            int actorColumnIdx = Utils.GetActorColumnIdx_Workflow(this, Utils.DefaultActorsDic[Utils.DefaultActors.Admin]);
             // click on plus icon(to open add node toolbox)
-            ClickXPath(U.workflow_iconNodesToolbox(this, nodeName: C.nodeStart, nodeType: U.NodeType.Start, actorColumnIdx: actorColumnIdx));
+            ClickXPath(Utils.workflow_iconNodesToolbox(this, nodeName: Const.nodeStart, nodeType: Utils.NodeType.Start, actorColumnIdx: actorColumnIdx));
 
             ClickLink("Loop");
             ExpectHeader("Add New Loop");
 
             BelowLabel("Linked node").ClickButton("---Select---");
-            NearXPath(C.formLoopNodeXPath).BelowLabel("Linked node").ClickLink(C.nodeStart);
+            NearXPath(Const.formLoopNodeXPath).BelowLabel("Linked node").ClickLink(Const.nodeStart);
 
             Click("Save");
 
             //ExpectLink(C.nodeStart);
             // Check loop node text and design
-            ExpectXPath($"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", C.cssClass_LoopNode)}]//*[{U.XPathTextContains(Casing.Exact, C.nodeLoop1)}]");
+            ExpectXPath($"//td[{actorColumnIdx}]//div[{Utils.XPathAttributeContains("class", Const.cssClass_LoopNode)}]//*[{Utils.XPathTextContains(Casing.Exact, Const.nodeLoop1)}]");
             // Check start node text and design
-            ExpectXPath($"//td[{actorColumnIdx}]//div[{U.XPathAttributeContains("class", C.cssClass_StartNode_LoopTarget)}]//*[{U.XPathTextContains(Casing.Exact, C.nodeStart)}]");
+            ExpectXPath($"//td[{actorColumnIdx}]//div[{Utils.XPathAttributeContains("class", Const.cssClass_StartNode_LoopTarget)}]//*[{Utils.XPathTextContains(Casing.Exact, Const.nodeStart)}]");
         }
 
 

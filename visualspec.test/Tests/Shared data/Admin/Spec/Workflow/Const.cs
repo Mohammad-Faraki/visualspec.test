@@ -6,7 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public static class C
+    public static class Const
     {
         public const string workflow1 = "workflow1";
         public const string workflowTopSectionXPath = "//form[@data-module='WorkFlowDiagramModule']";

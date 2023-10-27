@@ -20,7 +20,7 @@
             Run<CreateOpenProject>();
             // Open a new tab
             this.WebDriver.SwitchTo().NewWindow(WindowType.Tab);
-            U.ScanPages(this, true);
+            Utils.ScanPages(this, true);
 
             // first row edit has bug that shod be fixed
             int rowIndex = 1;

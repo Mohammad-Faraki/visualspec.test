@@ -7,7 +7,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public static class C
+    public static class Const
     {
         public const string addedUserstory = "story01";
         public const string editedUserstory = "story01 edited";

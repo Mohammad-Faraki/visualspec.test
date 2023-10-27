@@ -22,18 +22,18 @@
 
 
             //*********** Edit userstory
-            U.OpenUserstory(this, storyRowIdx: "last()");
+            Utils.OpenUserstory(this, storyRowIdx: "last()");
 
             ClickLink(That.Contains, "Edit");
             string editPopupTitle = "User Journey Details";
             WaitToSee(editPopupTitle);
 
-            Set(That.Contains, "Description").To(C.editedUserstory);
+            Set(That.Contains, "Description").To(Const.editedUserstory);
 
             //ClickButton(U.feature01);
-            U.OpenDropdown(this, U.feature01);
-            ClickLink(U.feature01);
-            ClickLink(U.feature02);
+            Utils.OpenDropdown(this, Utils.feature01);
+            ClickLink(Utils.feature01);
+            ClickLink(Utils.feature02);
             //ClickButton(U.feature02);
             ClickHeader(editPopupTitle);
 
@@ -43,21 +43,21 @@
             Click("Save");
             Thread.Sleep(5000);
             //WaitToSee(What.Contains, "Acceptance Criteria");
-            ExpectHeader(That.Contains, C.editedUserstory);
+            ExpectHeader(That.Contains, Const.editedUserstory);
             //Expect(What.Contains, U.feature02);
             ClickLink(That.Contains, "Edit");
             WaitToSee(editPopupTitle);
-            ExpectButton(U.feature02);
+            ExpectButton(Utils.feature02);
             Click("Cancel");
             Thread.Sleep(3000);
 
             //ClickXPath("//a[@name='UserStoriesList']");
             //WaitToSee("User Stories");
-            U.OpenUserstories(this);
+            Utils.OpenUserstories(this);
             Thread.Sleep(2000);
 
-            U.ScrollToBottom(this, C.scrollable_mainContent);
-            ExpectXPath($"//tr[last()]//*[text()='{C.editedUserstory}']");
+            Utils.ScrollToBottom(this, Const.scrollable_mainContent);
+            ExpectXPath($"//tr[last()]//*[text()='{Const.editedUserstory}']");
             #region Commented checking Status
             //ExpectXPath($"//tr[last()]//span[@class='user-story-list-status--designed']");
             ////ClickXPath("//tr[last()]/td[2]/a");

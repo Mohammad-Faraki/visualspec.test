@@ -19,18 +19,18 @@
 
             Run<CreateOpenProject>();
 
-            ClickXPath(U.scopeSidebarIcon_XPath);
+            ClickXPath(Utils.scopeSidebarIcon_XPath);
 
 
 
             
-            ExpectXPath($"//a[{U.XPathAttributeContains("id", "dropdownUser")}]"); // Hi <username>
+            ExpectXPath($"//a[{Utils.XPathAttributeContains("id", "dropdownUser")}]"); // Hi <username>
 
             // Hi <username>
-            ClickXPath($"//a[{U.XPathAttributeContains("id", "dropdownUser")}]/img");
-            WaitToSeeXPath($"//li[1]//a[{U.XPathTextContains(Casing.Exact, "Account")}]");
-            ExpectXPath($"//li[2]//a[{U.XPathTextContains(Casing.Exact, "Checkpoints")}]");
-            ExpectXPath($"//li[3]//a[{U.XPathTextContains(Casing.Exact, "Log out")}]");
+            ClickXPath($"//a[{Utils.XPathAttributeContains("id", "dropdownUser")}]/img");
+            WaitToSeeXPath($"//li[1]//a[{Utils.XPathTextContains(Casing.Exact, "Account")}]");
+            ExpectXPath($"//li[2]//a[{Utils.XPathTextContains(Casing.Exact, "Checkpoints")}]");
+            ExpectXPath($"//li[3]//a[{Utils.XPathTextContains(Casing.Exact, "Log out")}]");
 
         }
 

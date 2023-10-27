@@ -22,22 +22,22 @@
             Thread.Sleep(2000);
 
 
-            U.AddFeature(this, U.feature01);
+            Utils.AddFeature(this, Utils.feature01);
 
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(Tests.Shared.Admin.Scope.Features.C.scrollable_scopeFeatures_treeView));
+            this.WebDriver.ExecuteJavaScript(Utils.GetJS_ScrollToBottom(Tests.Shared.Admin.Scope.Features.Const.scrollable_scopeFeatures_treeView));
             //*********** Add usecase
-            U.AddUsecase(this, U.feature01, U.f1Usecase1, U.DefaultActors.Customer);
+            Utils.AddUsecase(this, Utils.feature01, Utils.f1Usecase1, Utils.DefaultActors.Customer);
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom(Tests.Shared.Admin.Scope.Features.C.scrollable_scopeFeatures_treeView));
-            Expect(U.f1Usecase1);
+            this.WebDriver.ExecuteJavaScript(Utils.GetJS_ScrollToBottom(Tests.Shared.Admin.Scope.Features.Const.scrollable_scopeFeatures_treeView));
+            Expect(Utils.f1Usecase1);
 
             Run<OpenEstimate>();
             Thread.Sleep(2000);
 
             //MyUtils.ScrollToBottom(this, "scope-content", this.WebDriver);
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom("scope-content"));
+            this.WebDriver.ExecuteJavaScript(Utils.GetJS_ScrollToBottom("scope-content"));
 
 
             ClickXPath($"//form[@data-module='UseCaseList']//tr[1]/td[4]/div/div[1]");
@@ -53,7 +53,7 @@
 
             //MyUtils.ScrollToBottom(this, "scope-content", this.WebDriver);
             // Scroll to bottom
-            this.WebDriver.ExecuteJavaScript(U.GetJS_ScrollToBottom("scope-content"));
+            this.WebDriver.ExecuteJavaScript(Utils.GetJS_ScrollToBottom("scope-content"));
 
             ExpectXPath($"//form[@data-module='UseCaseList']//tr[1]/td[4]/div/div[1][@class='selected']");
             ExpectXPath($"//form[@data-module='UseCaseList']//tr[1]/td[4]/div/div[2][@class='highlighted']");

@@ -14,9 +14,9 @@
         {
             LoginAs<AdminUser>();
 
-            U.CreateProject(this);
+            Utils.CreateProject(this);
 
-            U.OpenProject(this);
+            Utils.OpenProject(this);
         }
 
 

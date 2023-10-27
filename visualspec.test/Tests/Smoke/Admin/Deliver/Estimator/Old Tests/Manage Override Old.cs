@@ -17,7 +17,7 @@
             Run<CreateOpenProject>();
             // Open a new tab
             this.WebDriver.SwitchTo().NewWindow(WindowType.Tab);
-            U.ScanPages(this, true);
+            Utils.ScanPages(this, true);
 
             int rowIndex = 1;
 
@@ -43,7 +43,7 @@
             Thread.Sleep(2000);
 
             // Click off the override input
-            ClickXPath($"//th[{U.XPathText(Casing.Exact, "UI Design Implementation")}]");
+            ClickXPath($"//th[{Utils.XPathText(Casing.Exact, "UI Design Implementation")}]");
 
             ClickButton("Submit estimate");
 
@@ -51,7 +51,7 @@
             WaitToSee(What.Contains, "Page Estimates");
 
 
-            ExpectXPath($"//tr[{rowIndex}]//td[10][{U.XPathText(Casing.Exact, $"{overrideValueNew}")}]");
+            ExpectXPath($"//tr[{rowIndex}]//td[10][{Utils.XPathText(Casing.Exact, $"{overrideValueNew}")}]");
         }
 
 

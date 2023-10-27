@@ -15,7 +15,7 @@
 
             Run<CreateOpenProject>();
 
-            U.AddIntegration(this, integrationName: C.addedIntegration);
+            Utils.AddIntegration(this, integrationName: Const.addedIntegration);
         }
 
 

@@ -25,15 +25,15 @@
             
 
             //*********** Assign Domain Expertise
-            AtRow(1).Click(U.feature01);
+            AtRow(1).Click(Utils.feature01);
             WaitToSee("Use cases");
 
-            Expect(U.feature01);
-            AtRow(1).Expect(U.f1Usecase1);
-            AtRow(2).Expect(U.f1Usecase2);
+            Expect(Utils.feature01);
+            AtRow(1).Expect(Utils.f1Usecase1);
+            AtRow(2).Expect(Utils.f1Usecase2);
 
-            AtRow(1).Expect(U.DefaultActorsDic[U.DefaultActors.Admin]);
-            AtRow(2).Expect(U.DefaultActorsDic[U.DefaultActors.Admin]);
+            AtRow(1).Expect(Utils.DefaultActorsDic[Utils.DefaultActors.Admin]);
+            AtRow(2).Expect(Utils.DefaultActorsDic[Utils.DefaultActors.Admin]);
 
 
             ClickRow(1);
@@ -41,17 +41,17 @@
             Click(What.Contains, "Assign Stakeholders");
             WaitToSee("Add Stakeholder");
             ClickButton("Nothing selected");
-            ClickLink(U.stakeholder1);
-            ClickLink(U.stakeholder2);
+            ClickLink(Utils.stakeholder1);
+            ClickLink(Utils.stakeholder2);
             ClickButton(That.Contains, "Save");
 
-            AtRow(1).WaitToSee(U.stakeholder1);
-            AtRow(1).Expect(U.stakeholder2);
-            AtRow(1).ExpectNo(U.stakeholder3);
+            AtRow(1).WaitToSee(Utils.stakeholder1);
+            AtRow(1).Expect(Utils.stakeholder2);
+            AtRow(1).ExpectNo(Utils.stakeholder3);
 
-            AtRow(2).ExpectNo(U.stakeholder1);
-            AtRow(2).ExpectNo(U.stakeholder2);
-            AtRow(2).ExpectNo(U.stakeholder3);
+            AtRow(2).ExpectNo(Utils.stakeholder1);
+            AtRow(2).ExpectNo(Utils.stakeholder2);
+            AtRow(2).ExpectNo(Utils.stakeholder3);
             Thread.Sleep(2000);
 
 
@@ -61,33 +61,33 @@
             Click(What.Contains, "Assign Stakeholders");
             WaitToSee("Add Stakeholder");
             ClickButton("Nothing selected");
-            ClickLink(U.stakeholder3);
+            ClickLink(Utils.stakeholder3);
             ClickButton(That.Contains, "Save");
 
-            AtRow(1).WaitToSee(U.stakeholder1);
-            AtRow(1).Expect(U.stakeholder2);
-            AtRow(1).ExpectNo(U.stakeholder3);
+            AtRow(1).WaitToSee(Utils.stakeholder1);
+            AtRow(1).Expect(Utils.stakeholder2);
+            AtRow(1).ExpectNo(Utils.stakeholder3);
 
-            AtRow(2).ExpectNo(U.stakeholder1);
-            AtRow(2).ExpectNo(U.stakeholder2);
-            AtRow(2).Expect(U.stakeholder3);
+            AtRow(2).ExpectNo(Utils.stakeholder1);
+            AtRow(2).ExpectNo(Utils.stakeholder2);
+            AtRow(2).Expect(Utils.stakeholder3);
             Thread.Sleep(2000);
 
 
 
 
-            U.OpenPlanDomainExpertise(this);
-            AtRow(1).Expect($"{U.stakeholder1}: 1");
-            AtRow(1).Expect($"{U.stakeholder2}: 1");
-            AtRow(1).Expect($"{U.stakeholder3}: 1");
-            AtRow(2).ExpectNo($"{U.stakeholder1}: 1");
-            AtRow(2).ExpectNo($"{U.stakeholder2}: 1");
-            AtRow(2).ExpectNo($"{U.stakeholder3}: 1");
+            Utils.OpenPlanDomainExpertise(this);
+            AtRow(1).Expect($"{Utils.stakeholder1}: 1");
+            AtRow(1).Expect($"{Utils.stakeholder2}: 1");
+            AtRow(1).Expect($"{Utils.stakeholder3}: 1");
+            AtRow(2).ExpectNo($"{Utils.stakeholder1}: 1");
+            AtRow(2).ExpectNo($"{Utils.stakeholder2}: 1");
+            AtRow(2).ExpectNo($"{Utils.stakeholder3}: 1");
 
 
 
 
-            U.OpenPlanStakeholders(this);
+            Utils.OpenPlanStakeholders(this);
 
             AtRow(1).Expect($"0h direct");
             AtRow(2).Expect($"0h direct");
